@@ -12,7 +12,6 @@ public class BlueprintScript : MonoBehaviour
         buildingManager = GameObject.Find("BuildingManager").GetComponent<BuildingManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (buildingManager.pendingBuilding == null && buildingManager.canPlace == true) //&& Input.GetMouseButton(0))
