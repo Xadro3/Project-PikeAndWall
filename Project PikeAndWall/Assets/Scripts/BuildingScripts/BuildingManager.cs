@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class BuildingManager : MonoBehaviour
 {
-    [SerializeField] private Material[] materials;
-
     public int raycastLength;
-
+    
     public GameObject[] blueprint;
     public GameObject pendingBuilding;
 
@@ -16,18 +16,21 @@ public class BuildingManager : MonoBehaviour
 
     private RaycastHit hit;
 
-    [SerializeField] private LayerMask layerMask;
-
     public float rotateAmount;
 
     public float gridSize;
-    bool gridOn;
+    bool gridOn;    
+    
+    public bool canPlace;    
 
-    public bool canPlace = true;
-
+    [SerializeField] private Material[] materials;   
     [SerializeField] private Toggle gridToggle;
+    [SerializeField] private LayerMask layerMask;
+    
+    //[SerializeField] private Toggle destroyToggle;
 
-   
+    public bool destroyMode;
+
     void Update()
     {
         if(pendingBuilding != null)
@@ -47,8 +50,12 @@ public class BuildingManager : MonoBehaviour
                 pendingBuilding.transform.position = position; 
             }
 
-            
-            if(Input.GetMouseButtonDown(0) && canPlace)
+            //if (!IsPointerOverUI())
+            //{
+            //    canPlace = false;
+            //}
+
+            if(Input.GetMouseButtonDown(0) && canPlace &&! IsPointerOverUI())
             {
                 PlaceBuilding();
             }
@@ -71,7 +78,6 @@ public class BuildingManager : MonoBehaviour
 
     public void PlaceBuilding()
     {
-     //   pendingBuilding.GetComponent<MeshRenderer>().material = materials[2];
         pendingBuilding = null;
     }
 
@@ -103,20 +109,14 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-
     public void SelectBuilding(int index)
     {
-        if (pendingBuilding == null)
+
+        if (pendingBuilding != null)
         {
-            pendingBuilding = Instantiate(blueprint[index], position, transform.rotation);
+            Destroy(pendingBuilding);
         }
-
-        //if (pendingBuilding != null)
-        //{
-        //    Destroy(pendingBuilding);
-        //}
-        //pendingBuilding = Instantiate(blueprint[index], position, transform.rotation);
-
+        pendingBuilding = Instantiate(blueprint[index], position, transform.rotation);
     }
 
     public void ToggleGrid()
@@ -128,6 +128,18 @@ public class BuildingManager : MonoBehaviour
         else
         {
             gridOn = false;
+        }
+    }
+
+    public void ToggleDestoryBuild(bool destroyToggle)
+    {
+        if (destroyToggle == true)
+        {
+            destroyMode = true;
+        }
+        else
+        {
+            destroyMode = false;
         }
     }
 
@@ -143,4 +155,19 @@ public class BuildingManager : MonoBehaviour
         return position;
     }
 
+    public bool IsPointerOverUI()
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return true;
+        }
+        else
+        {
+            PointerEventData pe = new PointerEventData(EventSystem.current);
+            pe.position = Input.mousePosition;
+            List<RaycastResult> hits = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pe, hits);
+            return hits.Count > 0;
+        }
+    }
 }
