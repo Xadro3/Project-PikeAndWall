@@ -34,6 +34,10 @@ public class SelectedUnitsDictionary : MonoBehaviour
         }
         selectedUnits.Clear();
     }
+    public int ReportNumberOfSelectedUnits()
+    {
+        return selectedUnits.Count;
+    }
 
 
 }

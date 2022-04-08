@@ -59,14 +59,19 @@ public class UnitSelector : MonoBehaviour
 
                 if (Physics.Raycast(singleSelectionRay, out raycastHit, 50000f))
                 {
-                    if (Input.GetKey(KeyCode.LeftControl))
+                    if ((Input.GetKey(KeyCode.LeftControl)) && (raycastHit.transform.gameObject.tag=="Unit"))
                     {
                         selectedUnitsDictionary.AddSelectedUnits(raycastHit.transform.gameObject);
                     }
-                    else
+                    else 
                     {
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
-                        selectedUnitsDictionary.AddSelectedUnits(raycastHit.transform.gameObject);
+
+                        if(raycastHit.transform.gameObject.tag == "Unit") 
+                        {
+                            selectedUnitsDictionary.AddSelectedUnits(raycastHit.transform.gameObject);
+                        }
+                     
 
                     }
                 }
@@ -204,6 +209,14 @@ public class UnitSelector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        selectedUnitsDictionary.AddSelectedUnits(other.gameObject);
+        Debug.Log("Objects hit: " + other.tag);
+        
+            if(other.tag == "Unit")
+            {
+
+            selectedUnitsDictionary.AddSelectedUnits(other.gameObject);
+            }
+        
+        
     }
 }

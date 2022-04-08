@@ -17,7 +17,7 @@ public class MovementCommandHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if ((Input.GetMouseButton(1)&&(gameObject.GetComponent<UnitHighlighter>() != null)))
         {
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
