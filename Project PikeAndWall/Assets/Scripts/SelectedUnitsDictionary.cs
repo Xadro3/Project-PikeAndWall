@@ -11,6 +11,8 @@ public class SelectedUnitsDictionary : MonoBehaviour
     {
         int unitID = selectedUnit.GetInstanceID();
 
+        
+
         if (!selectedUnits.ContainsKey(unitID))
         {
             selectedUnits.Add(unitID, selectedUnit);
