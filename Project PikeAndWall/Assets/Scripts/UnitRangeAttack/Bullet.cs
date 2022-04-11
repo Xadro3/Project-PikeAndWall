@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         return n;
     }
 
-        public void Setup(Vector3 shootDirection){
+    public void Setup(Vector3 shootDirection){
         this.shootDirection = shootDirection;
         transform.eulerAngles = new Vector3(GetAngleFromVectorFloat(shootDirection),GetAngleFromVectorFloat(shootDirection), GetAngleFromVectorFloat(shootDirection));
         Destroy(gameObject, 1f);

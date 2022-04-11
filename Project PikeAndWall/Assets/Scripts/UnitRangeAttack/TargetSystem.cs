@@ -8,11 +8,17 @@ public class TargetSystem : MonoBehaviour
     
     private RangeUnit playerDummy;
 
+    List <GameObject> currentCollisions = new List <GameObject> ();
+
     private void Awake() {
         playerDummy = GetComponent<RangeUnit>();
     }
     
     private void OnTriggerEnter(Collider collision){
+        currentCollisions.Add (collision.gameObject);
+        foreach (GameObject gObject in currentCollisions) {
+            print (gObject.name);
+        }
         if (collision.TryGetComponent<Enemy>(out Enemy enemy)) {
             playerDummy.enemyInRange = true;
             playerDummy.SetTarget(enemy);
@@ -23,6 +29,7 @@ public class TargetSystem : MonoBehaviour
 
 
     private void OnTriggerExit(Collider collision){
+        currentCollisions.Remove (collision.gameObject);
         if (collision.TryGetComponent<Enemy>(out Enemy enemy)) {
             playerDummy.SetTarget(null);
             playerDummy.enemyInRange = false;
