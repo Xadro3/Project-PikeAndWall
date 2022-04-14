@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class ProjectileArch : MonoBehaviour
 {
-    private RangeUnit unit;
-    
-    private Vector3 shootDirection;
-    
+    private UnitClassRange unit;
     private float speed = 1f;
-
     public Transform sunrise;
     public Transform sunset;
     public Vector3 center;
     public Vector3 riseRelCenter;
     public Vector3 setRelCenter;
-
-    public float journeyTime = 3f;
-
+    public float journeyTime = 2f;
     private float startTime;
     
     void Start(){
 
-        
-        unit = gameObject.GetComponentInParent<RangeUnit>();
+        unit = gameObject.GetComponentInParent<UnitClassRange>();
         startTime = Time.time;
-        sunrise = unit.transform;
-        sunset = unit.targetEnemy.transform;
+        sunrise = unit.weapon.transform;
+        sunset = unit.targetHitbox.transform;
         center = (sunrise.position + sunset.position) * 0.5f;
         center -= new Vector3(0,1,0);
         riseRelCenter = sunrise.position - center;
         setRelCenter = sunset.position - center;
+        Destroy(gameObject, 4f);
 
+    }
+
+    private void OnTriggerEnter(Collider collision){
+        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
+            Destroy(gameObject,0f);
+        }
     }
 
     private void Update(){
@@ -41,7 +41,6 @@ public class ProjectileArch : MonoBehaviour
         transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete * speed);
         transform.position += center;
 
-        //transform.position += shootDirection * speed* Time.deltaTime;
     }
     public static float GetAngleFromVectorFloat(Vector3 dir) {
         dir = dir.normalized;
@@ -49,12 +48,5 @@ public class ProjectileArch : MonoBehaviour
         if (n < 0) n += 360;
 
         return n;
-    }
-
-    public void Setup(Vector3 shootDirection){
-        this.shootDirection = shootDirection;
-        transform.eulerAngles = new Vector3(GetAngleFromVectorFloat(shootDirection),GetAngleFromVectorFloat(shootDirection), GetAngleFromVectorFloat(shootDirection));
-        Destroy(gameObject, 4f);
-
     }
 }

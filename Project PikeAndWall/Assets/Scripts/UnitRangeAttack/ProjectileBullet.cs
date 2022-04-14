@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Bullet : MonoBehaviour
+public class ProjectileBullet : MonoBehaviour
 {
     private Vector3 shootDirection;
+    private float speed = 5f;
+
+    void Start(){
+    }
+
 
     public static float GetAngleFromVectorFloat(Vector3 dir) {
         dir = dir.normalized;
@@ -15,16 +20,23 @@ public class Bullet : MonoBehaviour
         return n;
     }
 
+
+    private void OnTriggerEnter(Collider collision){
+        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
+            Destroy(gameObject,0f);
+        }
+    }
+
+
     public void Setup(Vector3 shootDirection){
         this.shootDirection = shootDirection;
         transform.eulerAngles = new Vector3(GetAngleFromVectorFloat(shootDirection),GetAngleFromVectorFloat(shootDirection), GetAngleFromVectorFloat(shootDirection));
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 2f);
 
     }
 
     private void Update(){
-        float moveSpeed = 5f;
-        transform.position += shootDirection * moveSpeed* Time.deltaTime;
+        transform.position += shootDirection * speed * Time.deltaTime;
     }
 
 }
