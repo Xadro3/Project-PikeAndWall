@@ -14,7 +14,7 @@ public class BlueprintScript : MonoBehaviour
 
     void Update()
     {
-        if (buildingManager.pendingBuilding == null && buildingManager.canPlace == true) //&& Input.GetMouseButton(0))
+        if (buildingManager.pendingBuilding == null && buildingManager.canPlace == true)
         {
             Instantiate(realBuilding,transform.position,transform.rotation);
             Destroy(gameObject);

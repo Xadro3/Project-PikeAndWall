@@ -57,8 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56103f11950bbb24ba3e3cc0e06b2d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffekt: {fileID: 919132149155446097, guid: dbe23dfae67390845ba66b02732d773f, type: 3}
-  destroyEffektTime: 2
+  destroyEffekt: {fileID: 5746086383393966899, guid: 1cd2c33c78460054382b684e7dc32f30, type: 3}
+  destroyEffektTime: 1
 --- !u!114 &1156484661919363791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,9 +72,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aktuelleMengeText: {fileID: 0}
-  destroyMode: 0
   produktionsMenge: 5
   timer: 2
+  wood: 1
+  stone: 0
+  buildCost:
+  - resourceType: 3
+    resourceAmount: 3
+  producedResources: []
 --- !u!1001 &5702163948521796335
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,23 +11,34 @@ public class ResourceAquisition : MonoBehaviour
 
     public Text aktuelleMengeText;
 
-    [SerializeField]bool destroyMode;
-
-    //[SerializeField] private int startTime;
     [SerializeField] private int produktionsMenge;
     [SerializeField] private int timer;
 
+    [SerializeField] bool wood;
+    [SerializeField] bool stone;
+
+    public List<ResourceValue> buildCost;
+    public List<ResourceValue> producedResources;
+
     private void Start()
     {
+        if (wood == true)
+        {
+            aktuelleMengeText = GameObject.Find("HolzMengeInteger").GetComponent<Text>();
+        }
+
+        if (stone == true)
+        {
+            aktuelleMengeText = GameObject.Find("StoneMengeInteger").GetComponent<Text>();
+        }
+
         StartCoroutine(WaitBeforeProduction());        
-        aktuelleMengeText = GameObject.Find("HolzMengeInteger").GetComponent<Text>();
 
     }
 
     private void Update()
     {
         aktuelleMengeText.text = aktuelleMenge.ToString();
-
     }
 
     private void Production()
@@ -43,6 +54,4 @@ public class ResourceAquisition : MonoBehaviour
         Production();
         StartCoroutine(WaitBeforeProduction());
     }
-
-
 }

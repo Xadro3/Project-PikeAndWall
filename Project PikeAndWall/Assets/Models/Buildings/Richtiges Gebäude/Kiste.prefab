@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 7010031924530505523}
   - component: {fileID: -3685063067146499525}
   - component: {fileID: 2104281943883328297}
+  - component: {fileID: -6626661084713144166}
+  - component: {fileID: -4575973106463429484}
+  - component: {fileID: -8749067988401125}
   m_Layer: 0
   m_Name: Kiste
   m_TagString: Buildings
@@ -114,3 +117,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020599999, y: 0.020599999, z: 0.020599999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6626661084713144166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811396665855854310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aktuelleMengeText: {fileID: 0}
+  produktionsMenge: 6
+  timer: 4
+  wood: 0
+  stone: 1
+--- !u!114 &-4575973106463429484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811396665855854310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56103f11950bbb24ba3e3cc0e06b2d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffekt: {fileID: 5746086383393966899, guid: 1cd2c33c78460054382b684e7dc32f30, type: 3}
+  destroyEffektTime: 2
+--- !u!208 &-8749067988401125
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811396665855854310}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.010000001, y: 0.010000001, z: 0.010000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

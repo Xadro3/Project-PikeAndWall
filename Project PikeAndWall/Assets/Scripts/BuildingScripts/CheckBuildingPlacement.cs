@@ -6,7 +6,8 @@ using UnityEngine.EventSystems;
 public class CheckBuildingPlacement : MonoBehaviour
 {
     BuildingManager buildingManager;
-    private int anzahlGebäude;
+    private int anzahlGebäude; //nur ein Failsave, war erstmal zum überprüfen eines bugs da der nicht mehr auftreten sollte
+    
     void Start()
     {
         buildingManager = GameObject.Find("BuildingManager").GetComponent<BuildingManager>();
