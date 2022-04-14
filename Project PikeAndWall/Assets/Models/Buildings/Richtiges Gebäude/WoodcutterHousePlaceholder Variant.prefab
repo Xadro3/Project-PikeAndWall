@@ -79,7 +79,9 @@ MonoBehaviour:
   buildCost:
   - resourceType: 3
     resourceAmount: 3
-  producedResources: []
+  producedResources:
+  - resourceType: 1
+    resourceAmount: 4
 --- !u!1001 &5702163948521796335
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,13 +25,16 @@ public class BuildingManager : MonoBehaviour
     public bool destroyMode;
 
 
-
     [SerializeField] private Material[] materials;   
     [SerializeField] private Toggle gridToggle;
     [SerializeField] private LayerMask layerMask;
 
     [SerializeField] ResourceManager resourceManager;
     ResourceAquisition resourceAquisition;
+
+
+    public List<ResourceValue> buildCost;
+    public List<ResourceValue> producedResources;
 
     void Update()
     {
@@ -55,7 +58,10 @@ public class BuildingManager : MonoBehaviour
             if(Input.GetMouseButtonDown(0) && canPlace &&! IsPointerOverUI())
             {
                 PlaceBuilding();
-                Pay(resourceAquisition);
+                //resourceManager.SpendResource(resourceAquisition.buildCost);
+                //Pay(resourceAquisition);
+                //resourceManager.SpendResource(buildCost);
+
             }
 
             if (Input.GetMouseButtonDown(1))
@@ -74,10 +80,10 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    private void Pay(ResourceAquisition resourceAquisition)
-    {
-        resourceManager.SpendResource(resourceAquisition.buildCost);
-    }
+    //private void Pay(ResourceAquisition resourceAquisition)
+    //{
+    //    resourceManager.SpendResource(resourceAquisition.buildCost);
+    //}
 
     public void PlaceBuilding()
     {
