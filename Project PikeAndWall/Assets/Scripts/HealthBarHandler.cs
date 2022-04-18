@@ -27,4 +27,14 @@ public class HealthBarHandler : MonoBehaviour
     {
         renderer.enabled = false;
     }
+    public void SetHealth(float health)
+    {
+
+        
+
+        if(renderer!=null)
+        {
+            renderer.material.SetFloat(("_Health"), health);
+        }
+    }
 }

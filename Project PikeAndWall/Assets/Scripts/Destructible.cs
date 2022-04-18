@@ -22,8 +22,12 @@ public class Destructible : MonoBehaviour
     {
         if(collision.gameObject.tag == "SiegeProjectile")
         {
-            Instantiate(fracturedWall, transform.position, transform.rotation);
+            
             Destroy(gameObject);
         }
+    }
+    private void OnDestroy()
+    {
+        Instantiate(fracturedWall, transform.position, transform.rotation);
     }
 }
