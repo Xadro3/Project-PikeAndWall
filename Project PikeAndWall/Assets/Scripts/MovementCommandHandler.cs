@@ -24,15 +24,20 @@ public class MovementCommandHandler : MonoBehaviour
             if(Physics.Raycast(destinationRay, out destinationHit, 50000f))
             {
                 destination = destinationHit.point;
-                MoveToDestiantionSingle();
+               // MoveToDestiantionSingle();
             }
         }
 
     }
 
-    void MoveToDestiantionSingle()
+   // void MoveToDestiantionSingle()
+  //  {
+   //     agent.SetDestination(destination);
+    //}
+    public void MoveToDestinationMultiple(Vector3 dest)
     {
-        agent.SetDestination(destination);
+        Debug.Log("Destination is: " + dest);
+        agent.SetDestination(dest);
     }
 
 

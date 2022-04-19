@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public int healOverTimeEffect;
     public int healOverTimeTickRate;
 
+
     void Start()
     {
         hitPoints = maximumHitPoints;
@@ -26,7 +27,8 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
         if (hitPoints <= 0)
         {
-            Destroy(gameObject);
+            gameObject.GetComponent<Destructible>().Die();
+           
         }
     }
 

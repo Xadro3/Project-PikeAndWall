@@ -56,8 +56,7 @@ public class CameraMovement : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
 
-            Debug.Log("Transform.position "+transform.GetChild(0).position.y);
-            Debug.Log("Tranform.Child.transform "+(transform.GetChild(0).transform.forward * -zoomSpeed).y);
+           
 
             if ((transform.GetChild(0).position.y +zoomSpeed) < zoomMaxHeight)
             {

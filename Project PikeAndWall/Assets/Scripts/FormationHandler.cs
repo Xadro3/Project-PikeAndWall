@@ -9,6 +9,8 @@ public class FormationHandler : MonoBehaviour
     GameObject eventSystem;
     Dictionary<int, GameObject> selectedUnits;
     Dictionary<Vector3, GameObject> unitPlaces;
+    GameObject[] unitObjects;
+
 
     public int selectedUnitNumber;
 
@@ -17,10 +19,8 @@ public class FormationHandler : MonoBehaviour
     public double ratioQ;
     public double columns;
     public double rows;
-
-    int lastRow;
-    int lastColumn;
-    int unitsToPlace;
+    public GameObject lastInstance;
+    
     Vector3 lastPosition;
     RaycastHit raycast;
     public GameObject formationPlacement;
@@ -32,11 +32,11 @@ public class FormationHandler : MonoBehaviour
     void Start()
     {
         eventSystem = GameObject.Find("EventSystem");
-
-
+        unitObjects = Array.Empty<GameObject>();
+        unitPlaces = new Dictionary<Vector3, GameObject>();
         ratioQ = ratioColumns / ratioRows;
 
-
+        
 
     }
 
@@ -47,19 +47,28 @@ public class FormationHandler : MonoBehaviour
         selectedUnitNumber = eventSystem.GetComponent<SelectedUnitsDictionary>().ReportNumberOfSelectedUnits();
         selectedUnits = eventSystem.GetComponent<SelectedUnitsDictionary>().selectedUnits;
 
-
-
-
-
-        if (selectedUnitNumber > 1)
+        if (selectedUnitNumber != 0)
         {
+            if (unitObjects.Length!=0)
+            {
+                Array.Clear(unitObjects, 0, unitObjects.Length);
+            }
+            unitObjects = new GameObject[selectedUnits.Count];
+            selectedUnits.Values.CopyTo(unitObjects, 0);
+            
+        }
+
+
+
+        
+        
 
             columns = Math.Ceiling(Math.Sqrt(selectedUnitNumber * ratioQ));
             rows = Math.Ceiling(Math.Sqrt(selectedUnitNumber / ratioQ));
 
             if (Input.GetMouseButtonUp(1))
             {
-                Debug.Log("I am here");
+                
 
                 Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(destinationRay, out raycast, 50000f))
@@ -70,23 +79,49 @@ public class FormationHandler : MonoBehaviour
 
             }
 
-        }
+        
 
     }
 
     void PlaceUnits()
     {
 
-        
+        int index=1;
 
         for (int i = 0; i < columns; i++)
         {
+            
+
             for (int j = 0; j < rows; j++)
             {
-                Debug.Log("PlaceUnits at: " + j);
-                Instantiate(formationPlacement, new Vector3(lastPosition.x + i+5, lastPosition.y, lastPosition.z + j+5),Quaternion.identity);
+                
+
+                
+
+                lastInstance =  Instantiate(formationPlacement, new Vector3(lastPosition.x + i, lastPosition.y, lastPosition.z + j),Quaternion.identity);
+
+                Debug.Log("unitObjects is: " + unitObjects.Length + " unitPLaces is: " + unitPlaces.Count);
+
+                if (selectedUnits.Count >= index)
+                {
+                    Debug.Log("i made it here");
+                    unitPlaces.Add(lastInstance.transform.position, unitObjects[index-1]);
+                    index++;
+                }
+
             }
         }
+
+        Debug.Log("UnitPLaces is: " + unitPlaces.Count);
+
+        foreach(KeyValuePair<Vector3, GameObject> entry in unitPlaces)
+        {
+            Debug.Log("Placed unit at: " + entry.Key);
+            entry.Value.GetComponent<MovementCommandHandler>().MoveToDestinationMultiple(entry.Key);
+        }
+        unitPlaces.Clear();
+
     }
+
     
 }

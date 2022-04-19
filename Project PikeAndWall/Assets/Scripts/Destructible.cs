@@ -26,8 +26,9 @@ public class Destructible : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnDestroy()
+    public void Die()
     {
         Instantiate(fracturedWall, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
