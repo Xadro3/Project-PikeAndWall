@@ -14,20 +14,38 @@ public class TargetHandler : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider collision){
-        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
-            unit.enemyInRange = true;
-            unit.SetTarget(hitbox);
-            Debug.Log("initial target");
+        if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
+            if(unit.tag == "Unit"){
+                if(collision.tag == "Enemy"){
+                    unit.enemyInRange = true;
+                    unit.SetTarget(hitbox);
+                }
+            }
+            if(unit.tag == "Enemy"){
+                if(collision.tag == "Unit"){
+                    unit.enemyInRange = true;
+                    unit.SetTarget(hitbox);
+                }
+            }
         }
     }
 
 
 
     private void OnTriggerExit(Collider collision){
-        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
-            unit.SetTarget(null);
-            unit.enemyInRange = false;
-            Debug.Log("Target lost!");
+        if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
+            if(tag == "Unit"){
+                if(collision.tag == "Enemy"){
+                    unit.SetTarget(null);
+                    unit.enemyInRange = false;
+                }
+            }
+            if(tag == "Enemy"){
+                if(collision.tag == "Unit"){
+                    unit.SetTarget(null);
+                    unit.enemyInRange = false;
+                }
+            }
         }
     }
 
