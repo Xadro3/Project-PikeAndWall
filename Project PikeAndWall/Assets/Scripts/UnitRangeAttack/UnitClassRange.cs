@@ -14,7 +14,7 @@ public class UnitClassRange : MonoBehaviour
     public bool enemyInRange;
 
     void Start(){
-        weapon = gameObject.transform.Find("Weapon");
+        weapon = gameObject.transform.Find("UnitAttack").transform.Find("Weapon");
     }
 
     void Update(){ 
