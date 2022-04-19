@@ -10,6 +10,7 @@ public class UnitClassRange : MonoBehaviour
 
     public Transform weapon;
     public Hitbox targetHitbox;
+    public int damageValue = 3;
 
     public bool enemyInRange;
 

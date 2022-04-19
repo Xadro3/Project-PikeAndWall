@@ -30,6 +30,8 @@ public class ProjectileArch : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision){
         if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
+            Health hit = hitbox.GetComponentInParent<Health>();
+            hit.TakeDamage(unit.damageValue);
             Destroy(gameObject,0f);
         }
     }
