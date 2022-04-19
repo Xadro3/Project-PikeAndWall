@@ -19,6 +19,7 @@ public class UnitClassRange : MonoBehaviour
     }
 
     void Update(){ 
+        
     }
     public void SetTarget(Hitbox targetHitbox){
         this.targetHitbox = targetHitbox;

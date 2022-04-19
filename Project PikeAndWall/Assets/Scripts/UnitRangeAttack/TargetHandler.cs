@@ -6,44 +6,108 @@ public class TargetHandler : MonoBehaviour
 {
     
     private UnitClassRange unit;
+    public List<Hitbox> targetsInRange;
+    RaycastHit[] raycastHits;
+
+    private Hitbox targetHitbox;
+    private RaycastHit raycastHit;
+
 
     //List <GameObject> currentCollisions = new List <GameObject> ();
 
-    private void Awake() {
+    void Awake() {
         unit = GetComponent<UnitClassRange>();
     }
+
+    void Start(){
+    }
     
+    void Update(){
+        if(Input.GetMouseButtonDown(1)){
+            Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            raycastHits = Physics.RaycastAll(destinationRay, 50000f);
+
+            foreach(RaycastHit raycastHit in raycastHits)
+                {
+                    if(raycastHit.transform.tag == "Enemy")
+                    {
+                        Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
+                        if(targetsInRange.Contains(targetHitbox)){
+                            unit.enemyInRange = true;
+                            unit.SetTarget(targetHitbox);
+                        }else{
+                            unit.enemyInRange = false;
+                            unit.SetTarget(null);
+                        }
+                        CheckTargetHelper(targetHitbox, raycastHit);
+
+                    }
+                }
+            
+            
+            //if(Physics.Raycast(ray, out hit)){
+            //    Debug.Log("ich habe getroffen"+hit.transform.tag);
+            //    Hitbox targetHitbox = hit.transform.GetComponent<Hitbox>();
+            //    Debug.Log(targetHitbox);
+            //    if(targetsInRange.Contains(targetHitbox)){
+            //        unit.enemyInRange = true;
+            //        unit.SetTarget(targetHitbox);
+            //    }else{
+            //        unit.enemyInRange = false;
+            //        unit.SetTarget(null);
+            //    }
+            //}
+        }
+        CheckTarget(targetHitbox, raycastHit);
+    }
+
+
+    public void CheckTargetHelper(Hitbox targetHitbox, RaycastHit raycastHit){
+        this.targetHitbox = targetHitbox;
+        this.raycastHit = raycastHit;
+    }
+    
+    private void CheckTarget(Hitbox targetHitbox, RaycastHit raycastHit ){
+        if(targetsInRange.Contains(targetHitbox)){
+            unit.enemyInRange = true;
+        }else{
+            unit.enemyInRange = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider collision){
         if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
             if(unit.tag == "Unit"){
                 if(collision.tag == "Enemy"){
-                    unit.enemyInRange = true;
-                    unit.SetTarget(hitbox);
+                    targetsInRange.Add(hitbox);
+                    //unit.enemyInRange = true;
+                    //unit.SetTarget(hitbox);
                 }
             }
             if(unit.tag == "Enemy"){
-                if(collision.tag == "Player"){
-                    unit.enemyInRange = true;
-                    unit.SetTarget(hitbox);
+                if(collision.tag == "Player"){   
+                    targetsInRange.Add(hitbox);
+                    //unit.enemyInRange = true;
+                    //unit.SetTarget(hitbox);
                 }
             }
         }
     }
 
-
-
     private void OnTriggerExit(Collider collision){
         if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
             if(unit.tag == "Unit"){
                 if(collision.tag == "Enemy"){
-                    unit.SetTarget(null);
-                    unit.enemyInRange = false;
+                    targetsInRange.Remove(hitbox);
+                    //unit.SetTarget(null);
+                    //unit.enemyInRange = false;
                 }
             }
             if(unit.tag == "Enemy"){
                 if(collision.tag == "Player"){
-                    unit.SetTarget(null);
-                    unit.enemyInRange = false;
+                    targetsInRange.Remove(hitbox);
+                    //unit.SetTarget(null);
+                    //unit.enemyInRange = false;
                 }
             }
         }
