@@ -27,36 +27,20 @@ public class TargetHandler : MonoBehaviour
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHits = Physics.RaycastAll(destinationRay, 50000f);
 
-            foreach(RaycastHit raycastHit in raycastHits)
-                {
-                    if(raycastHit.transform.tag == "Enemy")
-                    {
-                        Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
-                        if(targetsInRange.Contains(targetHitbox)){
-                            unit.enemyInRange = true;
-                            unit.SetTarget(targetHitbox);
-                        }else{
-                            unit.enemyInRange = false;
-                            unit.SetTarget(null);
-                        }
-                        CheckTargetHelper(targetHitbox, raycastHit);
-
+            foreach(RaycastHit raycastHit in raycastHits){
+                if(raycastHit.transform.tag == "Enemy"){
+                    Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
+                    if(targetsInRange.Contains(targetHitbox)){
+                        unit.enemyInRange = true;
+                        unit.SetTarget(targetHitbox);
+                    }else{
+                        unit.enemyInRange = false;
+                        unit.SetTarget(null);
                     }
+                    CheckTargetHelper(targetHitbox, raycastHit);
+
                 }
-            
-            
-            //if(Physics.Raycast(ray, out hit)){
-            //    Debug.Log("ich habe getroffen"+hit.transform.tag);
-            //    Hitbox targetHitbox = hit.transform.GetComponent<Hitbox>();
-            //    Debug.Log(targetHitbox);
-            //    if(targetsInRange.Contains(targetHitbox)){
-            //        unit.enemyInRange = true;
-            //        unit.SetTarget(targetHitbox);
-            //    }else{
-            //        unit.enemyInRange = false;
-            //        unit.SetTarget(null);
-            //    }
-            //}
+            }
         }
         CheckTarget(targetHitbox, raycastHit);
     }
@@ -72,6 +56,7 @@ public class TargetHandler : MonoBehaviour
             unit.enemyInRange = true;
         }else{
             unit.enemyInRange = false;
+            targetsInRange.Remove(targetHitbox);
         }
     }
 
