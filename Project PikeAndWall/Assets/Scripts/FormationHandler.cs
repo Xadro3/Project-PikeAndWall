@@ -23,6 +23,7 @@ public class FormationHandler : MonoBehaviour
     
     Vector3 lastPosition;
     RaycastHit raycast;
+    RaycastHit[] raycastHits;
     public GameObject formationPlacement;
 
 
@@ -71,11 +72,19 @@ public class FormationHandler : MonoBehaviour
                 
 
                 Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(destinationRay, out raycast, 50000f))
+                raycastHits = Physics.RaycastAll(destinationRay, 50000f);
+                
+                foreach(RaycastHit raycastHit in raycastHits)
                 {
-                    lastPosition = raycast.point;
-                    PlaceUnits();
+                    if(raycastHit.collider.gameObject.layer == 3)
+                    {
+                    lastPosition = raycastHit.point;
+                    }
                 }
+
+                    
+                    PlaceUnits();
+                
 
             }
 
