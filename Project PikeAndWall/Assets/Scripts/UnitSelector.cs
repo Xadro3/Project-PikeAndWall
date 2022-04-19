@@ -101,7 +101,7 @@ public class UnitSelector : MonoBehaviour
                 {
                     Ray ray = Camera.main.ScreenPointToRay(corner);
 
-                    if(Physics.Raycast(ray, out raycastHit, 50000f,(1<<8)))
+                    if(Physics.Raycast(ray, out raycastHit, 50000f,(1<<3)))
                     {
                         vertices[i] = new Vector3(raycastHit.point.x, 0, raycastHit.point.z);
                         vectors[i] = ray.origin - raycastHit.point;

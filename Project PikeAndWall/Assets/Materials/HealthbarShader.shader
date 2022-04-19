@@ -12,6 +12,8 @@ Shader "Custom/Healthbar"
         _Ratio("Ratio", Float) = 8.0
         _BorderColor("Border Color", Color) = (0, 0, 0, 1)
         _BorderThickness("Border Thickness", Range(0, 0.5)) = 0.2
+        _Width("Width", Float) = 1
+        _Height("Height", Float) = 0.1
     }
         SubShader
         {
@@ -49,11 +51,16 @@ Shader "Custom/Healthbar"
                 float _Ratio;
                 float4 _BorderColor;
                 float _BorderThickness;
+                float _Width;
+                float _Height;
 
                 Interpolators vert(MeshData v)
                 {
                     Interpolators o;
-                    o.vertex = UnityObjectToClipPos(v.vertex);
+                    o.vertex = mul(UNITY_MATRIX_P,
+                        mul(UNITY_MATRIX_MV, float4(0.0, 0.0, 0.0, 1.0))
+                        + float4(v.vertex.x, v.vertex.y, 0.0, 0.0)
+                        * float4(_Width, _Height, 1.0, 1.0));
                     o.uv = v.uv;
                     return o;
                 }
