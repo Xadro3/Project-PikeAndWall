@@ -6,9 +6,11 @@ using UnityEngine;
 public class ProjectileBullet : MonoBehaviour
 {
     private Vector3 shootDirection;
+    private UnitClassRange unit;
     private float speed = 5f;
 
     void Start(){
+        unit = gameObject.GetComponentInParent<UnitClassRange>();
     }
 
 
@@ -23,6 +25,8 @@ public class ProjectileBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision){
         if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
+            Health hit = hitbox.GetComponentInParent<Health>();
+            hit.TakeDamage(unit.damageValue);
             Destroy(gameObject,0f);
         }
     }

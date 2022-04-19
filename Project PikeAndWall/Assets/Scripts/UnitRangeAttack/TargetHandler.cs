@@ -22,7 +22,7 @@ public class TargetHandler : MonoBehaviour
                 }
             }
             if(unit.tag == "Enemy"){
-                if(collision.tag == "Unit"){
+                if(collision.tag == "Player"){
                     unit.enemyInRange = true;
                     unit.SetTarget(hitbox);
                 }
@@ -34,14 +34,14 @@ public class TargetHandler : MonoBehaviour
 
     private void OnTriggerExit(Collider collision){
         if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
-            if(tag == "Unit"){
+            if(unit.tag == "Unit"){
                 if(collision.tag == "Enemy"){
                     unit.SetTarget(null);
                     unit.enemyInRange = false;
                 }
             }
-            if(tag == "Enemy"){
-                if(collision.tag == "Unit"){
+            if(unit.tag == "Enemy"){
+                if(collision.tag == "Player"){
                     unit.SetTarget(null);
                     unit.enemyInRange = false;
                 }

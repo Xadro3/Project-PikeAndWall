@@ -9,6 +9,7 @@ public class MovementCommandHandler : MonoBehaviour
     NavMeshAgent agent;
     RaycastHit destinationHit;
     Vector3 destination;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -17,6 +18,7 @@ public class MovementCommandHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if ((Input.GetMouseButton(1)&&(gameObject.GetComponent<UnitHighlighter>() != null)))
         {
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
