@@ -98,7 +98,7 @@ public class FormationHandler : MonoBehaviour
 
                 
 
-                lastInstance =  Instantiate(formationPlacement, new Vector3(lastPosition.x + i, lastPosition.y, lastPosition.z + j),Quaternion.identity);
+                lastInstance =  Instantiate(formationPlacement, new Vector3(lastPosition.x + (i*2), lastPosition.y, lastPosition.z + (j*2)),Quaternion.identity);
 
                 Debug.Log("unitObjects is: " + unitObjects.Length + " unitPLaces is: " + unitPlaces.Count);
 
