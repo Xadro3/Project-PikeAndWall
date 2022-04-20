@@ -130,12 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aktuelleMengeText: {fileID: 0}
-  produktionsMenge: 6
   timer: 4
-  wood: 0
-  stone: 1
-  buildCostBuilding: []
+  buildCost: []
   producedResources: []
 --- !u!114 &-4575973106463429484
 MonoBehaviour:
@@ -179,12 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aktuelleMengeText: {fileID: 0}
-  produktionsMenge: 0
   timer: 0
-  wood: 0
-  stone: 0
-  buildCostBuilding:
-  - resourceType: 3
+  buildCost:
+  - resourceType: 1
     resourceAmount: 2
   producedResources: []

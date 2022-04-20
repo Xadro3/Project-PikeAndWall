@@ -57,8 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56103f11950bbb24ba3e3cc0e06b2d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffekt: {fileID: 5746086383393966899, guid: 1cd2c33c78460054382b684e7dc32f30, type: 3}
-  destroyEffektTime: 1
+  destroyEffekt: {fileID: 2451630964253312392, guid: 042d0cefbcdfc9f49a064caf109e9c62, type: 3}
+  destroyEffektTime: 15
+  getResouceBackInt:
+  - resourceType: 3
+    resourceAmount: 3
+  destroyClip: {fileID: 8300000, guid: fad7b3ac5dab49449a3d10b660b35d37, type: 3}
 --- !u!114 &1156484661919363791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,17 +75,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aktuelleMengeText: {fileID: 0}
-  produktionsMenge: 5
   timer: 2
-  wood: 1
-  stone: 0
   buildCost:
   - resourceType: 3
     resourceAmount: 3
   producedResources:
   - resourceType: 1
     resourceAmount: 4
+--- !u!114 &2047257933285888808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891839621583015870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f512a2a9919be64b85ebdabcce20612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  buildClip: {fileID: 8300000, guid: 849aecea020c98c428e1dc3a9e8d90ce, type: 3}
 --- !u!1001 &5702163948521796335
 PrefabInstance:
   m_ObjectHideFlags: 0

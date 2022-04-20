@@ -32,10 +32,6 @@ public class BuildingManager : MonoBehaviour
     [SerializeField] ResourceManager resourceManager;
     ResourceAquisition resourceAquisition;
 
-
-    public List<ResourceValue> buildCost;
-    public List<ResourceValue> producedResources;
-
     void Update()
     {
         if(pendingBuilding != null)
@@ -58,10 +54,6 @@ public class BuildingManager : MonoBehaviour
             if(Input.GetMouseButtonDown(0) && canPlace &&! IsPointerOverUI())
             {
                 PlaceBuilding();
-                //resourceManager.SpendResource(resourceAquisition.buildCost);
-                //Pay(resourceAquisition);
-                //resourceManager.SpendResource(buildCost);
-
             }
 
             if (Input.GetMouseButtonDown(1))
@@ -79,11 +71,6 @@ public class BuildingManager : MonoBehaviour
 
         }
     }
-
-    //private void Pay(ResourceAquisition resourceAquisition)
-    //{
-    //    resourceManager.SpendResource(resourceAquisition.buildCost);
-    //}
 
     public void PlaceBuilding()
     {
