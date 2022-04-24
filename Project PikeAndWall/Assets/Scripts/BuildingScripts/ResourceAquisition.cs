@@ -9,8 +9,8 @@ public class ResourceAquisition : MonoBehaviour
 
     [SerializeField] private int timer;
 
+   
     ResourceManager resourceManager;
-
     public List<ResourceValue> buildCost;
     public List<ResourceValue> producedResources;
 
@@ -19,8 +19,8 @@ public class ResourceAquisition : MonoBehaviour
         resourceManager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
 
         StartCoroutine(WaitBeforeProduction());
-        resourceManager.SpendResource(buildCost);
 
+        resourceManager.SpendResource(buildCost);
     }
 
     private IEnumerator WaitBeforeProduction()

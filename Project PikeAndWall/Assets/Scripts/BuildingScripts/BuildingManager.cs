@@ -24,13 +24,22 @@ public class BuildingManager : MonoBehaviour
     public bool canPlace;    
     public bool destroyMode;
 
+    //public ResourceValue resourceRequired;
 
     [SerializeField] private Material[] materials;   
     [SerializeField] private Toggle gridToggle;
     [SerializeField] private LayerMask layerMask;
 
     [SerializeField] ResourceManager resourceManager;
+
     ResourceAquisition resourceAquisition;
+
+    DestroyBuilding destroyBuilding;
+
+    //private void Start()
+    //{
+    //    blueprint[index].GetComponent<ResourceAquisition>().buildCost;
+    //}
 
     void Update()
     {
@@ -105,15 +114,32 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
+     
     public void SelectBuilding(int index)
     {
-
+       
         if (pendingBuilding != null)
         {
             Destroy(pendingBuilding);
         }
+
         pendingBuilding = Instantiate(blueprint[index], position, transform.rotation);
+
+        //if (resourceManager.resourceRequired < resourceAquisition.buildCost)
+        //{
+        //    Debug.Log("NoBuildingAllowed");
+        //}
+        //_requiredResource = blueprint[index].GetComponent<ResourceAquisition>().buildCost;
+        //resourceManager.CheckResourceAvailability(ResourceValue);
+
+
+        //if (resourceManager.CheckResourceAvailability(ResourceValue buildCost)
+        //{
+
+        //}
+
     }
+
 
     public void ToggleGrid() //ein grid kann mit diesem Toggle aktiviert und deaktiviert werden
     {
@@ -151,7 +177,7 @@ public class BuildingManager : MonoBehaviour
         return position;
     }
 
-    public bool IsPointerOverUI() //ist für die Zerstörung von gebäude, wenn ein gebäude das "DestroyBuilding" skript hat dann ist dieses zerstörbar sollte der Korrespondierende Toggle (ToggleDestroyBuild) auch noch aktiv sein
+    public bool IsPointerOverUI()
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {

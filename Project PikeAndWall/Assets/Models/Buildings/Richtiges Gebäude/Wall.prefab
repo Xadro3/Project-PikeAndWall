@@ -32,6 +32,8 @@ MonoBehaviour:
   buildCost:
   - resourceType: 3
     resourceAmount: 1
+  - resourceType: 2
+    resourceAmount: 5
   producedResources: []
 --- !u!114 &3589394820199292628
 MonoBehaviour:
@@ -47,7 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEffekt: {fileID: 2451630964253312392, guid: 042d0cefbcdfc9f49a064caf109e9c62, type: 3}
   destroyEffektTime: 15
-  destroyClip: {fileID: 0}
+  getResouceBackInt:
+  - resourceType: 3
+    resourceAmount: 1
+  destroyClip: {fileID: 8300000, guid: fad7b3ac5dab49449a3d10b660b35d37, type: 3}
 --- !u!1001 &6761451042230431433
 PrefabInstance:
   m_ObjectHideFlags: 0

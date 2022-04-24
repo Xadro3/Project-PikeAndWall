@@ -66,6 +66,11 @@ public class ResourceManager : MonoBehaviour
         {
             throw new InvalidOperationException("Cant have resource less than 0" + resourceType);
         }
+        
+        //if(resourceDictionary[resourceType] < )
+        //{
+
+        //}
     }
 
     private void PrepareResourceDictionary()
@@ -78,9 +83,9 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    public bool CheckResourceAvailability(ResourceValue resourceRequired)
+    public bool CheckResourceAvailability(ResourceValue requiredResource)
     {
-        return resourceDictionary[resourceRequired.resourceType] >= resourceRequired.resourceAmount;
+        return resourceDictionary[requiredResource.resourceType] >= requiredResource.resourceAmount;
     }
 
     public void SpendResource(List<ResourceValue> buildCost)
@@ -96,6 +101,11 @@ public class ResourceManager : MonoBehaviour
         resourceDictionary[resourceType] -= resourceAmount;
         VerifyResourceAmount(resourceType);
         UpdateUI(resourceType);
+    }
+
+    internal bool CheckResourceAvailability(ResourceValue resourceValue, object buildCost)
+    {
+        throw new NotImplementedException();
     }
 }
 

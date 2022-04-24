@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DestroyBuilding : MonoBehaviour
@@ -25,7 +26,7 @@ public class DestroyBuilding : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (buildingManager.destroyMode == true)
+        if (buildingManager.destroyMode == true && !buildingManager.IsPointerOverUI())
         {
             DestroyBuildingEffekt();
             GetResourcesBack();
@@ -44,7 +45,7 @@ public class DestroyBuilding : MonoBehaviour
         Destroy(gameObject);
     }
     
-    private void GetResourcesBack()
+    public void GetResourcesBack()
     {
         resourceManager.AddResource(getResouceBackInt);
     }
