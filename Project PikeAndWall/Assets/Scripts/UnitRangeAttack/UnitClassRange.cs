@@ -11,11 +11,13 @@ public class UnitClassRange : MonoBehaviour
     public Transform weapon;
     public Hitbox targetHitbox;
     public int damageValue = 3;
+    AudioSource audio;
 
     public bool enemyInRange;
 
     void Start(){
         weapon = gameObject.transform.Find("UnitAttack").transform.Find("Weapon");
+        audio = GetComponent<AudioSource>();
     }
 
     void Update(){ 
@@ -27,16 +29,19 @@ public class UnitClassRange : MonoBehaviour
     }
 
     public void StartAttack(){
+       
         StartCoroutine(RangeAttack());
     }
 
     private IEnumerator RangeAttack(){
         yield return new WaitForSeconds(unitFirerate);
         if(enemyInRange == true){
+            audio.Play(0);
             Transform projectileTransform = Instantiate(projectile, new Vector3(weapon.transform.position.x, weapon.transform.position.y, weapon.transform.position.z),Quaternion.identity);
             projectileTransform.transform.parent = weapon.transform;
             Vector3 shootDirection = new Vector3(targetHitbox.transform.position.x - transform.position.x, targetHitbox.transform.position.y - transform.position.y, targetHitbox.transform.position.z - transform.position.z );
             if(projectile.name == "pfBullet"){
+               
                 projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
             }            
         
