@@ -9,7 +9,7 @@ public class CheckBuildingPlacement : MonoBehaviour
     ResourceManager resourceManager;
     ResourceAquisition resourceAquisition;
 
-    private int anzahlGebäude; //nur ein Failsave, war erstmal zum überprüfen eines bugs da der nicht mehr auftreten sollte
+    private int anzahlBuildings; //nur ein Failsave, war erstmal zum überprüfen eines bugs da der nicht mehr auftreten sollte
     
     void Start()
     {
@@ -32,7 +32,7 @@ public class CheckBuildingPlacement : MonoBehaviour
         if (other.gameObject.CompareTag("Buildings"))
         {
             buildingManager.canPlace = false;
-            anzahlGebäude++;
+            anzahlBuildings++;
         }
     }
 
@@ -40,8 +40,8 @@ public class CheckBuildingPlacement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Buildings"))
         {
-            anzahlGebäude--;
-            if(anzahlGebäude == 0)
+            anzahlBuildings--;
+            if(anzahlBuildings == 0)
             {
                 buildingManager.canPlace = true;
             }
