@@ -70,9 +70,11 @@ public class FormationHandler : MonoBehaviour
 
             foreach (RaycastHit raycastHit in raycastHits)
             {
+                
                 if (raycastHit.collider.gameObject.layer == 3)
                 {
                     lastPosition = raycastHit.point;
+                    break;
                 }
             }
 
