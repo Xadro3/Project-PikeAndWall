@@ -37,8 +37,8 @@ public class CheckBuildingPlacement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Buildings"))
         {
-            anzahlGeb�ude--;
-            if(anzahlGeb�ude == 0)
+            anzahlBuildings--;
+            if(anzahlBuildings == 0)
             {
                 buildingManager.canPlace = true;
             }
