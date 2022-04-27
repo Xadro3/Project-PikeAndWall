@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,14 +15,14 @@ public class ResourceManagerUI : MonoBehaviour
 
     private void PrepareResourceDictonary()
     {
-        foreach(ResourceUI resourceUIReference in GetComponentsInChildren<ResourceUI>())
+        foreach (ResourceUI resourceUIReference in GetComponentsInChildren<ResourceUI>())
         {
             if (resourceUiDictionary.ContainsKey(resourceUIReference.ResourceType))
             {
                 throw new ArgumentException("Dictionary already contains a" + resourceUIReference.ResourceType.ToString());
             }
             resourceUiDictionary[resourceUIReference.ResourceType] = resourceUIReference;
-            SetResource(resourceUIReference.ResourceType,0);
+            SetResource(resourceUIReference.ResourceType, 0);
         }
     }
 

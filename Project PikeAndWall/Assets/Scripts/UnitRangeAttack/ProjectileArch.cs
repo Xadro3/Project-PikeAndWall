@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileArch : MonoBehaviour
@@ -13,30 +11,34 @@ public class ProjectileArch : MonoBehaviour
     public Vector3 setRelCenter;
     public float journeyTime = 2f;
     private float startTime;
-    
-    void Start(){
+
+    void Start()
+    {
 
         unit = gameObject.GetComponentInParent<UnitClassRange>();
         startTime = Time.time;
         sunrise = unit.weapon.transform;
         sunset = unit.targetHitbox.transform;
         center = (sunrise.position + sunset.position) * 0.5f;
-        center -= new Vector3(0,1,0);
+        center -= new Vector3(0, 1, 0);
         riseRelCenter = sunrise.position - center;
         setRelCenter = sunset.position - center;
         Destroy(gameObject, 4f);
 
     }
 
-    private void OnTriggerEnter(Collider collision){
-        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox)) {
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        {
             Health hit = hitbox.GetComponentInParent<Health>();
             hit.TakeDamage(unit.damageValue);
-            Destroy(gameObject,0f);
+            Destroy(gameObject, 0f);
         }
     }
 
-    private void Update(){
+    private void Update()
+    {
 
         float fracComplete = (Time.time - startTime) / journeyTime * speed;
 
@@ -44,7 +46,8 @@ public class ProjectileArch : MonoBehaviour
         transform.position += center;
 
     }
-    public static float GetAngleFromVectorFloat(Vector3 dir) {
+    public static float GetAngleFromVectorFloat(Vector3 dir)
+    {
         dir = dir.normalized;
         float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (n < 0) n += 360;

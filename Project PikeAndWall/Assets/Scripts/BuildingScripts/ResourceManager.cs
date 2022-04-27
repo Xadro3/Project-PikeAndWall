@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ public class ResourceManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        foreach(ResourceType resourceType in resourceDictionary.Keys)
+        foreach (ResourceType resourceType in resourceDictionary.Keys)
         {
             UpdateUI(resourceType);
         }
@@ -62,11 +61,11 @@ public class ResourceManager : MonoBehaviour
 
     private void VerifyResourceAmount(ResourceType resourceType)
     {
-        if(resourceDictionary[resourceType] < 0)
+        if (resourceDictionary[resourceType] < 0)
         {
             throw new InvalidOperationException("Cant have resource less than 0" + resourceType);
         }
-        
+
         //if(resourceDictionary[resourceType] < )
         //{
 
@@ -77,7 +76,7 @@ public class ResourceManager : MonoBehaviour
     {
         foreach (ResourceType resourceType in Enum.GetValues(typeof(ResourceType)))
         {
-            if(resourceType == ResourceType.None)
+            if (resourceType == ResourceType.None)
                 continue;
             resourceDictionary[resourceType] = 0;
         }
@@ -109,7 +108,8 @@ public class ResourceManager : MonoBehaviour
     }
 }
 
-[Serializable] public struct ResourceValue
+[Serializable]
+public struct ResourceValue
 {
     public ResourceType resourceType;
     [Min(0)]

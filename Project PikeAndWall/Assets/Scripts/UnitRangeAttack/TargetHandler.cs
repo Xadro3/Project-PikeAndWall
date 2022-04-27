@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetHandler : MonoBehaviour
 {
-    
+
     private UnitClassRange unit;
     public List<Hitbox> targetsInRange;
     RaycastHit[] raycastHits;
@@ -15,25 +14,34 @@ public class TargetHandler : MonoBehaviour
 
     //List <GameObject> currentCollisions = new List <GameObject> ();
 
-    void Awake() {
+    void Awake()
+    {
         unit = GetComponent<UnitClassRange>();
     }
 
-    void Start(){
+    void Start()
+    {
     }
-    
-    void Update(){
-        if(Input.GetMouseButtonDown(1)){
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHits = Physics.RaycastAll(destinationRay, 50000f);
 
-            foreach(RaycastHit raycastHit in raycastHits){
-                if(raycastHit.transform.tag == "Enemy"){
+            foreach (RaycastHit raycastHit in raycastHits)
+            {
+                if (raycastHit.transform.tag == "Enemy")
+                {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
-                    if(targetsInRange.Contains(targetHitbox)){
+                    if (targetsInRange.Contains(targetHitbox))
+                    {
                         unit.enemyInRange = true;
                         unit.SetTarget(targetHitbox);
-                    }else{
+                    }
+                    else
+                    {
                         unit.enemyInRange = false;
                         unit.SetTarget(null);
                     }
@@ -46,31 +54,42 @@ public class TargetHandler : MonoBehaviour
     }
 
 
-    public void CheckTargetHelper(Hitbox targetHitbox, RaycastHit raycastHit){
+    public void CheckTargetHelper(Hitbox targetHitbox, RaycastHit raycastHit)
+    {
         this.targetHitbox = targetHitbox;
         this.raycastHit = raycastHit;
     }
-    
-    private void CheckTarget(Hitbox targetHitbox, RaycastHit raycastHit ){
-        if(targetsInRange.Contains(targetHitbox)){
+
+    private void CheckTarget(Hitbox targetHitbox, RaycastHit raycastHit)
+    {
+        if (targetsInRange.Contains(targetHitbox))
+        {
             unit.enemyInRange = true;
-        }else{
+        }
+        else
+        {
             unit.enemyInRange = false;
             targetsInRange.Remove(targetHitbox);
         }
     }
 
-    private void OnTriggerEnter(Collider collision){
-        if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
-            if(unit.tag == "Unit"){
-                if(collision.tag == "Enemy"){
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        {
+            if (unit.tag == "Unit")
+            {
+                if (collision.tag == "Enemy")
+                {
                     targetsInRange.Add(hitbox);
                     //unit.enemyInRange = true;
                     //unit.SetTarget(hitbox);
                 }
             }
-            if(unit.tag == "Enemy"){
-                if(collision.tag == "Player"){   
+            if (unit.tag == "Enemy")
+            {
+                if (collision.tag == "Player")
+                {
                     targetsInRange.Add(hitbox);
                     //unit.enemyInRange = true;
                     //unit.SetTarget(hitbox);
@@ -79,17 +98,23 @@ public class TargetHandler : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collision){
-        if(collision.TryGetComponent<Hitbox>(out Hitbox hitbox)){
-            if(unit.tag == "Unit"){
-                if(collision.tag == "Enemy"){
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        {
+            if (unit.tag == "Unit")
+            {
+                if (collision.tag == "Enemy")
+                {
                     targetsInRange.Remove(hitbox);
                     //unit.SetTarget(null);
                     //unit.enemyInRange = false;
                 }
             }
-            if(unit.tag == "Enemy"){
-                if(collision.tag == "Player"){
+            if (unit.tag == "Enemy")
+            {
+                if (collision.tag == "Player")
+                {
                     targetsInRange.Remove(hitbox);
                     //unit.SetTarget(null);
                     //unit.enemyInRange = false;

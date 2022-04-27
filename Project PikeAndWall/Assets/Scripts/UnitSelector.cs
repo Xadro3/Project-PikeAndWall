@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitSelector : MonoBehaviour
@@ -7,6 +5,7 @@ public class UnitSelector : MonoBehaviour
 
     SelectedUnitsDictionary selectedUnitsDictionary;
     RaycastHit raycastHit;
+    RaycastHit[] raycastHits;
 
     bool isDragging;
 
@@ -53,39 +52,39 @@ public class UnitSelector : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if(isDragging == false)
+            if (isDragging == false)
             {
                 Ray singleSelectionRay = Camera.main.ScreenPointToRay(mouseDownPosition);
+                raycastHits = Physics.RaycastAll(singleSelectionRay, 50000f);
 
-                if (Physics.Raycast(singleSelectionRay, out raycastHit, 50000f))
+                foreach (RaycastHit raycast in raycastHits)
                 {
-                    if ((Input.GetKey(KeyCode.LeftControl)) && (raycastHit.transform.gameObject.tag=="Unit"))
+                    // if ((raycast.collider.gameObject.tag == "Unit") && (Input.GetKey(KeyCode.LeftControl)))
+                    // {
+                    //     Debug.Log("I got here at least ");
+                    //     selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
+                    //     break;
+                    // }
+
+
+                    if (raycast.collider.gameObject.tag == "Unit")
                     {
-                        selectedUnitsDictionary.AddSelectedUnits(raycastHit.transform.gameObject);
-                    }
-                    else 
-                    {
+
+
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
-
-                        if(raycastHit.transform.gameObject.tag == "Unit") 
-                        {
-                            selectedUnitsDictionary.AddSelectedUnits(raycastHit.transform.gameObject);
-                        }
-                     
-
-                    }
-                }
-                else
-                {
-                    if (Input.GetKey(KeyCode.LeftControl))
-                    {
-                        
+                        selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
+                        break;
                     }
                     else
                     {
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                     }
+
+
                 }
+
+
+
             }
             else
             {
@@ -97,11 +96,11 @@ public class UnitSelector : MonoBehaviour
                 mouseDragPosition = Input.mousePosition;
                 corners = getBoundingBox(mouseDownPosition, mouseDragPosition);
 
-                foreach(Vector2 corner in corners)
+                foreach (Vector2 corner in corners)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(corner);
 
-                    if(Physics.Raycast(ray, out raycastHit, 50000f,(1<<3)))
+                    if (Physics.Raycast(ray, out raycastHit, 50000f, (1 << 3)))
                     {
                         vertices[i] = new Vector3(raycastHit.point.x, 0, raycastHit.point.z);
                         vectors[i] = ray.origin - raycastHit.point;
@@ -116,7 +115,7 @@ public class UnitSelector : MonoBehaviour
                 selectionBox.convex = true;
                 selectionBox.isTrigger = true;
 
-                if(!Input.GetKey(KeyCode.LeftShift))
+                if (!Input.GetKey(KeyCode.LeftShift))
                 {
                     selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                 }
@@ -124,15 +123,16 @@ public class UnitSelector : MonoBehaviour
             }
             isDragging = false;
         }
+
     }
 
     void OnGUI()
     {
-        if(isDragging == true)
+        if (isDragging == true)
         {
             var rectangle = DrawSelectionRectangle.GetScreenRect(mouseDownPosition, Input.mousePosition);
             DrawSelectionRectangle.DrawScreenRect(rectangle, new Color(0.8f, 0.8f, 0.95f, 0.25f));
-            DrawSelectionRectangle.DrawScreenRectBorder(rectangle,2, new Color(0.8f, 0.8f, 0.95f));
+            DrawSelectionRectangle.DrawScreenRectBorder(rectangle, 2, new Color(0.8f, 0.8f, 0.95f));
         }
     }
 
@@ -210,13 +210,13 @@ public class UnitSelector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Objects hit: " + other.tag);
-        
-            if(other.tag == "Unit")
-            {
+
+        if (other.tag == "Unit")
+        {
 
             selectedUnitsDictionary.AddSelectedUnits(other.gameObject);
-            }
-        
-        
+        }
+
+
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimedExpiration : MonoBehaviour
@@ -9,15 +7,15 @@ public class TimedExpiration : MonoBehaviour
     public float timeToDie;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        
-            Destroy(gameObject,timeToDie);
-        
+
+
+        Destroy(gameObject, timeToDie);
+
     }
 }

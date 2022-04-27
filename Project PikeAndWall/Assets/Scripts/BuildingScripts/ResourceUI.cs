@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class ResourceUI : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class ResourceUI : MonoBehaviour
     {
         if (resourceType == ResourceType.None)
         {
-            throw new System.ArgumentException("Resource type cannt be None in "+ gameObject.name);
+            throw new System.ArgumentException("Resource type cannt be None in " + gameObject.name);
         }
 
     }

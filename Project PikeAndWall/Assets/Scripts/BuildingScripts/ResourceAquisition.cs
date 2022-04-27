@@ -1,15 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ResourceAquisition : MonoBehaviour
 {
 
     [SerializeField] private int timer;
 
-   
+
     ResourceManager resourceManager;
     public List<ResourceValue> buildCost;
     public List<ResourceValue> producedResources;

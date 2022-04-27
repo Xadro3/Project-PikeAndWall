@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -28,15 +27,15 @@ public class Health : MonoBehaviour
         if (hitPoints <= 0)
         {
             gameObject.GetComponent<Destructible>().Die();
-           
+
         }
     }
 
 
     void UpdateHealthBar()
     {
-        
-        gameObject.GetComponentInChildren<HealthBarHandler>().SetHealth( (float)hitPoints/maximumHitPoints);
+
+        gameObject.GetComponentInChildren<HealthBarHandler>().SetHealth((float)hitPoints / maximumHitPoints);
     }
 
 
@@ -64,7 +63,7 @@ public class Health : MonoBehaviour
 
     IEnumerator HealOverTime()
     {
-        if(hitPoints != maximumHitPoints)
+        if (hitPoints != maximumHitPoints)
         {
             if (maximumHitPoints > hitPoints && hitPoints + healOverTimeEffect <= maximumHitPoints)
             {
@@ -79,7 +78,7 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
 
         yield return new WaitForSeconds(healOverTimeTickRate);
-        
+
     }
 
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlueprintScript : MonoBehaviour
@@ -16,7 +14,7 @@ public class BlueprintScript : MonoBehaviour
     {
         if (buildingManager.pendingBuilding == null && buildingManager.canPlace == true)
         {
-            Instantiate(realBuilding,transform.position,transform.rotation);
+            Instantiate(realBuilding, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

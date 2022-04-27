@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyTowardsWall : MonoBehaviour
@@ -19,8 +17,8 @@ public class FlyTowardsWall : MonoBehaviour
         {
             Debug.Log("I am here");
 
-            thisBody.AddForce(transform.position.x * force, transform.position.y * (force / 2),0,ForceMode.Impulse);
-           
+            thisBody.AddForce(transform.position.x * force, transform.position.y * (force / 2), 0, ForceMode.Impulse);
+
         }
     }
 }

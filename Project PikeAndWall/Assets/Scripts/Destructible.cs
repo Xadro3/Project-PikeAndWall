@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Destructible : MonoBehaviour
@@ -9,18 +7,20 @@ public class Destructible : MonoBehaviour
     public GameObject fracturedWall;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "SiegeProjectile")
+
+
+        if (collision.gameObject.tag == "SiegeProjectile")
         {
             Instantiate(fracturedWall, transform.position, transform.rotation);
             Destroy(gameObject);

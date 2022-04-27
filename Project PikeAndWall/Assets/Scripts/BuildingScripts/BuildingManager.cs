@@ -1,14 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
+using UnityEngine.UI;
 
 public class BuildingManager : MonoBehaviour
 {
     public int raycastLength;
-    
+
     public GameObject[] blueprint;
     public GameObject pendingBuilding;
 
@@ -19,14 +17,14 @@ public class BuildingManager : MonoBehaviour
     public float rotateAmount;
 
     public float gridSize;
-    bool gridOn;    
-    
-    public bool canPlace;    
+    bool gridOn;
+
+    public bool canPlace;
     public bool destroyMode;
 
     //public ResourceValue resourceRequired;
 
-    [SerializeField] private Material[] materials;   
+    [SerializeField] private Material[] materials;
     [SerializeField] private Toggle gridToggle;
     [SerializeField] private LayerMask layerMask;
 
@@ -43,7 +41,7 @@ public class BuildingManager : MonoBehaviour
 
     void Update()
     {
-        if(pendingBuilding != null)
+        if (pendingBuilding != null)
         {
 
             if (gridOn)
@@ -57,10 +55,10 @@ public class BuildingManager : MonoBehaviour
 
             else
             {
-                pendingBuilding.transform.position = position; 
+                pendingBuilding.transform.position = position;
             }
 
-            if(Input.GetMouseButtonDown(0) && canPlace &&! IsPointerOverUI())
+            if (Input.GetMouseButtonDown(0) && canPlace && !IsPointerOverUI())
             {
                 PlaceBuilding();
             }
@@ -114,10 +112,10 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-     
+
     public void SelectBuilding(int index)
     {
-       
+
         if (pendingBuilding != null)
         {
             Destroy(pendingBuilding);
@@ -169,7 +167,7 @@ public class BuildingManager : MonoBehaviour
     {
         float xDiff = position % gridSize;
         position -= xDiff;
-        if(xDiff > (gridSize / 2))
+        if (xDiff > (gridSize / 2))
         {
             position += gridSize;
         }

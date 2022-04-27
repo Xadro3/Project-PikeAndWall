@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class CheckBuildingPlacement : MonoBehaviour
 {
@@ -9,7 +6,7 @@ public class CheckBuildingPlacement : MonoBehaviour
     ResourceManager resourceManager;
     ResourceAquisition resourceAquisition;
 
-    private int anzahlBuildings; //nur ein Failsave, war erstmal zum überprüfen eines bugs da der nicht mehr auftreten sollte
+    private int anzahlBuildings; //nur ein Failsave, war erstmal zum ï¿½berprï¿½fen eines bugs da der nicht mehr auftreten sollte
     
     void Start()
     {
@@ -40,8 +37,8 @@ public class CheckBuildingPlacement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Buildings"))
         {
-            anzahlBuildings--;
-            if(anzahlBuildings == 0)
+            anzahlGebï¿½ude--;
+            if(anzahlGebï¿½ude == 0)
             {
                 buildingManager.canPlace = true;
             }
