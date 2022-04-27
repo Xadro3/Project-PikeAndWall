@@ -36,10 +36,6 @@ public class ResourceManager : MonoBehaviour
     {
         foreach (ResourceValue initialResourceValue in initialResources)
         {
-            if (initialResourceValue.resourceType == ResourceType.None)
-            {
-                throw new ArgumentException("Resource cant be none");
-            }
             resourceDictionary[initialResourceValue.resourceType] = initialResourceValue.resourceAmount;
         }
     }
@@ -55,22 +51,22 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceType resourceType, int resourceAmount)
     {
         resourceDictionary[resourceType] += resourceAmount;
-        VerifyResourceAmount(resourceType);
+        //VerifyResourceAmount(resourceType);
         UpdateUI(resourceType);
     }
 
-    private void VerifyResourceAmount(ResourceType resourceType)
-    {
-        if (resourceDictionary[resourceType] < 0)
-        {
-            throw new InvalidOperationException("Cant have resource less than 0" + resourceType);
-        }
+    //private void VerifyResourceAmount(ResourceType resourceType)
+    //{
+    //    if (resourceDictionary[resourceType] < 0)
+    //    {
+    //        throw new InvalidOperationException("Cant have resource less than 0" + resourceType);
+    //    }
 
-        //if(resourceDictionary[resourceType] < )
-        //{
+    //    //if(resourceDictionary[resourceType] < )
+    //    //{
 
-        //}
-    }
+    //    //}
+    //}
 
     private void PrepareResourceDictionary()
     {
@@ -98,14 +94,10 @@ public class ResourceManager : MonoBehaviour
     private void SpendResource(ResourceType resourceType, int resourceAmount)
     {
         resourceDictionary[resourceType] -= resourceAmount;
-        VerifyResourceAmount(resourceType);
+        //VerifyResourceAmount(resourceType);
         UpdateUI(resourceType);
     }
 
-    internal bool CheckResourceAvailability(ResourceValue resourceValue, object buildCost)
-    {
-        throw new NotImplementedException();
-    }
 }
 
 [Serializable]

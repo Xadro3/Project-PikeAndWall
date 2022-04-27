@@ -12,7 +12,7 @@ public class ResourceUI : MonoBehaviour
     {
         if (resourceType == ResourceType.None)
         {
-            throw new System.ArgumentException("Resource type cannt be None in " + gameObject.name);
+            throw new System.ArgumentException("Resource type shouldnt be None "+ gameObject.name);
         }
 
     }

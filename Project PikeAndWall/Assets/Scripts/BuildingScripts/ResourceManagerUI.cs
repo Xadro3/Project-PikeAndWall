@@ -17,10 +17,10 @@ public class ResourceManagerUI : MonoBehaviour
     {
         foreach (ResourceUI resourceUIReference in GetComponentsInChildren<ResourceUI>())
         {
-            if (resourceUiDictionary.ContainsKey(resourceUIReference.ResourceType))
-            {
-                throw new ArgumentException("Dictionary already contains a" + resourceUIReference.ResourceType.ToString());
-            }
+            //if (resourceUiDictionary.ContainsKey(resourceUIReference.ResourceType))
+            //{
+            //    throw new ArgumentException("Dictionary already contains a" + resourceUIReference.ResourceType.ToString());
+            //}
             resourceUiDictionary[resourceUIReference.ResourceType] = resourceUIReference;
             SetResource(resourceUIReference.ResourceType, 0);
         }
