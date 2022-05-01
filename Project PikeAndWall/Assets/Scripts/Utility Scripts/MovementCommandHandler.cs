@@ -28,6 +28,9 @@ public class MovementCommandHandler : MonoBehaviour
             }
         }
 
+        
+        
+
     }
 
     // void MoveToDestiantionSingle()
@@ -36,6 +39,7 @@ public class MovementCommandHandler : MonoBehaviour
     //}
     public void MoveToDestinationMultiple(Vector3 dest)
     {
+        
         Debug.Log("Destination is: " + dest);
         agent.SetDestination(dest);
     }
