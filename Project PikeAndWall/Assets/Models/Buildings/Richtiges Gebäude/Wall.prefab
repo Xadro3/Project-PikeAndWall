@@ -60,6 +60,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5982243721746006011, guid: 1dfbc01b91a47c3428405008347cf623, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1636172033678913298, guid: 1dfbc01b91a47c3428405008347cf623, type: 3}
       propertyPath: m_Name
       value: Wall
@@ -70,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1807183863512142433, guid: 1dfbc01b91a47c3428405008347cf623, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2100302422634730814, guid: 1dfbc01b91a47c3428405008347cf623, type: 3}
       propertyPath: m_IsKinematic

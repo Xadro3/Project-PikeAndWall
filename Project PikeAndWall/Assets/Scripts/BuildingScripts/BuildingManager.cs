@@ -115,7 +115,7 @@ public class BuildingManager : MonoBehaviour
 
     public void SelectBuilding(int index)
     {
-
+     
         if (pendingBuilding != null)
         {
             Destroy(pendingBuilding);
