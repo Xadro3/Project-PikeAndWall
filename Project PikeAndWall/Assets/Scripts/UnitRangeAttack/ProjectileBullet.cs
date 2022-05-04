@@ -4,12 +4,12 @@ using UnityEngine;
 public class ProjectileBullet : MonoBehaviour
 {
     private Vector3 shootDirection;
-    private UnitClassRange unit;
+    private UnitClass unit;
     private float speed = 5f;
 
     void Start()
     {
-        unit = gameObject.GetComponentInParent<UnitClassRange>();
+        unit = gameObject.GetComponentInParent<UnitClass>();
     }
 
 

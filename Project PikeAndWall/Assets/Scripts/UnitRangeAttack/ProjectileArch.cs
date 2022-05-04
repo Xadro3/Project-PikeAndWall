@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ProjectileArch : MonoBehaviour
 {
-    private UnitClassRange unit;
+    private UnitClass unit;
     private float speed = 1f;
     public Transform sunrise;
     public Transform sunset;
@@ -15,7 +15,7 @@ public class ProjectileArch : MonoBehaviour
     void Start()
     {
 
-        unit = gameObject.GetComponentInParent<UnitClassRange>();
+        unit = gameObject.GetComponentInParent<UnitClass>();
         startTime = Time.time;
         sunrise = unit.weapon.transform;
         sunset = unit.targetHitbox.transform;

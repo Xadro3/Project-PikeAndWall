@@ -8,7 +8,7 @@ public class UnitReach : MonoBehaviour
 
     void Start()
     {
-        unitRange = GetComponentInParent<UnitClassRange>().unitRange;
+        unitRange = GetComponentInParent<UnitClass>().range;
         unitReach = GetComponent<SphereCollider>();
         unitReach.radius *= unitRange;
     }

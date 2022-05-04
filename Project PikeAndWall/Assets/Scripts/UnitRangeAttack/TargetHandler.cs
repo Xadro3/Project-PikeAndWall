@@ -4,7 +4,7 @@ using UnityEngine;
 public class TargetHandler : MonoBehaviour
 {
 
-    private UnitClassRange unit;
+    private UnitClass unit;
     public List<Hitbox> targetsInRange;
     RaycastHit[] raycastHits;
 
@@ -16,7 +16,7 @@ public class TargetHandler : MonoBehaviour
 
     void Awake()
     {
-        unit = GetComponent<UnitClassRange>();
+        unit = GetComponent<UnitClass>();
     }
 
     void Start()
