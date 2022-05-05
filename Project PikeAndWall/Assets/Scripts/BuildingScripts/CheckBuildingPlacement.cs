@@ -6,12 +6,19 @@ public class CheckBuildingPlacement : MonoBehaviour
     ResourceManager resourceManager;
     ResourceAquisition resourceAquisition;
 
+    [SerializeField] bool mine;
+    
+
     private int buildingCount; //nur ein Failsave, war erstmal zum �berpr�fen eines bugs da der nicht mehr auftreten sollte
     
     void Start()
     {
         buildingManager = GameObject.Find("BuildingManager").GetComponent<BuildingManager>();
         resourceManager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
+        if (mine == true)
+        {
+            buildingManager.canPlace = false;
+        }
     }
 
     //private void NotEnoughResource()
@@ -29,18 +36,27 @@ public class CheckBuildingPlacement : MonoBehaviour
             buildingManager.canPlace = false;
             buildingCount++;
         }
+
+        if (other.gameObject.CompareTag("Mountain") && mine == true)
+        {
+            buildingManager.canPlace = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Buildings"))
         {
-             buildingCount--;
+            buildingCount--;
             if (buildingCount == 0)
             {
                 buildingManager.canPlace = true;
             }
 
+        }
+        if (other.gameObject.CompareTag("Mountain") && mine == true)
+        {
+            buildingManager.canPlace = false;
         }
     }
 }

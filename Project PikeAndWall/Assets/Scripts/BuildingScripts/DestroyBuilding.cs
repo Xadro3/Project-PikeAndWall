@@ -36,8 +36,8 @@ public class DestroyBuilding : MonoBehaviour
         if (destroyEffekt != null)
         {
             Destroy(Instantiate(destroyEffekt, transform.position, transform.rotation), destroyEffektTime);
-            audioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
-            audioSource.PlayOneShot(destroyClip);
+            //audioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+            //audioSource.PlayOneShot(destroyClip);
         }
         Destroy(gameObject);
     }

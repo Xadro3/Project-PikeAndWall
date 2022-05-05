@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc02d28b7bfe9824a968a049d7d54bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mine: 0
 --- !u!114 &3279134181818567932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +57,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5520064818563903599, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 747cf1a2df1d1994da3a5f5f748537f3, type: 2}
     - target: {fileID: 6312861148505854394, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
       propertyPath: m_Name
       value: WallBuildingBlueprint

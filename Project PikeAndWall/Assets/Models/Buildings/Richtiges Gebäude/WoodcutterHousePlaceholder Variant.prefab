@@ -24,7 +24,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4891839621583015870}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.099999994, y: 0.063, z: 0.099999994}
@@ -45,43 +45,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.031000001, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &-2624795365653066193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4891839621583015870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56103f11950bbb24ba3e3cc0e06b2d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyEffekt: {fileID: 2451630964253312392, guid: 042d0cefbcdfc9f49a064caf109e9c62, type: 3}
-  destroyEffektTime: 15
-  getResouceBackInt:
-  - resourceType: 3
-    resourceAmount: 3
-  destroyClip: {fileID: 8300000, guid: fad7b3ac5dab49449a3d10b660b35d37, type: 3}
---- !u!114 &1156484661919363791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4891839621583015870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
-  buildCost:
-  - resourceType: 3
-    resourceAmount: 3
-  producedResources:
-  - resourceType: 1
-    resourceAmount: 5
 --- !u!82 &4839176737682161008
 AudioSource:
   m_ObjectHideFlags: 0
@@ -178,6 +141,43 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2624795365653066193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891839621583015870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56103f11950bbb24ba3e3cc0e06b2d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffekt: {fileID: 2451630964253312392, guid: 042d0cefbcdfc9f49a064caf109e9c62, type: 3}
+  destroyEffektTime: 15
+  getResouceBackInt:
+  - resourceType: 3
+    resourceAmount: 3
+  destroyClip: {fileID: 8300000, guid: fad7b3ac5dab49449a3d10b660b35d37, type: 3}
+--- !u!114 &1156484661919363791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891839621583015870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
+  buildCost:
+  - resourceType: 3
+    resourceAmount: 3
+  producedResources:
+  - resourceType: 1
+    resourceAmount: 5
 --- !u!1001 &5702163948521796335
 PrefabInstance:
   m_ObjectHideFlags: 0

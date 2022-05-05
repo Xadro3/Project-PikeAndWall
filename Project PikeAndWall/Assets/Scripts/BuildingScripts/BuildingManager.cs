@@ -123,6 +123,27 @@ public class BuildingManager : MonoBehaviour
 
         pendingBuilding = Instantiate(blueprint[index], position, transform.rotation);
 
+        //So wars im Vid aufgebaut, dazu fehlen mir aber die elemente, also muss ich nen workaround suchen oder die elemente sinnvoll nachkreiren:
+
+        //foreach (UIBuildSelectionHandler buildItem in buildOptions)
+        //{
+        //    if (buildItem.BuildData == null)
+        //    {
+        //        buildItem.ToggleActive(false);
+        //        continue;
+        //    }
+
+        //    buildItem.ToggleActive(true);
+        //    foreach (ResourceValue item in resourceAquisition.buildCost)
+        //    {
+        //        if (resourceManager.CheckResourceAvailability(item) == false)
+        //        {
+        //            buildItem.ToggleActive(false);
+        //            break;
+        //        }
+        //    }
+        //}
+
         //if (resourceManager.resourceRequired < resourceAquisition.buildCost)
         //{
         //    Debug.Log("NoBuildingAllowed");
