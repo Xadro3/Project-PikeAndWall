@@ -128,7 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc02d28b7bfe9824a968a049d7d54bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mine: 1
+  notEverywherePlaceable: 1
+  mine: 0
+  woods: 0
+  placableOnTag: Mountain
 --- !u!114 &-145844942525494912
 MonoBehaviour:
   m_ObjectHideFlags: 0

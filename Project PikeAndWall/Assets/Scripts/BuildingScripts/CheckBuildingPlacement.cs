@@ -6,8 +6,9 @@ public class CheckBuildingPlacement : MonoBehaviour
     ResourceManager resourceManager;
     ResourceAquisition resourceAquisition;
 
-    [SerializeField] bool mine;
-    
+    [SerializeField] bool notEverywherePlaceable;
+    [SerializeField] string placableOnTag;
+
 
     private int buildingCount; //nur ein Failsave, war erstmal zum �berpr�fen eines bugs da der nicht mehr auftreten sollte
     
@@ -15,7 +16,7 @@ public class CheckBuildingPlacement : MonoBehaviour
     {
         buildingManager = GameObject.Find("BuildingManager").GetComponent<BuildingManager>();
         resourceManager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
-        if (mine == true)
+        if (notEverywherePlaceable == true)
         {
             buildingManager.canPlace = false;
         }
@@ -37,7 +38,7 @@ public class CheckBuildingPlacement : MonoBehaviour
             buildingCount++;
         }
 
-        if (other.gameObject.CompareTag("Mountain") && mine == true)
+        if (other.gameObject.CompareTag(placableOnTag) && notEverywherePlaceable == true)
         {
             buildingManager.canPlace = true;
         }
@@ -54,7 +55,7 @@ public class CheckBuildingPlacement : MonoBehaviour
             }
 
         }
-        if (other.gameObject.CompareTag("Mountain") && mine == true)
+        if (other.gameObject.CompareTag(placableOnTag) && notEverywherePlaceable == true)
         {
             buildingManager.canPlace = false;
         }
