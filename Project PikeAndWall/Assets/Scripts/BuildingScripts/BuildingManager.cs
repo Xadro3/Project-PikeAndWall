@@ -22,10 +22,9 @@ public class BuildingManager : MonoBehaviour
     public bool canPlace;
     public bool destroyMode;
 
-    //public ResourceValue resourceRequired;
 
     [SerializeField] private Material[] materials;
-    [SerializeField] private Toggle gridToggle;
+
     [SerializeField] private LayerMask layerMask;
 
     [SerializeField] ResourceManager resourceManager;
@@ -160,9 +159,9 @@ public class BuildingManager : MonoBehaviour
     }
 
 
-    public void ToggleGrid() //ein grid kann mit diesem Toggle aktiviert und deaktiviert werden
+    public void ToggleGrid(bool gridToggle) //ein grid kann mit diesem Toggle aktiviert und deaktiviert werden
     {
-        if (gridToggle.isOn)
+        if (gridToggle == true)
         {
             gridOn = true;
         }

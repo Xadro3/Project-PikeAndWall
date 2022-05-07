@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8811396665855854310
+--- !u!1 &8740032602213544862
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8143508929529650268}
-  - component: {fileID: 5092539479895905273}
-  - component: {fileID: 7010031924530505523}
-  - component: {fileID: -3685063067146499525}
-  - component: {fileID: 2104281943883328297}
-  - component: {fileID: -4575973106463429484}
-  - component: {fileID: -8749067988401125}
-  - component: {fileID: -6198512166050574693}
+  - component: {fileID: 8214853744302827812}
+  - component: {fileID: 5021195145055970945}
+  - component: {fileID: 7082518617428513355}
+  - component: {fileID: 8470070823754419924}
+  - component: {fileID: 8470070823754419915}
+  - component: {fileID: 8470070823754419914}
+  - component: {fileID: 8470070823754419913}
   m_Layer: 0
-  m_Name: Kiste
-  m_TagString: Buildings
+  m_Name: LumberjackBuildingBlueprint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8143508929529650268
+--- !u!4 &8214853744302827812
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.2, z: 0}
+  m_GameObject: {fileID: 8740032602213544862}
+  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -61.170696, y: 0.23474775, z: 4.365898}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5092539479895905273
+--- !u!33 &5021195145055970945
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
-  m_Mesh: {fileID: -5495902117074765545, guid: 9b8f20ac6ccb4b24bbb43cc1ee1fa4ce, type: 3}
---- !u!23 &7010031924530505523
+  m_GameObject: {fileID: 8740032602213544862}
+  m_Mesh: {fileID: -7920133966784229283, guid: 798a76e11bca5e0479198b981fea4147, type: 3}
+--- !u!23 &7082518617428513355
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
+  m_GameObject: {fileID: 8740032602213544862}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,9 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9104163317325768827, guid: 9b8f20ac6ccb4b24bbb43cc1ee1fa4ce, type: 3}
-  - {fileID: 8874870964801245301, guid: 9b8f20ac6ccb4b24bbb43cc1ee1fa4ce, type: 3}
-  - {fileID: -698885381919932261, guid: 9b8f20ac6ccb4b24bbb43cc1ee1fa4ce, type: 3}
+  - {fileID: 2100000, guid: 038732c6d8561f94ea2982dd00d178dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &-3685063067146499525
+--- !u!54 &8470070823754419924
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
+  m_GameObject: {fileID: 8740032602213544862}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -104,69 +101,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2104281943883328297
+--- !u!65 &8470070823754419915
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
+  m_GameObject: {fileID: 8740032602213544862}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.020599999, y: 0.020599999, z: 0.020599999}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4575973106463429484
+  m_Size: {x: 0.099999994, y: 0.065, z: 0.099999994}
+  m_Center: {x: 0, y: 0.0325, z: 0}
+--- !u!114 &8470070823754419914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
+  m_GameObject: {fileID: 8740032602213544862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56103f11950bbb24ba3e3cc0e06b2d1b, type: 3}
+  m_Script: {fileID: 11500000, guid: fc02d28b7bfe9824a968a049d7d54bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffekt: {fileID: 5746086383393966899, guid: 1cd2c33c78460054382b684e7dc32f30, type: 3}
-  destroyEffektTime: 2
-  getResouceBackInt: []
-  destroyClip: {fileID: 0}
---- !u!208 &-8749067988401125
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.010000001, y: 0.010000001, z: 0.010000001}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
---- !u!114 &-6198512166050574693
+  notEverywherePlaceable: 1
+  placableOnTag: Forest
+--- !u!114 &8470070823754419913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811396665855854310}
+  m_GameObject: {fileID: 8740032602213544862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c41a920c60b4b84428bb11e3470f5980, type: 3}
+  m_Script: {fileID: 11500000, guid: f124f5571228ada47a4040a03fecb186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 5
-  buildCost:
-  - resourceType: 1
-    resourceAmount: 10
-  - resourceType: 3
-    resourceAmount: 1
-  producedResources:
-  - resourceType: 2
-    resourceAmount: 2
+  realBuilding: {fileID: 8393006951303051420, guid: 8f77af476c8bc9d4bb7336b63f959305, type: 3}

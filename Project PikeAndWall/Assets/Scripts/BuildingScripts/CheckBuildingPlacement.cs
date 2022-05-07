@@ -41,6 +41,8 @@ public class CheckBuildingPlacement : MonoBehaviour
         if (other.gameObject.CompareTag(placableOnTag) && notEverywherePlaceable == true)
         {
             buildingManager.canPlace = true;
+
+
         }
     }
 
