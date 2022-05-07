@@ -15,6 +15,11 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        if (gameObject.tag == "Unit")
+        {
+            GameEnviroment.Singleton.Units.Add(gameObject);
+        }
+        
         hitPoints = maximumHitPoints;
         StartCoroutine(HealOverTime());
     }
@@ -26,6 +31,10 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
         if (hitPoints <= 0)
         {
+            if (gameObject.tag == "Unit")
+            {
+                GameEnviroment.Singleton.Units.Remove(gameObject);
+            }
             gameObject.GetComponent<Destructible>().Die();
 
         }
