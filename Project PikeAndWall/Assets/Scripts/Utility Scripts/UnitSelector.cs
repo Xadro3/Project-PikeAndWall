@@ -209,7 +209,7 @@ public class UnitSelector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Objects hit: " + other.tag);
+       // Debug.Log("Objects hit: " + other.tag);
 
         if (other.tag == "Unit")
         {
