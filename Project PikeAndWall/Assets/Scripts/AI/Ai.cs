@@ -11,12 +11,15 @@ public class Ai : MonoBehaviour
     public bool charge;
     public Transform objective;
     public bool isGuard;
+    public bool isPatrol;
+    public bool gettingAttacked;
     States currentState;
     void Start()
     {
+        
         agent = this.GetComponent<NavMeshAgent>();
         animator = this.GetComponent<Animator>();
-        currentState = new Idle(this.gameObject, agent, animator, GameEnviroment.Singleton.Units, GetComponent<UnitClass>().range, isGuard, charge, objective);
+        currentState = new Idle(this.gameObject, agent, animator, GameEnviroment.Singleton.Units, GetComponent<UnitClass>().range, isGuard, charge, objective, isPatrol, gettingAttacked);
     }
 
     // Update is called once per frame

@@ -26,8 +26,10 @@ public class States
     protected float aggroRange = 50f;
     protected float attackRange;
     protected bool isGuard; //prevent pursuit
-    protected bool charge;
-    public States(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective)
+    protected bool charge; 
+    protected bool isPatrol; //prevent all enemy units to patrol 
+    protected bool gettingAttacked;
+    public States(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAttacked)
     {
         npc = _npc;
         agent = _agent;
@@ -38,6 +40,8 @@ public class States
         charge = _charge;
         objective = _objective;
         stage = EVENT.ENTER;
+        isPatrol = _isPatrol;
+        gettingAttacked = _gettingAttacked;
     }
 
     public virtual void Enter()
@@ -77,8 +81,8 @@ public class States
 
 public class Idle : States
 {
-    public Idle(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective)
-                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard,_charge, _objective)
+    public Idle(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked)
+                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard,_charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.IDLE;
     }
@@ -92,41 +96,42 @@ public class Idle : States
     public override void Update()
     {
 
-        if (isGuard)    //if the unit is guard it will only attack within its range and not pursue
-        {
+       
 
-        }
-
-        if (!isGuard) //if the unit us not guard it will pursue units inside its aggro range and engage them, they can also randomly start to patrol and if a charge
-                      //flag is set they will move to the position of the objective and attack units in their range
-        {
+        
             Vector3 npcPos = npc.transform.position;
            
             foreach (GameObject unit in playerUnits)
             {
-                if ((Vector3.Distance(unit.transform.position, npcPos)) < aggroRange)
+                if ((Vector3.Distance(unit.transform.position, npcPos)) < aggroRange && !isGuard)   //if any unit is within range, start pursuit
                 {
-                   nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective);
+                   nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked ,unit);
                    Debug.Log("AI transitioning to Pursue");
                    stage = EVENT.EXIT;
                 }
+                if((Vector3.Distance(unit.transform.position, npcPos)) <= attackRange && isGuard)
+                {
+                   nextState = new Attack(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, unit); // transition to attacking
+                stage = EVENT.EXIT;
             }
-            if (Random.Range(0, 1000) < 10)
+            }
+
+            if (Random.Range(0, 1000) < 10 && isPatrol && !isGuard) //if this unit has patrol flag, random chance to start patroling
             {
-                nextState = new Patrol(npc,agent,animator,playerUnits, attackRange, isGuard, charge, objective);
+                nextState = new Patrol(npc,agent,animator,playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
                 Debug.Log("AI is transitioning to Patrol");
                 stage = EVENT.EXIT;
             }
-            if (charge)
+            if (charge) // if charge flag is set, charge
             {
-                nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective);
+                nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
                 Debug.Log("Ai is Transitioning to Charge");
                     stage = EVENT.EXIT;
             }
-        }
-        
-        
     }
+        
+        
+    
 
     public override void Exit()
     {
@@ -137,19 +142,76 @@ public class Idle : States
 
 public class Pursue: States
 {
-    public Pursue(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective)
-                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective)
+    GameObject closestUnit;
+    Vector3 origin;
+    public Pursue(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked, GameObject _closestUnit)
+                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
     {
-        Debug.Log("AI is in Pursue");
+        name = STATE.PURSUE;
+        agent.speed = 4.5f;
+        agent.isStopped = false;
+        closestUnit = _closestUnit;
+        
     }
+
+    public  override void Enter()
+    {
+        Debug.Log("AI is in Pursuit");
+        animator.SetTrigger("isRunning");
+        origin = npc.transform.position;
+        base.Enter();
+    }
+
+    public override void Update()
+    {
+        agent.SetDestination(closestUnit.transform.position); //follow closest unit
+
+        if (agent.hasPath)
+        {
+            foreach (GameObject unit in playerUnits)
+            {
+                if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnit.transform.position, npc.transform.position)) // find closest unit
+                {
+                    closestUnit = unit;
+                }
+            }
+            if(charge && Vector3.Distance(origin, npc.transform.position) > 25)
+            {
+                nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+                stage = EVENT.EXIT;
+            }
+
+            if (Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
+            {
+                nextState = new Attack(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit); // transition to attacking
+                stage = EVENT.EXIT;
+            }
+
+            if (Vector3.Distance(origin, npc.transform.position) > 50 && !gettingAttacked) // retreat if not in combat and too far from origin
+            {
+                nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked ,origin, closestUnit);
+                stage = EVENT.EXIT;
+            }
+            
+        }
+    }
+
+    public override void Exit()
+    {
+        animator.ResetTrigger("isRunning");
+        base.Exit();
+    }
+
+
 }
 
 public class Patrol: States
 {
     int currentIndex = -1;
-
-    public Patrol(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective)
-                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard,_charge, _objective)
+    int patrolPasses = 0;
+    Vector3 origin;
+    public Patrol(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked)
+                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard,_charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.PATROL;
         agent.speed = 3.5f;
@@ -158,6 +220,7 @@ public class Patrol: States
 
     public override void Enter()
     {
+        origin = npc.transform.position;
         Debug.Log("AI is in Patrol");
         currentIndex = 0;
         animator.SetTrigger("isWalking");
@@ -167,10 +230,27 @@ public class Patrol: States
 
     public override void Update()
     {
+        if (charge)
+        {
+            nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+            stage = EVENT.EXIT;
+        }
+
+        foreach (GameObject unit in playerUnits)
+        {
+            if ((Vector3.Distance(unit.transform.position, npc.transform.position)) < aggroRange)   //if any unit is within range, start pursuit
+            {
+                nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked ,unit);
+                Debug.Log("AI transitioning to Pursue");
+                stage = EVENT.EXIT;
+            }
+        }
+
         if (agent.remainingDistance < 1)
         {
-            if(currentIndex >= GameEnviroment.Singleton.Perimeter.Count-1)
+            if(currentIndex >= GameEnviroment.Singleton.Perimeter.Count-1) //walk through waypoints and increase counter for break off
             {
+                patrolPasses++;
                 currentIndex = 0;
             }
             else
@@ -181,6 +261,13 @@ public class Patrol: States
             agent.SetDestination(GameEnviroment.Singleton.Perimeter[currentIndex].transform.position);
         }
 
+        if(patrolPasses >= 5) // break off Patrol after 5 passes
+        {
+            agent.SetDestination(origin);
+            Debug.Log("AI is going back to Idle");
+            nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+            stage = EVENT.EXIT;
+        }
         
     }
 
@@ -192,11 +279,142 @@ public class Patrol: States
     }
 
 }
-public class Charge: States
+public class Charge : States
 {
-    public Charge(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective)
-                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective)
+    public Charge(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked)
+                : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
     {
+        name = STATE.CHARGE;
+        agent.speed = 4.5f;
+        agent.isStopped = false;
 
     }
+
+    public override void Enter()
+    {
+        Debug.Log("AI is Charging");
+        animator.SetTrigger("isRunning");
+        base.Enter();
+    }
+
+    public override void Update()
+    {
+        agent.SetDestination(objective.position);
+
+        foreach (GameObject unit in playerUnits)
+        {
+            if ((Vector3.Distance(unit.transform.position, npc.transform.position)) < aggroRange / 2)   //if any unit is within range, start pursuit
+            {
+                nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, unit);
+                Debug.Log("AI transitioning to Pursue");
+                stage = EVENT.EXIT;
+            }
+        }
+    }
 }
+
+public class Retreat : States
+{
+        Vector3 origin;
+        GameObject closestUnit;
+        public Retreat(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked, Vector3 _origin, GameObject _closestUnit)
+                    : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
+        {
+            name = STATE.RETREAT;
+            agent.speed = 4.5f;
+            agent.isStopped = false;
+            origin = _origin;
+            closestUnit = _closestUnit;
+        }
+
+        public override void Enter()
+        {
+            Debug.Log("Ai is Retreating");
+            animator.SetTrigger("isRunning");
+            base.Enter();
+        }
+
+        public override void Update()
+        {
+            if (!gettingAttacked) //if not in combat, return to idle 
+            {
+            if (agent.destination != origin)
+            {
+                Debug.Log("AI is returning to Origin");
+                agent.SetDestination(origin);
+            }
+                if(origin == npc.transform.position)
+            {
+                nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+                stage = EVENT.EXIT;
+            }
+            }
+            else
+            {
+                Debug.Log("AI  is continuing pursuit"); // ignore max distance from origin in favor of pursuit
+                nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit);
+                stage = EVENT.EXIT;
+
+            }
+
+        }
+
+        public override void Exit()
+        {
+            animator.ResetTrigger("isRunning");
+            base.Exit();
+
+        }
+
+}
+public class Attack : States
+{
+    GameObject closestUnit;
+        public Attack(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked, GameObject _closestUnit)
+                    : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
+        {
+
+        closestUnit = _closestUnit;
+        name = STATE.ATTACK;
+
+        }
+
+    public override void Enter()
+    {
+        animator.SetTrigger("isAttacking");
+        base.Enter();
+    }
+
+    public override void Update()
+    {
+        if(Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
+        {
+
+        }
+        else
+        {
+            nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit);
+            stage = EVENT.EXIT;
+        }
+
+        foreach (GameObject unit in playerUnits)
+        {
+            if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnit.transform.position, npc.transform.position)) // find closest unit
+            {
+                closestUnit = unit;
+            }
+        }
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+    }
+
+
+
+
+
+}
+

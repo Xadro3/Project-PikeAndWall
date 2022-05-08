@@ -101,11 +101,11 @@ public class FormationHandler : MonoBehaviour
 
                 lastInstance = Instantiate(formationPlacement, new Vector3(lastPosition.x + (i * 2), lastPosition.y, lastPosition.z + (j * 2)), Quaternion.identity);
 
-                Debug.Log("unitObjects is: " + unitObjects.Length + " unitPLaces is: " + unitPlaces.Count);
+                //Debug.Log("unitObjects is: " + unitObjects.Length + " unitPLaces is: " + unitPlaces.Count);
 
                 if (selectedUnits.Count >= index)
                 {
-                    Debug.Log("i made it here");
+                    //Debug.Log("i made it here");
                     unitPlaces.Add(lastInstance.transform.position, unitObjects[index - 1]);
                     index++;
                 }
@@ -113,11 +113,11 @@ public class FormationHandler : MonoBehaviour
             }
         }
 
-        Debug.Log("UnitPLaces is: " + unitPlaces.Count);
+       // Debug.Log("UnitPLaces is: " + unitPlaces.Count);
 
         foreach (KeyValuePair<Vector3, GameObject> entry in unitPlaces)
         {
-            Debug.Log("Placed unit at: " + entry.Key);
+            //Debug.Log("Placed unit at: " + entry.Key);
             entry.Value.GetComponent<MovementCommandHandler>().MoveToDestinationMultiple(entry.Key);
         }
         unitPlaces.Clear();
