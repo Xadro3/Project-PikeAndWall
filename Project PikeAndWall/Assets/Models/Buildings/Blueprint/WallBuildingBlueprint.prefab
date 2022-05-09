@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc02d28b7bfe9824a968a049d7d54bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mine: 0
+  notEverywherePlaceable: 0
+  placableOnTag: 
 --- !u!114 &3279134181818567932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,6 +58,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5520064818563903599, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 7522640335242584857, guid: a9c98263635c7b14d99caf1211fd2615, type: 3}
     - target: {fileID: 5520064818563903599, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 

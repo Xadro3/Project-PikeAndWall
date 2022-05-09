@@ -63,9 +63,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 44484ce9e8d1f90479abca9c377b9a1c, type: 2}
-  - {fileID: 2100000, guid: 44484ce9e8d1f90479abca9c377b9a1c, type: 2}
-  - {fileID: 2100000, guid: 44484ce9e8d1f90479abca9c377b9a1c, type: 2}
+  - {fileID: 7522640335242584857, guid: a9c98263635c7b14d99caf1211fd2615, type: 3}
+  - {fileID: 7522640335242584857, guid: a9c98263635c7b14d99caf1211fd2615, type: 3}
+  - {fileID: 7522640335242584857, guid: a9c98263635c7b14d99caf1211fd2615, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,8 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notEverywherePlaceable: 1
-  mine: 0
-  woods: 0
   placableOnTag: Mountain
 --- !u!114 &-145844942525494912
 MonoBehaviour:
