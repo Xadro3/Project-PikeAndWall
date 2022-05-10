@@ -9,7 +9,8 @@ public class UnitAttack : MonoBehaviour
     private UnitClass unit;
     public Hitbox targetHitbox;
     public Health targetHealth;
-    
+    private bool isAttacking = false;
+
     void Start()
     {
         unit = GetComponentInParent<UnitClass>();
@@ -23,10 +24,14 @@ public class UnitAttack : MonoBehaviour
 
     public void StartAttack()
     {
-        StartCoroutine(Attack());
+        if (isAttacking == false)
+        {
+            StartCoroutine(Attack());
+        }
     }
     private IEnumerator Attack()
     {
+        isAttacking = true;
         yield return new WaitForSeconds(unit.firerate);
         if (unit.enemyInRange == true)
         {
@@ -44,6 +49,7 @@ public class UnitAttack : MonoBehaviour
             {
                 targetHealth.TakeDamage(unit.damageValue);
             }
+            isAttacking = false;
             StartCoroutine(Attack());
         }
     }

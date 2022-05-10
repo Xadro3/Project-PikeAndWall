@@ -395,6 +395,7 @@ public class Attack : States
         }
         else
         {
+            npc.GetComponent<UnitClass>().enemyInRange = false;
             nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit);
             stage = EVENT.EXIT;
         }
