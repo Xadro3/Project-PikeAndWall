@@ -10,8 +10,7 @@ public class TargetHandler : MonoBehaviour
 
     private Hitbox targetHitbox;
     private RaycastHit raycastHit;
-
-
+    
     //List <GameObject> currentCollisions = new List <GameObject> ();
 
     void Awake()
@@ -35,6 +34,7 @@ public class TargetHandler : MonoBehaviour
                 if (raycastHit.transform.tag == "Enemy")
                 {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
+                    
                     if (targetsInRange.Contains(targetHitbox))
                     {
                         unit.enemyInRange = true;

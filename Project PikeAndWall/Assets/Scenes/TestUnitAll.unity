@@ -1639,17 +1639,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &146577669 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8984408401369203596, guid: ce6ff865350dfdf4eae7de5ce7cf25fe, type: 3}
-  m_PrefabInstance: {fileID: 399475464}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6713312e469a545bb9cdf582adf8b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &301054858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320379559399775779, guid: 36699d6134ce4754d9a5a4bd62fc3232, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.73
+      value: -34.94
       objectReference: {fileID: 0}
     - target: {fileID: 6320379559399775779, guid: 36699d6134ce4754d9a5a4bd62fc3232, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3557,7 +3546,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146577669}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: ToggleGrid
         m_Mode: 1
@@ -3799,6 +3788,14 @@ PrefabInstance:
     - target: {fileID: 8919609364193832655, guid: a6f4124c604d05c4a89e19bd44a8fb30, type: 3}
       propertyPath: m_Name
       value: PlaceholderFigurMusket
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050012425465912094, guid: a6f4124c604d05c4a89e19bd44a8fb30, type: 3}
+      propertyPath: range
+      value: 30.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050012425465912094, guid: a6f4124c604d05c4a89e19bd44a8fb30, type: 3}
+      propertyPath: firerate
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6f4124c604d05c4a89e19bd44a8fb30, type: 3}
@@ -4606,7 +4603,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146577669}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: SelectBuilding
         m_Mode: 3
@@ -4739,7 +4736,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146577669}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: SelectBuilding
         m_Mode: 3
@@ -6449,7 +6446,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146577669}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: SelectBuilding
         m_Mode: 3
@@ -6934,7 +6931,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146577669}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: ToggleDestoryBuild
         m_Mode: 0

@@ -21,14 +21,17 @@ public class UnitAttack : MonoBehaviour
         targetHealth = unit.targetHealth;
     }
 
-    public void StartAttack(){
+    public void StartAttack()
+    {
         StartCoroutine(Attack());
     }
     private IEnumerator Attack()
     {
         yield return new WaitForSeconds(unit.firerate);
-        if (unit.enemyInRange == true){
-            if(gameObject.name == "Bow" | gameObject.name == "Musket"){
+        if (unit.enemyInRange == true)
+        {
+            if(gameObject.name == "Bow" | gameObject.name == "Musket")
+            {
                 //audio.Play(0);
                 Transform projectileTransform = Instantiate(projectile, new Vector3(unit.weapon.transform.position.x, unit.weapon.transform.position.y, unit.weapon.transform.position.z), Quaternion.identity);
                 projectileTransform.transform.parent = unit.weapon.transform;
@@ -37,7 +40,8 @@ public class UnitAttack : MonoBehaviour
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
                 }
             }
-            if(gameObject.name == "Spear" | gameObject.name == "Sword"){
+            if(gameObject.name == "Spear" | gameObject.name == "Sword")
+            {
                 targetHealth.TakeDamage(unit.damageValue);
             }
             StartCoroutine(Attack());
