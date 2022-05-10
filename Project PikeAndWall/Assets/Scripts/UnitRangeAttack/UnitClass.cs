@@ -46,6 +46,7 @@ public class UnitClass : MonoBehaviour
     {
         this.targetHitbox = targetHitbox;
         targetHealth = targetHitbox.GetComponentInParent<Health>();
+        Debug.Log(enemyInRange);
         StartAttack();
         return targetHealth;
     }

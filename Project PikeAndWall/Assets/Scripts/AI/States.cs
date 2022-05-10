@@ -382,6 +382,7 @@ public class Attack : States
     public override void Enter()
     {
         animator.SetTrigger("isAttacking");
+        agent.isStopped = true;
         base.Enter();
     }
 
@@ -389,7 +390,8 @@ public class Attack : States
     {
         if(Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
         {
-
+            npc.GetComponent<UnitClass>().enemyInRange = true;
+            npc.GetComponent<UnitClass>().SetTarget(closestUnit.GetComponentInChildren<Hitbox>());
         }
         else
         {
