@@ -36,6 +36,7 @@ public class CheckBuildingPlacement : MonoBehaviour
         {
             buildingManager.canPlace = false;
             buildingCount++;
+            Debug.Log(buildingCount);
         }
 
         if (other.gameObject.CompareTag(placableOnTag) && notEverywherePlaceable == true)
@@ -46,12 +47,18 @@ public class CheckBuildingPlacement : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Buildings"))
         {
             buildingCount--;
-            if (buildingCount == 0)
+            Debug.Log(buildingCount);
+            if (buildingCount == 0 && notEverywherePlaceable == false)
             {
                 buildingManager.canPlace = true;
             }
