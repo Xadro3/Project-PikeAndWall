@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitAttack : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class UnitAttack : MonoBehaviour
     public Hitbox targetHitbox;
     public Health targetHealth;
     private bool isAttacking = false;
+    private NavMeshAgent agent;
 
     void Start()
     {
         unit = GetComponentInParent<UnitClass>();
+        agent = GetComponentInParent<NavMeshAgent>();
     }
     // Update is called once per frame
     void Update()
@@ -25,9 +28,9 @@ public class UnitAttack : MonoBehaviour
     public void StartAttack()
     {
         if (isAttacking == false)
-        {
-            StartCoroutine(Attack());
-        }
+            {
+                StartCoroutine(Attack());
+            }
     }
     private IEnumerator Attack()
     {

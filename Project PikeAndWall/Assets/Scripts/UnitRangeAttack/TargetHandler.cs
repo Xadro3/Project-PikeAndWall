@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TargetHandler : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class TargetHandler : MonoBehaviour
 
     private Hitbox targetHitbox;
     private RaycastHit raycastHit;
+    private NavMeshAgent agent;
     
     //List <GameObject> currentCollisions = new List <GameObject> ();
 
     void Awake()
     {
         unit = GetComponent<UnitClass>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Start()
@@ -28,22 +31,24 @@ public class TargetHandler : MonoBehaviour
         {
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHits = Physics.RaycastAll(destinationRay, 50000f);
-
+            
             foreach (RaycastHit raycastHit in raycastHits)
             {
                 if (raycastHit.transform.tag == "Enemy")
                 {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
-                    
+
                     if (targetsInRange.Contains(targetHitbox))
                     {
                         unit.enemyInRange = true;
                         unit.SetTarget(targetHitbox);
+                        agent.isStopped = true;
                     }
                     else
                     {
-                        unit.enemyInRange = false;
-                        unit.SetTarget(null);
+                        //unit.enemyInRange = false;
+                        //unit.SetTarget(null);
+                        agent.isStopped = false;
                     }
                     CheckTargetHelper(targetHitbox, raycastHit);
 
@@ -82,8 +87,9 @@ public class TargetHandler : MonoBehaviour
                 if (collision.tag == "Enemy")
                 {
                     targetsInRange.Add(hitbox);
-                    //unit.enemyInRange = true;
-                    //unit.SetTarget(hitbox);
+                    unit.enemyInRange = true;
+                    agent.isStopped = true;
+                    unit.SetTarget(hitbox);
                 }
             }
             if (unit.tag == "Enemy")
@@ -91,8 +97,8 @@ public class TargetHandler : MonoBehaviour
                 if (collision.tag == "Player")
                 {
                     targetsInRange.Add(hitbox);
-                    //unit.enemyInRange = true;
-                    //unit.SetTarget(hitbox);
+                    unit.enemyInRange = true;
+                    unit.SetTarget(hitbox);
                 }
             }
         }
@@ -107,8 +113,8 @@ public class TargetHandler : MonoBehaviour
                 if (collision.tag == "Enemy")
                 {
                     targetsInRange.Remove(hitbox);
-                    //unit.SetTarget(null);
-                    //unit.enemyInRange = false;
+                    unit.SetTarget(null);
+                    unit.enemyInRange = false;
                 }
             }
             if (unit.tag == "Enemy")
@@ -116,8 +122,8 @@ public class TargetHandler : MonoBehaviour
                 if (collision.tag == "Player")
                 {
                     targetsInRange.Remove(hitbox);
-                    //unit.SetTarget(null);
-                    //unit.enemyInRange = false;
+                    unit.SetTarget(null);
+                    unit.enemyInRange = false;
                 }
             }
         }
