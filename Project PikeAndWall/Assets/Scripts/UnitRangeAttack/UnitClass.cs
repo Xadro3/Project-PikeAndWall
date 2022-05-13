@@ -19,6 +19,7 @@ public class UnitClass : MonoBehaviour
     private UnitAttack unitAttack;
     private UnitReach unitReach;
     private float rangeOld;
+    public float buildTime;
 
     void Awake()
     {

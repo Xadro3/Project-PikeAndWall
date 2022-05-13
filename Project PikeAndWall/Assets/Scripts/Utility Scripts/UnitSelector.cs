@@ -75,9 +75,22 @@ public class UnitSelector : MonoBehaviour
                         selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
                         break;
                     }
+                    else if(raycast.collider.gameObject.tag == "Building")
+                    {
+                        selectedUnitsDictionary.RemoveAllUnitsFromSelection();
+                        selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
+                        break;
+                    }
+                    else if(raycast.collider.gameObject.tag == "UIQuad")
+                    {
+                        //do nothing
+                        break;
+                    }
                     else
                     {
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
+                        break;
+                        
                     }
 
 

@@ -11,15 +11,16 @@ public class Health : MonoBehaviour
     public int team;
     public int healOverTimeEffect;
     public int healOverTimeTickRate;
-
+    HealthBarHandler healthBarHandler;
 
     void Start()
     {
         if (gameObject.tag == "Unit")
         {
             GameEnviroment.Singleton.Units.Add(gameObject);
+            
         }
-        
+        healthBarHandler = gameObject.GetComponentInChildren<HealthBarHandler>();
         hitPoints = maximumHitPoints;
         StartCoroutine(HealOverTime());
     }
@@ -38,13 +39,17 @@ public class Health : MonoBehaviour
             gameObject.GetComponent<Destructible>().Die();
 
         }
+        if (hitPoints < maximumHitPoints)
+        {
+            healthBarHandler.ShowHealthBar();
+        }
     }
 
 
     void UpdateHealthBar()
     {
 
-        gameObject.GetComponentInChildren<HealthBarHandler>().SetHealth((float)hitPoints / maximumHitPoints);
+        healthBarHandler.SetHealth((float)hitPoints / maximumHitPoints);
     }
 
 

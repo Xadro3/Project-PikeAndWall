@@ -848,7 +848,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 3.5
+  m_Speed: 25
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -915,11 +915,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 2
   range: 20
+  damageValue: 4
   weapon: {fileID: 5405358457279144823}
   targetHitbox: {fileID: 0}
   targetHealth: {fileID: 0}
-  damageValue: 4
   enemyInRange: 0
+  buildTime: 15
 --- !u!114 &4308157075494461721
 MonoBehaviour:
   m_ObjectHideFlags: 0
