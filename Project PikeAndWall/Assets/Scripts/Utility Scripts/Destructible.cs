@@ -28,6 +28,15 @@ public class Destructible : MonoBehaviour
     }
     public void Die()
     {
+        if (gameObject.tag == "Unit")
+        {
+            GameEnviroment.Singleton.Units.Remove(gameObject);
+        }
+        if(gameObject.tag == "Enemy")
+        {
+            GameEnviroment.Singleton.Enemies.Remove(gameObject);
+        }
+
         Instantiate(fracturedWall, transform.position, transform.rotation);
         Destroy(gameObject);
     }
