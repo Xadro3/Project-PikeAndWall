@@ -55,6 +55,7 @@ public class UnitAttack : MonoBehaviour
             isAttacking = false;
             StartCoroutine(Attack());
         }
+        isAttacking = false;
     }
 
 }

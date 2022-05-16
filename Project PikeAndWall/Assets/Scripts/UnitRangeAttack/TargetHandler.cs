@@ -51,7 +51,7 @@ public class TargetHandler : MonoBehaviour
                         agent.isStopped = false;
                     }
                     CheckTargetHelper(targetHitbox, raycastHit);
-
+                    agent.isStopped = false;
                 }
             }
         }
