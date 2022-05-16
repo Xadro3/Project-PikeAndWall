@@ -3457,13 +3457,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5436513901128770378, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
-      propertyPath: buildable
-      value: 
-      objectReference: {fileID: 6533088543906999853, guid: 6c53394d2df13f14f93add1acec4eee2, type: 3}
     - target: {fileID: 7448133977558183315, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
       propertyPath: m_Name
       value: Barracks
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750109919914846107, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
+      propertyPath: m_Size.x
+      value: 0.02801996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750109919914846107, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
+      propertyPath: m_Size.y
+      value: 0.020999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750109919914846107, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
+      propertyPath: m_Size.z
+      value: 0.040885128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750109919914846107, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
+      propertyPath: m_Center.x
+      value: 0.003009982
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750109919914846107, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
+      propertyPath: m_Center.y
+      value: 0.010499998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750109919914846107, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
+      propertyPath: m_Center.z
+      value: -0.010442575
       objectReference: {fileID: 0}
     - target: {fileID: 7788631170453813033, guid: 8f117d4ea0dc27d439b6ff56a2d27053, type: 3}
       propertyPath: m_RootOrder
