@@ -20,6 +20,10 @@ public class Health : MonoBehaviour
             GameEnviroment.Singleton.Units.Add(gameObject);
             
         }
+        if(gameObject.tag == "Enemy")
+        {
+            GameEnviroment.Singleton.Enemies.Add(gameObject);
+        }
         healthBarHandler = gameObject.GetComponentInChildren<HealthBarHandler>();
         hitPoints = maximumHitPoints;
         StartCoroutine(HealOverTime());
