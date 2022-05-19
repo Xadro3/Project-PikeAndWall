@@ -111,7 +111,7 @@ public class Idle : States
                 }
                 if((Vector3.Distance(unit.transform.position, npcPos)) <= attackRange && isGuard)
                 {
-                   nextState = new Attack(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, unit); // transition to attacking
+                   nextState = new Attack(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, unit, npcPos); // transition to attacking
                 stage = EVENT.EXIT;
             }
             }
@@ -183,7 +183,7 @@ public class Pursue: States
 
             if (Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
             {
-                nextState = new Attack(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit); // transition to attacking
+                nextState = new Attack(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit,origin); // transition to attacking
                 stage = EVENT.EXIT;
             }
 
@@ -370,11 +370,13 @@ public class Retreat : States
 public class Attack : States
 {
     GameObject closestUnit;
-        public Attack(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked, GameObject _closestUnit)
+    Vector3 origin;
+        public Attack(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked, GameObject _closestUnit, Vector3 _origin)
                     : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
         {
 
         closestUnit = _closestUnit;
+        origin = _origin;
         name = STATE.ATTACK;
 
         }
@@ -388,16 +390,20 @@ public class Attack : States
 
     public override void Update()
     {
-        if(Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
+        
+        if(closestUnit != null)
         {
-            npc.GetComponent<UnitClass>().enemyInRange = true;
-            npc.GetComponent<UnitClass>().SetTarget(closestUnit.GetComponentInChildren<Hitbox>());
-        }
-        else
-        {
-            npc.GetComponent<UnitClass>().enemyInRange = false;
-            nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit);
-            stage = EVENT.EXIT;
+            if (Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
+            {
+                npc.GetComponent<UnitClass>().enemyInRange = true;
+                npc.GetComponent<UnitClass>().SetTarget(closestUnit.GetComponentInChildren<Hitbox>());
+            }
+            else
+            {
+                npc.GetComponent<UnitClass>().enemyInRange = false;
+                nextState = new Pursue(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, closestUnit);
+                stage = EVENT.EXIT;
+            }
         }
 
         foreach (GameObject unit in playerUnits)
@@ -406,6 +412,17 @@ public class Attack : States
             {
                 closestUnit = unit;
             }
+        }
+
+        if(Vector3.Distance(closestUnit.transform.position, npc.transform.position) > aggroRange && closestUnit != null)
+        {
+            nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
+            stage = EVENT.EXIT;
+        }
+        if(closestUnit == null)
+        {
+            nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
+            stage = EVENT.EXIT;
         }
     }
 
