@@ -86,6 +86,12 @@ public class BuildingManager : MonoBehaviour
     public void RotateBuilding()
     {
         pendingBuilding.transform.Rotate(Vector3.up, rotateAmount);
+
+        //Rigidbody rigidbody = pendingBuilding.GetComponent<Rigidbody>();        
+        //Vector3 eulerAngle = rigidbody.rotation.eulerAngles;
+        //eulerAngle = new Vector3(eulerAngle.x, eulerAngle.y + rotateAmount, eulerAngle.z);
+        //Quaternion quaternion = Quaternion.Euler(eulerAngle);
+        //rigidbody.rotation = quaternion;
     }
 
     private void FixedUpdate()

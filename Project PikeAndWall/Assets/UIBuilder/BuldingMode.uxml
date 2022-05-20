@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="BuildingMode.uss" />
+    <ui:Toggle label="BuildingMode" value="true" style="visibility: visible; align-items: stretch; flex-direction: row-reverse;" />
+    <ui:Button text="Lumberjack&apos;s Hut" display-tooltip-when-elided="true" />
+    <ui:TextField picking-mode="Ignore" label="Wood: 10; Gold: 10" value="Building Costs" text="filler text" style="-unity-background-image-tint-color: rgb(0, 0, 0); flex-direction: row-reverse;" />
+    <ui:Button text="Hunter&apos;s Hut" display-tooltip-when-elided="true" />
+    <ui:Button text="Stone Mine" display-tooltip-when-elided="true" />
+    <ui:Button text="Iron Mine" display-tooltip-when-elided="true" />
+    <ui:Button text="Blackpowder Mine" display-tooltip-when-elided="true" />
+</ui:UXML>

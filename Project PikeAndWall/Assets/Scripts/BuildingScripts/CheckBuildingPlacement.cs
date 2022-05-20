@@ -47,10 +47,10 @@ public class CheckBuildingPlacement : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
+    //private void OnTriggerStay(Collider other)
+    //{
         
-    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {
