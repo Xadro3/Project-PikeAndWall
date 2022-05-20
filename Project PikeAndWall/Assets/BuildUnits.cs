@@ -22,6 +22,7 @@ public class BuildUnits : MonoBehaviour
     {
         if (buildQueue.Count >=1 && !subroutineRunning)
         {
+
             Debug.Log("Starting coroutine");
             subroutineRunning = true;
             StartCoroutine(BuildUnit(buildQueue[0]));
@@ -45,19 +46,17 @@ public class BuildUnits : MonoBehaviour
     IEnumerator BuildUnit(GameObject unitToBuild)
     {
         float buildTime= unitToBuild.gameObject.GetComponent<UnitClass>().buildTime;
-        while (timer <= buildTime)
-        {
-            timer += Time.deltaTime;
-        }
-        if(timer >= buildTime)
-        {
+        yield return new WaitForSeconds(buildTime);
+      
+        
             Instantiate(unitToBuild, spawnpoint, transform.rotation);
             buildQueue.Remove(unitToBuild);
             Debug.Log("Weird shit");
             subroutineRunning = false;
-            yield return null;
+           // yield return new WaitForSeconds(buildTime);
+            
 
-        }
+        
 
     }
 

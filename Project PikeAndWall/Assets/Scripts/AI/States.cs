@@ -148,7 +148,7 @@ public class Pursue: States
                 : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.PURSUE;
-        agent.speed = 4.5f;
+        agent.speed = agent.speed +4.5f; ;
         agent.isStopped = false;
         closestUnit = _closestUnit;
         
@@ -214,7 +214,7 @@ public class Patrol: States
                 : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard,_charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.PATROL;
-        agent.speed = 3.5f;
+        agent.speed = agent.speed-3.5f;
         agent.isStopped = false;
     }
 
@@ -285,7 +285,7 @@ public class Charge : States
                 : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.CHARGE;
-        agent.speed = 4.5f;
+        agent.speed = agent.speed + 4.5f; ;
         agent.isStopped = false;
 
     }
@@ -321,7 +321,7 @@ public class Retreat : States
                     : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
         {
             name = STATE.RETREAT;
-            agent.speed = 4.5f;
+            agent.speed = agent.speed + 4.5f; ;
             agent.isStopped = false;
             origin = _origin;
             closestUnit = _closestUnit;
@@ -371,6 +371,7 @@ public class Attack : States
 {
     GameObject closestUnit;
     Vector3 origin;
+    Vector3 closestUnitPosition;
         public Attack(GameObject _npc, NavMeshAgent _agent, Animator _anim, List<GameObject> _playerUnits, float _attackRange, bool _isGuard, bool _charge, Transform _objective, bool _isPatrol, bool _gettingAtacked, GameObject _closestUnit, Vector3 _origin)
                     : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
         {
@@ -393,6 +394,8 @@ public class Attack : States
         
         if(closestUnit != null)
         {
+            closestUnitPosition = closestUnit.transform.position;
+
             if (Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
             {
                 npc.GetComponent<UnitClass>().enemyInRange = true;
@@ -408,7 +411,7 @@ public class Attack : States
 
         foreach (GameObject unit in playerUnits)
         {
-            if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnit.transform.position, npc.transform.position)) // find closest unit
+            if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnitPosition, npc.transform.position)) // find closest unit
             {
                 closestUnit = unit;
             }
@@ -421,7 +424,7 @@ public class Attack : States
         }
         if(closestUnit == null)
         {
-            nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
+            nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
             stage = EVENT.EXIT;
         }
     }
