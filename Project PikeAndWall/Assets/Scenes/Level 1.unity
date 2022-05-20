@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17500192, g: 0.21892768, b: 0.30121958, a: 1}
+  m_IndirectSpecularColor: {r: 0.17500214, g: 0.21892793, b: 0.30122015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -586,7 +586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -68.4
+      value: -76.2
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -896,11 +896,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1572331806}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -402, y: 204.19}
+  m_AnchoredPosition: {x: -368.1, y: 141.39}
   m_SizeDelta: {x: 196.7745, y: 261.6284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580156782
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -993,7 +993,8 @@ MonoBehaviour:
   nameText: "General Gonzalo Fern\xE1ndez de C\xF3rdoba"
   nameColor: {r: 1, g: 0.9822674, b: 0, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
+  portraits:
+  - {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -1222,6 +1223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 781928977570089506, guid: 6c53394d2df13f14f93add1acec4eee2, type: 3}
+      propertyPath: m_Speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5900245227946407063, guid: 6c53394d2df13f14f93add1acec4eee2, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1395,7 +1400,7 @@ MonoBehaviour:
   storyText: "We\u2019ll meet again at Seminara! \n\n"
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1424,7 +1429,7 @@ MonoBehaviour:
     \n\n"
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1453,7 +1458,7 @@ MonoBehaviour:
 '
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1481,7 +1486,7 @@ MonoBehaviour:
     of their Horsemen. \n"
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1509,7 +1514,7 @@ MonoBehaviour:
     what I pay you for after all. "
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1537,7 +1542,7 @@ MonoBehaviour:
     Naples is rid of those pollos en vinagre french bastards. \n"
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1565,7 +1570,7 @@ MonoBehaviour:
     the troops.
   description: 
   character: {fileID: 660565921}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 75b3c930e57b474429eeacc6b77ff13e, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1606,7 +1611,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -95.49996
     y: -177.72719
-    width: 108.22783
+    width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1636,11 +1641,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 254.37827, y: 452.53775}
+  scrollPos: {x: 163.51172, y: 545.22266}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.7900002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1648,9 +1653,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1048206231}
-  selectedCommands:
-  - {fileID: 1048206230}
+  - {fileID: 1048206235}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1720,7 +1724,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 41.46244
     y: 0.62822723
-    width: 112.0253
+    width: 113
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1777,7 +1781,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 41.462425
     y: -90.28084
-    width: 112.0253
+    width: 113
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1834,7 +1838,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 42.137512
     y: -177.11452
-    width: 112.0253
+    width: 112
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1947,7 +1951,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.872055
     y: -217.8999
-    width: 129.74683
+    width: 130
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2308,17 +2312,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187064417}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1572331806}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.822, y: -177.49014}
-  m_SizeDelta: {x: 433.74, y: 74.291}
+  m_AnchoredPosition: {x: -86, y: -176.5}
+  m_SizeDelta: {x: 448.405, y: 74.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187064419
 MonoBehaviour:
@@ -2383,16 +2387,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200675223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1572331806}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.5, y: -342.8}
+  m_AnchoredPosition: {x: 71.321045, y: -339.2898}
   m_SizeDelta: {x: 436.84, y: 62.899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200675225
@@ -3210,7 +3214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.4
+      value: -70.2
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3285,17 +3289,17 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1187064418}
-  - {fileID: 1200675224}
   - {fileID: 580156781}
   - {fileID: 1572595168}
+  - {fileID: 1187064418}
+  - {fileID: 1200675224}
   - {fileID: 1719356226}
   m_Father: {fileID: 169238621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -914.3, y: 404.6}
+  m_AnchoredPosition: {x: -912, y: 563}
   m_SizeDelta: {x: 316.376, y: 335}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1572331807
@@ -3407,11 +3411,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1572331806}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.6027374}
+  m_AnchoredPosition: {x: 0, y: -16.36}
   m_SizeDelta: {x: 270.277, y: 302.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572595169
@@ -3638,17 +3642,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719356225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1572331806}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0.78700006}
-  m_AnchoredPosition: {x: -4.145, y: 14.04}
-  m_SizeDelta: {x: -70.709, y: 6.921}
+  m_AnchoredPosition: {x: -159.077, y: 4.8294983}
+  m_SizeDelta: {x: 246.773, y: -9.659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719356227
 MonoBehaviour:
@@ -4065,7 +4069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.3
+      value: -104.1
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4192,7 +4196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.2
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4393,6 +4397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2849587360076079820, guid: e4ea4296fa59294498a899373be07026, type: 3}
+      propertyPath: m_Speed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8644674545772480195, guid: e4ea4296fa59294498a899373be07026, type: 3}
       propertyPath: m_Name
       value: AIPlaceholderFigurSword
