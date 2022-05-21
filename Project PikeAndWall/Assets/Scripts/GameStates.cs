@@ -6,12 +6,12 @@ public class GameStates : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    GameObject lostScreen;
-    GameObject winScreen;
+    public GameObject lostScreen;
+    public GameObject winScreen;
     void Start()
     {
-        lostScreen = GameObject.Find("LostScreen");
-        winScreen = GameObject.Find("WinScreen");
+        //lostScreen = GameObject.Find("LostScreen");
+        //winScreen = GameObject.Find("WinScreen");
     }
 
     // Update is called once per frame
@@ -19,13 +19,13 @@ public class GameStates : MonoBehaviour
     {
         if(GameEnviroment.Singleton.Units.Count == 0)
         {
-           // lostScreen.SetActive(true);
+            lostScreen.SetActive(true);
             Time.timeScale = 0;
             Debug.Log("Lost");
         }
         if (GameEnviroment.Singleton.Enemies.Count == 0)
         {
-            //winScreen.SetActive(true);
+            winScreen.SetActive(true);
             Time.timeScale = 0;
             Debug.Log("Won");
         }
