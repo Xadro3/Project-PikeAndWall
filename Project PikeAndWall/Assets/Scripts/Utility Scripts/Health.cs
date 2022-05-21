@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     public int team;
     public int healOverTimeEffect;
     public int healOverTimeTickRate;
+    public AudioSource audio;
+    public AudioClip audioClip;
     HealthBarHandler healthBarHandler;
 
     void Start()
@@ -26,6 +28,7 @@ public class Health : MonoBehaviour
         }
         healthBarHandler = gameObject.GetComponentInChildren<HealthBarHandler>();
         hitPoints = maximumHitPoints;
+        audio = GetComponent<AudioSource>();
         StartCoroutine(HealOverTime());
     }
 
@@ -61,7 +64,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hitPoints = hitPoints - damage;
-
+        audio.PlayOneShot(audioClip, 0.5f);
         UpdateHealthBar();
     }
     public void HealDamage(int healing)

@@ -14,11 +14,13 @@ public class UnitAttack : MonoBehaviour
     private NavMeshAgent agent;
     private Quaternion lookRotation;
     private Vector3 lookDirection;
+    private AudioSource audio;
 
     void Start()
     {
         unit = GetComponentInParent<UnitClass>();
         agent = GetComponentInParent<NavMeshAgent>();
+        audio = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -47,7 +49,6 @@ public class UnitAttack : MonoBehaviour
             yield return new WaitForSeconds(unit.fireRate);
             if((gameObject.name == "Bow" || gameObject.name == "Musket") && unit.enemyInRange == true)
             {
-                //audio.Play(0);
                 Transform projectileTransform = Instantiate(projectile, new Vector3(unit.weapon.transform.position.x, unit.weapon.transform.position.y, unit.weapon.transform.position.z), Quaternion.identity);
                 projectileTransform.transform.parent = unit.weapon.transform;
                 Vector3 shootDirection = new Vector3(targetHitbox.transform.position.x - transform.position.x, targetHitbox.transform.position.y - transform.position.y, targetHitbox.transform.position.z - transform.position.z);
@@ -59,6 +60,7 @@ public class UnitAttack : MonoBehaviour
             {
                 targetHealth.TakeDamage(unit.damageValue);
             }
+            audio.PlayOneShot(audio.clip, 1f);
         }
         if (unit.targetHealth.hitPoints <= 0f)
         {
