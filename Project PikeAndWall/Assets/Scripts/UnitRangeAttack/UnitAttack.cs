@@ -12,6 +12,8 @@ public class UnitAttack : MonoBehaviour
     public Health targetHealth;
     private bool isAttacking = false;
     private NavMeshAgent agent;
+    private Quaternion lookRotation;
+    private Vector3 lookDirection;
 
     void Start()
     {
@@ -23,8 +25,12 @@ public class UnitAttack : MonoBehaviour
     {  
         targetHitbox = unit.targetHitbox;
         targetHealth = unit.targetHealth;
-    }
 
+        lookDirection = (unit.targetHitbox.transform.position - unit.transform.position).normalized;
+        lookRotation = Quaternion.LookRotation(lookDirection);
+        unit.transform.rotation =
+            Quaternion.Slerp(unit.transform.rotation, lookRotation, Time.deltaTime * unit.turnRate);
+    }
     public void StartAttack()
     {
         if (isAttacking == false)
@@ -35,10 +41,11 @@ public class UnitAttack : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true;
-        yield return new WaitForSeconds(unit.firerate);
-        if (unit.enemyInRange == true)
+        yield return new WaitForSeconds(unit.fireRate);
+        while (unit.enemyInRange == true)
         {
-            if(gameObject.name == "Bow" | gameObject.name == "Musket")
+            yield return new WaitForSeconds(unit.fireRate);
+            if((gameObject.name == "Bow" || gameObject.name == "Musket") && unit.enemyInRange == true)
             {
                 //audio.Play(0);
                 Transform projectileTransform = Instantiate(projectile, new Vector3(unit.weapon.transform.position.x, unit.weapon.transform.position.y, unit.weapon.transform.position.z), Quaternion.identity);
@@ -48,14 +55,15 @@ public class UnitAttack : MonoBehaviour
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
                 }
             }
-            if(gameObject.name == "Spear" | gameObject.name == "Sword")
+            if((gameObject.name == "Spear" || gameObject.name == "Sword") && unit.enemyInRange == true)
             {
                 targetHealth.TakeDamage(unit.damageValue);
             }
-            isAttacking = false;
-            StartCoroutine(Attack());
+        }
+        if (unit.targetHealth.hitPoints <= 0f)
+        {
+            yield break;
         }
         isAttacking = false;
     }
-
 }
