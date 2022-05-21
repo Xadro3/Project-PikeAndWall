@@ -34,7 +34,7 @@ public class TargetHandler : MonoBehaviour
             
             foreach (RaycastHit raycastHit in raycastHits)
             {
-                if (raycastHit.transform.tag == "Enemy")
+                if (raycastHit.transform.CompareTag("Enemy"))
                 {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
 
@@ -54,6 +54,7 @@ public class TargetHandler : MonoBehaviour
                     agent.isStopped = false;
                 }
             }
+            agent.isStopped = false;
         }
         CheckTarget(targetHitbox, raycastHit);
     }
@@ -82,9 +83,9 @@ public class TargetHandler : MonoBehaviour
     {
         if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
         {
-            if (unit.tag == "Unit")
+            if (unit.CompareTag("Unit"))
             {
-                if (collision.tag == "Enemy")
+                if (collision.CompareTag("Enemy"))
                 {
                     targetsInRange.Add(hitbox);
                     unit.enemyInRange = true;
@@ -92,9 +93,9 @@ public class TargetHandler : MonoBehaviour
                     unit.SetTarget(hitbox);
                 }
             }
-            if (unit.tag == "Enemy")
+            if (unit.CompareTag("Enemy"))
             {
-                if (collision.tag == "Player")
+                if (collision.CompareTag("Player"))
                 {
                     targetsInRange.Add(hitbox);
                     unit.enemyInRange = true;
@@ -108,18 +109,18 @@ public class TargetHandler : MonoBehaviour
     {
         if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
         {
-            if (unit.tag == "Unit")
+            if (unit.CompareTag("Unit"))
             {
-                if (collision.tag == "Enemy")
+                if (collision.CompareTag("Enemy"))
                 {
                     targetsInRange.Remove(hitbox);
                     unit.SetTarget(null);
                     unit.enemyInRange = false;
                 }
             }
-            if (unit.tag == "Enemy")
+            if (unit.CompareTag("Enemy"))
             {
-                if (collision.tag == "Player")
+                if (collision.CompareTag("Player"))
                 {
                     targetsInRange.Remove(hitbox);
                     unit.SetTarget(null);

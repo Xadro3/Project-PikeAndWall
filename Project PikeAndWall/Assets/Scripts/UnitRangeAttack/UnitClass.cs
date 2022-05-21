@@ -6,11 +6,13 @@ public class UnitClass : MonoBehaviour
     AudioSource audio;
     [Header ("Weapon Stats")]
     [Range(1,10)]
-    [SerializeField] public float firerate;
+    [SerializeField] public float fireRate;
     [Range(5,50)]
     [SerializeField] public float range;
     [Range(1,10)]
     [SerializeField] public int damageValue;
+    [Range(1,10)]
+    [SerializeField] public float turnRate;
     [Header ("Functional stuff")]
     public Transform weapon;
     public Hitbox targetHitbox;
@@ -47,36 +49,37 @@ public class UnitClass : MonoBehaviour
     {
         this.targetHitbox = targetHitbox;
         targetHealth = targetHitbox.GetComponentInParent<Health>();
-        StartAttack();
-    }
-    public void StartAttack(){
         unitAttack.StartAttack();
     }
     private void SetWeaponStats()
     {
         if (unitAttack.gameObject.name == "Sword")
         {
-            firerate = 4;
+            fireRate = 4;
             range = 5;
             damageValue = 7;
+            turnRate = 1;
         }
         if (unitAttack.gameObject.name == "Spear")
         {
-            firerate = 3;
+            fireRate = 3;
             range = 10;
             damageValue = 10;
+            turnRate = 3;
         }
         if (unitAttack.gameObject.name == "Bow")
         {
-            firerate = 2;
+            fireRate = 2;
             range = 30;
             damageValue = 6;
+            turnRate = 2;
         }        
         if (unitAttack.gameObject.name == "Musket")
         {
-            firerate = 1;
+            fireRate = 1;
             range = 50;
             damageValue = 10;
+            turnRate = 2;
         }
     }
 
