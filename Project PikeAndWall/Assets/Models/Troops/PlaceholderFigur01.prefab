@@ -852,13 +852,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3d0f2f4e720f04cadf7d8639c69ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 7351541362236825818, guid: 7a460c2474e141f4d9dc497047b9553c, type: 3}
-  unitFirerate: 2
-  unitRange: 20
+  fireRate: 0
+  range: 0
+  damageValue: 3
+  turnRate: 0
   weapon: {fileID: 5572129895525337539}
   targetHitbox: {fileID: 0}
-  damageValue: 3
+  targetHealth: {fileID: 0}
   enemyInRange: 0
+  buildTime: 0
 --- !u!114 &4440048362254191533
 MonoBehaviour:
   m_ObjectHideFlags: 0
