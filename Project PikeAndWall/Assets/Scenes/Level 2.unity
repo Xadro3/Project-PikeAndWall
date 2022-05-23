@@ -368,13 +368,16 @@ GameObject:
   m_Component:
   - component: {fileID: 163513460}
   - component: {fileID: 163513472}
-  - component: {fileID: 163513471}
   - component: {fileID: 163513470}
   - component: {fileID: 163513469}
   - component: {fileID: 163513468}
   - component: {fileID: 163513467}
   - component: {fileID: 163513466}
   - component: {fileID: 163513465}
+  - component: {fileID: 163513464}
+  - component: {fileID: 163513463}
+  - component: {fileID: 163513462}
+  - component: {fileID: 163513461}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -396,6 +399,119 @@ Transform:
   m_Father: {fileID: 1092380855}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163513461
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163513459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  storyText: Now let us march to Seminara.
+  description: 
+  character: {fileID: 170048218}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &163513462
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163513459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 7
+  indentLevel: 0
+  storyText: 'Good job! That will teach them. '
+  description: 
+  character: {fileID: 170048218}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &163513463
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163513459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 251.33374
+    y: -345.8118
+    width: 122.30763
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 6
+  blockName: nach Kampf
+  description: 'trigger nachdem gegner tot sind
+
+'
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 163513462}
+  - {fileID: 163513461}
+  suppressAllAutoSelections: 0
+--- !u!114 &163513464
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163513459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 5
+  indentLevel: 0
+  storyText: 'Try to buy your archers as much time as possible to shoot.
+
+'
+  description: 
+  character: {fileID: 170048218}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &163513465
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -408,10 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 11
+  itemId: 4
   indentLevel: 0
-  storyText: 'If we chose the right target for the right troop, we might be able
-    to win this fight.  '
+  storyText: Here, take these two archers in addition to your pikeman.
   description: 
   character: {fileID: 170048218}
   portrait: {fileID: 0}
@@ -436,9 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 10
+  itemId: 3
   indentLevel: 0
-  storyText: 'Quick! Order your troops to attack the enemy. '
+  storyText: 'This time there seem to be 3 Pikemen coming or us. '
   description: 
   character: {fileID: 170048218}
   portrait: {fileID: 0}
@@ -463,9 +578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 9
+  itemId: 2
   indentLevel: 0
-  storyText: "Capitan. We are being ambushed by the French. \n"
+  storyText: 'I had hoped we got them all. '
   description: 
   character: {fileID: 170048218}
   portrait: {fileID: 0}
@@ -490,14 +605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 8
+  itemId: 1
   indentLevel: 0
-  storyText: 'Attack those Spaniards in the name of the King!
-
-
-'
+  storyText: 'Wait! More are coming. '
   description: 
-  character: {fileID: 1085940651}
+  character: {fileID: 170048218}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -517,40 +629,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 163513459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 7
-  indentLevel: 0
-  storyText: "A l\u2018attaque!!  \n\n"
-  description: 
-  character: {fileID: 1085940651}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &163513470
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163513459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 163513471}
+  parentBlock: {fileID: 163513470}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
---- !u!114 &163513471
+--- !u!114 &163513470
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,22 +649,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -84.69639
-    y: -182.41469
-    width: 102.24485
+    x: 116.63995
+    y: -345.8119
+    width: 114.615326
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
-  blockName: Levelstart
+  blockName: Level start
   description: 
-  eventHandler: {fileID: 163513470}
+  eventHandler: {fileID: 163513469}
   commandList:
-  - {fileID: 163513469}
   - {fileID: 163513468}
   - {fileID: 163513467}
   - {fileID: 163513466}
   - {fileID: 163513465}
+  - {fileID: 163513464}
   suppressAllAutoSelections: 0
 --- !u!114 &163513472
 MonoBehaviour:
@@ -594,11 +679,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 340.50247, y: 890.70935}
+  scrollPos: {x: 269.8877, y: 866.15857}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.49000046
+  zoom: 0.52000046
   scrollViewRect:
     serializedVersion: 2
     x: -343
