@@ -43,6 +43,10 @@ public class CursorChanger : MonoBehaviour
             {
                 Cursor.SetCursor(moveCursor, hotSpot, cursorMode);
             }
+            if(selected.selectedUnits.Count == 0)
+            {
+                Cursor.SetCursor(selectCursor, hotSpot, cursorMode);
+            }
 
         }
     }
