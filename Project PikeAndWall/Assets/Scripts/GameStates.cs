@@ -10,6 +10,7 @@ public class GameStates : MonoBehaviour
     public GameObject winScreen;
     void Start()
     {
+        Time.timeScale = 1;
         //lostScreen = GameObject.Find("LostScreen");
         //winScreen = GameObject.Find("WinScreen");
     }
