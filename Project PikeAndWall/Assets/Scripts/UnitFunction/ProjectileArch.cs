@@ -11,11 +11,11 @@ public class ProjectileArch : MonoBehaviour
     public Vector3 setRelCenter;
     public float journeyTime = 2f;
     private float startTime;
+    private int damageValue;
 
     void Start()
     {
-
-        unit = gameObject.GetComponentInParent<UnitClass>();
+        
         startTime = Time.time;
         sunrise = unit.weapon.transform;
         sunset = unit.targetHitbox.transform;
@@ -29,14 +29,25 @@ public class ProjectileArch : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        if (collision.CompareTag("Enemy") && gameObject.CompareTag("Player") || collision.CompareTag("Player") && gameObject.CompareTag("Enemy"))
         {
-            Health hit = hitbox.GetComponentInParent<Health>();
-            hit.TakeDamage(unit.damageValue);
+            Health hit = collision.GetComponentInParent<Health>();
+            hit.TakeDamage(damageValue);
             Destroy(gameObject, 0f);
         }
+        //if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        //{
+        //    Health hit = hitbox.GetComponentInParent<Health>();
+        //    hit.TakeDamage(damageValue);
+        //    Destroy(gameObject, 0f);
+        //}
     }
 
+    public void SetDamage(int damageValue)
+    {
+        this.damageValue = damageValue;
+    }
+    
     private void Update()
     {
 

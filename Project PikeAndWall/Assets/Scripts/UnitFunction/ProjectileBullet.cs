@@ -6,10 +6,12 @@ public class ProjectileBullet : MonoBehaviour
     private Vector3 shootDirection;
     private UnitClass unit;
     private float speed = 5f;
+    private int damageValue;
+    private Rigidbody body;
 
     void Start()
     {
-        unit = gameObject.GetComponentInParent<UnitClass>();
+        body = GetComponent<Rigidbody>();
     }
 
 
@@ -22,15 +24,30 @@ public class ProjectileBullet : MonoBehaviour
         return n;
     }
 
+    public void SetDamage(int damageValue)
+    {
+        this.damageValue = damageValue;
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        if (collision.TryGetComponent(out Hitbox hitbox))
         {
-            Health hit = hitbox.GetComponentInParent<Health>();
-            hit.TakeDamage(unit.damageValue);
-            Destroy(gameObject, 0f);
+            if (collision.CompareTag("Enemy") && gameObject.CompareTag("Player") || collision.CompareTag("Player") && gameObject.CompareTag("Enemy"))
+            {
+                Health hit = hitbox.GetComponentInParent<Health>();
+                hit.TakeDamage(damageValue);
+                Destroy(gameObject, 0f);
+            }
         }
+        
+        
+        //if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
+        //{
+        //    Health hit = hitbox.GetComponentInParent<Health>();
+        //    hit.TakeDamage(damageValue);
+        //    Destroy(gameObject, 0f);
+        //}
     }
 
 
@@ -44,7 +61,8 @@ public class ProjectileBullet : MonoBehaviour
 
     private void Update()
     {
-        transform.position += shootDirection * speed * Time.deltaTime;
+        //transform.position += shootDirection * speed * Time.deltaTime;
+        body.MovePosition(transform.position + shootDirection * speed * Time.deltaTime);
     }
 
 }
