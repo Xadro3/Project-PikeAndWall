@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.042060483, g: 0.0335726, b: 0.019631147, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4820,18 +4820,6 @@ PrefabInstance:
     - target: {fileID: 5436801974628755489, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
       propertyPath: m_Name
       value: UnitPikeman
-      objectReference: {fileID: 0}
-    - target: {fileID: 5436801974628755489, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556380107707915931, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_Acceleration
-      value: 1e+10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556380107707915931, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
