@@ -22,12 +22,14 @@ public class UnitClass : MonoBehaviour
     private UnitReach unitReach;
     private float rangeOld;
     public float buildTime;
+    public TargetHandler targetHandler;
 
     void Awake()
     {
         audio = GetComponent<AudioSource>();
         unitReach = GetComponentInChildren<UnitReach>();
         unitAttack = weapon.GetComponentInChildren<UnitAttack>();
+        targetHandler = GetComponent<TargetHandler>();
         SetWeaponStats();
     }
     
@@ -47,39 +49,43 @@ public class UnitClass : MonoBehaviour
     
     public void SetTarget(Hitbox targetHitbox)
     {
-        this.targetHitbox = targetHitbox;
-        targetHealth = targetHitbox.GetComponentInParent<Health>();
-        unitAttack.StartAttack();
+        if (targetHitbox != null)
+        {
+            this.targetHitbox = targetHitbox;
+            targetHealth = targetHitbox.GetComponentInParent<Health>();
+            unitAttack.StartAttack();
+        }
     }
+    
     private void SetWeaponStats()
     {
         if (unitAttack.gameObject.name == "Sword")
         {
-            fireRate = 2;
-            range = 10;
-            damageValue = 10;
-            turnRate = 1;
+            fireRate = 2f;
+            range = 2.5f;
+            damageValue = 1;
+            turnRate = 2f;
         }
         if (unitAttack.gameObject.name == "Spear")
         {
-            fireRate = 3;
-            range = 20;
-            damageValue = 20;
-            turnRate = 2;
+            fireRate = 2f;
+            range = 5f;
+            damageValue = 2;
+            turnRate = 2f;
         }
         if (unitAttack.gameObject.name == "Bow")
         {
-            fireRate = 3;
-            range = 30;
-            damageValue = 6;
-            turnRate = 2;
+            fireRate = 2f;
+            range = 50f;
+            damageValue = 1;
+            turnRate = 2f;
         }        
         if (unitAttack.gameObject.name == "Musket")
         {
-            fireRate = 4;
-            range = 50;
-            damageValue = 10;
-            turnRate = 2;
+            fireRate = 2f;
+            range = 40f;
+            damageValue = 2;
+            turnRate = 2f;
         }
     }
 

@@ -1158,7 +1158,6 @@ GameObject:
   - component: {fileID: 4402452847656368039}
   - component: {fileID: 2627326304673812080}
   - component: {fileID: 2067700572403802479}
-  - component: {fileID: 9104958263075567431}
   - component: {fileID: 6003955168756119578}
   - component: {fileID: 230279635717318652}
   - component: {fileID: 1225596197610355997}
@@ -1166,6 +1165,7 @@ GameObject:
   - component: {fileID: 7315035546941142013}
   - component: {fileID: 6604533760541123703}
   - component: {fileID: 6565786880051711956}
+  - component: {fileID: -517032888369641536}
   m_Layer: 0
   m_Name: AIUnitMusketman
   m_TagString: Enemy
@@ -1226,18 +1226,6 @@ MonoBehaviour:
   targetHealth: {fileID: 0}
   enemyInRange: 0
   buildTime: 0
---- !u!114 &9104958263075567431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3914603509265640733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95dca09600bf33a45850c739fc431cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6003955168756119578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,9 +1251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f03ba78bea5dde4f8c31a0056b2df96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 100
+  hitPoints: 10
   armor: 0
-  maximumHitPoints: 100
+  maximumHitPoints: 10
   team: 0
   healOverTimeEffect: 2
   healOverTimeTickRate: 5
@@ -1431,6 +1419,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-517032888369641536
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914603509265640733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4022076434190150546
 GameObject:
   m_ObjectHideFlags: 0

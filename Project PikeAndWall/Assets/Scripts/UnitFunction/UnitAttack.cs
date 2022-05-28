@@ -27,11 +27,12 @@ public class UnitAttack : MonoBehaviour
     {  
         targetHitbox = unit.targetHitbox;
         targetHealth = unit.targetHealth;
+        if (isAttacking && unit.enemyInRange && targetHitbox != null)
+        {
+            RotateFaceToEnemy();
+        }
+        
 
-        lookDirection = (unit.targetHitbox.transform.position - unit.transform.position).normalized;
-        lookRotation = Quaternion.LookRotation(lookDirection);
-        unit.transform.rotation =
-            Quaternion.Slerp(unit.transform.rotation, lookRotation, Time.deltaTime * unit.turnRate);
     }
     public void StartAttack()
     {
@@ -39,6 +40,13 @@ public class UnitAttack : MonoBehaviour
             {
                 StartCoroutine(Attack());
             }
+    }
+
+    private void RotateFaceToEnemy()
+    {
+        lookDirection = (targetHitbox.transform.position - unit.transform.position).normalized;
+        lookRotation = Quaternion.LookRotation(lookDirection);
+        unit.transform.rotation = Quaternion.Slerp(unit.transform.rotation, lookRotation, Time.deltaTime * unit.turnRate);
     }
     private IEnumerator Attack()
     {
@@ -74,8 +82,14 @@ public class UnitAttack : MonoBehaviour
             }
             audio.PlayOneShot(audio.clip, 1f);
         }
-        if (unit.targetHealth.hitPoints <= 0f)
+        if (targetHealth.hitPoints <= 0f)
         {
+            isAttacking = false;
+            unit.enemyInRange = false;
+            targetHealth = null;
+            targetHitbox = null;
+            unit.targetHandler.targetsInRange.Remove(targetHitbox);
+            //unit.ClearTarget(targetHitbox);
             yield break;
         }
         isAttacking = false;

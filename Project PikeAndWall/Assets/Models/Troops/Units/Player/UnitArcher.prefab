@@ -1096,7 +1096,6 @@ GameObject:
   - component: {fileID: 5449190995143569885}
   - component: {fileID: 5976820441889867786}
   - component: {fileID: 7653374349016885013}
-  - component: {fileID: 638528803028382013}
   - component: {fileID: 2726253059296001632}
   - component: {fileID: 8481918325609406854}
   - component: {fileID: 7459646411485657959}
@@ -1164,18 +1163,6 @@ MonoBehaviour:
   targetHealth: {fileID: 0}
   enemyInRange: 0
   buildTime: 0
---- !u!114 &638528803028382013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4671564297744837479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95dca09600bf33a45850c739fc431cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2726253059296001632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,9 +1188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f03ba78bea5dde4f8c31a0056b2df96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 100
+  hitPoints: 10
   armor: 0
-  maximumHitPoints: 100
+  maximumHitPoints: 10
   team: 0
   healOverTimeEffect: 2
   healOverTimeTickRate: 5

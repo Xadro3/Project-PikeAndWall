@@ -12,6 +12,7 @@ public class TargetHandler : MonoBehaviour
     private Hitbox targetHitbox;
     private RaycastHit raycastHit;
     private NavMeshAgent agent;
+    private bool toBattle;
     
     //List <GameObject> currentCollisions = new List <GameObject> ();
 
@@ -43,18 +44,20 @@ public class TargetHandler : MonoBehaviour
                         unit.enemyInRange = true;
                         unit.SetTarget(targetHitbox);
                         agent.isStopped = true;
-                    }
-                    else
-                    {
-                        //unit.enemyInRange = false;
-                        //unit.SetTarget(null);
-                        agent.isStopped = false;
+                        
                     }
                     CheckTargetHelper(targetHitbox, raycastHit);
                     agent.isStopped = false;
+                    toBattle = true;
+                }
+                else
+                {
+                    toBattle = false;
                 }
             }
+            unit.SetTarget(null);
             agent.isStopped = false;
+            
         }
         CheckTarget(targetHitbox, raycastHit);
     }
@@ -85,7 +88,7 @@ public class TargetHandler : MonoBehaviour
         {
             if (unit.CompareTag("Unit"))
             {
-                if (collision.CompareTag("Enemy"))
+                if (collision.CompareTag("Enemy") && toBattle)
                 {
                     targetsInRange.Add(hitbox);
                     unit.enemyInRange = true;
@@ -95,7 +98,7 @@ public class TargetHandler : MonoBehaviour
             }
             if (unit.CompareTag("Enemy"))
             {
-                if (collision.CompareTag("Player"))
+                if (collision.CompareTag("Player") && toBattle)
                 {
                     targetsInRange.Add(hitbox);
                     unit.enemyInRange = true;
@@ -116,6 +119,7 @@ public class TargetHandler : MonoBehaviour
                     targetsInRange.Remove(hitbox);
                     unit.SetTarget(null);
                     unit.enemyInRange = false;
+                    agent.isStopped = false;
                 }
             }
             if (unit.CompareTag("Enemy"))

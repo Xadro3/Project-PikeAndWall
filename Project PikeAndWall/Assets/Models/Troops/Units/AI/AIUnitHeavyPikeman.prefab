@@ -1569,7 +1569,6 @@ GameObject:
   - component: {fileID: 4818835453323754427}
   - component: {fileID: 6607191325064430188}
   - component: {fileID: 7167096646249835891}
-  - component: {fileID: 115995825594514267}
   - component: {fileID: 3212477963774292998}
   - component: {fileID: 9004183026505264096}
   - component: {fileID: 7981900151625036033}
@@ -1577,6 +1576,7 @@ GameObject:
   - component: {fileID: 1892475878170263521}
   - component: {fileID: 2625408010473547883}
   - component: {fileID: 2655165253838062536}
+  - component: {fileID: -8745528799098922731}
   m_Layer: 0
   m_Name: AIUnitHeavyPikeman
   m_TagString: Enemy
@@ -1637,18 +1637,6 @@ MonoBehaviour:
   targetHealth: {fileID: 0}
   enemyInRange: 0
   buildTime: 0
---- !u!114 &115995825594514267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5301900031175680257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95dca09600bf33a45850c739fc431cf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3212477963774292998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,9 +1662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f03ba78bea5dde4f8c31a0056b2df96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 100
+  hitPoints: 10
   armor: 0
-  maximumHitPoints: 100
+  maximumHitPoints: 10
   team: 0
   healOverTimeEffect: 2
   healOverTimeTickRate: 5
@@ -1842,6 +1830,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-8745528799098922731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301900031175680257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5789563503678132029
 GameObject:
   m_ObjectHideFlags: 0
