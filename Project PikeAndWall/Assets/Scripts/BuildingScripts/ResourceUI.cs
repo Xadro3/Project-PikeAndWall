@@ -28,6 +28,8 @@ public enum ResourceType
     None,
     Wood,
     Stone,
-    BuildingSlots,
+    Gold,
+    Iron,
+    BlackPowder,
 
 }
