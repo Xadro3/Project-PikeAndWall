@@ -6,7 +6,7 @@ public class ResourceManager : MonoBehaviour
 {
     ResourceManagerUI resourceUI;
 
-    Dictionary<ResourceType, int> resourceDictionary
+    public Dictionary<ResourceType, int> resourceDictionary
         = new Dictionary<ResourceType, int>();
 
     public List<ResourceValue> initialResources = new List<ResourceValue>();

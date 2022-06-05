@@ -18,7 +18,7 @@ public class ResourceAquisition : MonoBehaviour
 
         StartCoroutine(WaitBeforeProduction());
 
-        resourceManager.SpendResource(buildCost);
+       // resourceManager.SpendResource(buildCost);
     }
 
     private IEnumerator WaitBeforeProduction()
