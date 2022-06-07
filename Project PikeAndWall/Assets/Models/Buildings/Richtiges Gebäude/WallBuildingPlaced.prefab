@@ -11,8 +11,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07600001, y: 0.239, z: 0.24}
-  m_Center: {x: -0.018000007, y: 0.1195, z: 0}
+  m_Size: {x: 0.07600001, y: 0.2709864, z: 0.24}
+  m_Center: {x: -0.018000007, y: 0.103506796, z: 0}
+--- !u!208 &6019815916779593559
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312861148505854394}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.038000003, y: 0.119, z: 0.120000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.018000001, y: 0.119, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!114 &-4132511298480572921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,26 +64,10 @@ MonoBehaviour:
   timer: 0
   buildCost:
   - resourceType: 2
-    resourceAmount: 5
+    resourceAmount: 0
   - resourceType: 3
     resourceAmount: 1
   producedResources: []
---- !u!208 &6019815916779593559
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6312861148505854394}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.038000003, y: 0.119, z: 0.120000005}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.018000001, y: 0.119, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1001 &424189791474848945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,6 +98,18 @@ PrefabInstance:
     - target: {fileID: 5942727971587147019, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
       propertyPath: m_TagString
       value: Buildings
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.26716816
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
+      propertyPath: m_Center.y
+      value: 0.10541592
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
       propertyPath: m_IsTrigger

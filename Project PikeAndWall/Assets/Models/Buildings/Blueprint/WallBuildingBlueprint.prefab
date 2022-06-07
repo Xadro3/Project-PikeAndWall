@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notEverywherePlaceable: 1
   placableOnTag: wall
+  resourceCost:
+  - resourceType: 1
+    resourceAmount: 1
+  wood: 0
+  gold: 0
+  iron: 0
+  stone: 0
+  enoughResources: 0
 --- !u!114 &3279134181818567932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +148,7 @@ PrefabInstance:
     - {fileID: -4132511298480572921, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
     - {fileID: 1981902294229094515, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
     - {fileID: 30062308087305359, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
+    - {fileID: 6019815916779593559, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
 --- !u!1 &6558452762824464424 stripped
 GameObject:
