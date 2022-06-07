@@ -51,7 +51,6 @@ public class UnitAttack : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true;
-        yield return new WaitForSeconds(unit.fireRate);
         while (unit.enemyInRange == true)
         {
             yield return new WaitForSeconds(unit.fireRate);

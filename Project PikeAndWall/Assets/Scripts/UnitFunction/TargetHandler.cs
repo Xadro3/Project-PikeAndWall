@@ -43,7 +43,8 @@ public class TargetHandler : MonoBehaviour
                     {
                         unit.enemyInRange = true;
                         unit.SetTarget(targetHitbox);
-                        agent.isStopped = true;
+                        agent.ResetPath();
+                        //agent.isStopped = true;
                         
                     }
                     CheckTargetHelper(targetHitbox, raycastHit);
@@ -92,7 +93,8 @@ public class TargetHandler : MonoBehaviour
                 {
                     targetsInRange.Add(hitbox);
                     unit.enemyInRange = true;
-                    agent.isStopped = true;
+                    agent.ResetPath();
+                    //agent.isStopped = true;
                     unit.SetTarget(hitbox);
                 }
             }
