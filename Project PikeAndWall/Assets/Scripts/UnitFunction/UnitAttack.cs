@@ -71,9 +71,9 @@ public class UnitAttack : MonoBehaviour
                     projectileTransform.GetComponent<ProjectileBullet>().SetDamage(unit.damageValue);
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
                 }
-                if (projectile.name == "pfArch")
+                if (projectile.name == "pfArrow")
                 {
-                    projectileTransform.GetComponent<ProjectileArch>().SetDamage(unit.damageValue);
+                    projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.damageValue, unit.weapon.transform, targetHitbox.transform);
                 }
             }
             if((gameObject.name == "Spear" || gameObject.name == "Sword") && unit.enemyInRange == true)
