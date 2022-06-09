@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using Fungus;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -54,7 +55,7 @@ public class TargetHandler : MonoBehaviour
                         unit.unitAttack.StartAttack();
                         //agent.isStopped = true;
                     }
-
+                    InvokeRepeating("MoveToAttack", 0, 0.1f);
                     StartCoroutine(WaitingToAttack(targetHitbox));
                     break;
                 }
@@ -64,6 +65,21 @@ public class TargetHandler : MonoBehaviour
         
     }
 
+    public void MoveToAttack()
+    {
+        if ((Vector3.Distance(transform.position, targetHitbox.transform.position)) > unit.range / 2)
+        {
+            agent.SetDestination(targetHitbox.transform.position);
+        }
+        else
+        {
+            CancelInvoke("MoveToAttack");
+            agent.ResetPath();
+        }
+
+        //unit.unitAttack.StartAttack();
+    }
+    
     private IEnumerator FindNewTarget()
     {
         while (ClearDestroyedTargetsInRange(targetHitbox) <= 0)
