@@ -1,19 +1,27 @@
 using UnityEngine;
+using System.Collections;
 
 
 public class ProjectileBullet : MonoBehaviour
 {
     private Vector3 shootDirection;
     private UnitClass unit;
-    private float speed = 5f;
+    private float speed = 7f;
     private int damageValue;
     private Rigidbody body;
 
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        StartCoroutine(TimeToLive());
+
     }
 
+    private IEnumerator TimeToLive()
+    {
+        Destroy(gameObject, 3f);
+        yield break;
+    }
 
     public static float GetAngleFromVectorFloat(Vector3 dir)
     {
@@ -37,11 +45,11 @@ public class ProjectileBullet : MonoBehaviour
             {
                 Health hit = hitbox.GetComponentInParent<Health>();
                 hit.TakeDamage(damageValue);
-                Destroy(gameObject, 0f);
+                Destroy(gameObject,0f);
             }
         }
-        
-        
+
+
         //if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
         //{
         //    Health hit = hitbox.GetComponentInParent<Health>();

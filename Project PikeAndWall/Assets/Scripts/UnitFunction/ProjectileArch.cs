@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ProjectileArch : MonoBehaviour
 {
@@ -15,23 +16,22 @@ public class ProjectileArch : MonoBehaviour
     void Awake()
     {
         startTime = Time.time;
-        Destroy(gameObject, 4f);
+        StartCoroutine(TimeToLive());
     }
+    
+    
     
     void Start()
     {
-        
-        
-        //sunrise = unit.weapon.transform;
-        //sunset = unit.targetHitbox.transform;
-        //center = (sunrise.position + sunset.position) * 0.5f;
-        //center -= new Vector3(0, 1, 0);
-        //riseRelCenter = sunrise.position - center;
-        //setRelCenter = sunset.position - center;
-       
-
+        StartCoroutine(TimeToLive());
     }
 
+    private IEnumerator TimeToLive()
+    {
+        Destroy(gameObject, 3f);
+        yield break;
+    }
+    
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent(out Hitbox hitbox))
@@ -40,7 +40,7 @@ public class ProjectileArch : MonoBehaviour
             {
                 Health hit = hitbox.GetComponentInParent<Health>();
                 hit.TakeDamage(damageValue);
-                Destroy(gameObject, 0f);
+                Destroy(gameObject,0f);
             }
         }
         

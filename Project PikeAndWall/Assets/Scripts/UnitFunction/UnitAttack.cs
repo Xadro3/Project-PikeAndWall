@@ -59,10 +59,9 @@ public class UnitAttack : MonoBehaviour
         while(unit.enemyInRange)
         {
             yield return new WaitForSeconds(unit.fireRate);
-            if((gameObject.name == "Bow" || gameObject.name == "Musket") && unit.enemyInRange == true)
+            if((gameObject.name == "Bow" || gameObject.name == "Musket" || gameObject.name == "Pistol") && unit.enemyInRange && unit.targetHitbox != null)
             {
                 Transform projectileTransform = Instantiate(projectile, new Vector3(unit.weapon.transform.position.x, unit.weapon.transform.position.y, unit.weapon.transform.position.z), Quaternion.identity);
-                Vector3 shootDirection = new Vector3(unit.targetHitbox.transform.position.x - transform.position.x, unit.targetHitbox.transform.position.y - transform.position.y, unit.targetHitbox.transform.position.z - transform.position.z);
                 if (transform.root.CompareTag("Unit"))
                 {
                     projectileTransform.tag = "Player";
@@ -72,6 +71,7 @@ public class UnitAttack : MonoBehaviour
                     projectileTransform.tag = "Enemy";
                 }
                 if (projectile.name == "pfBullet"){
+                    Vector3 shootDirection = new Vector3(unit.targetHitbox.transform.position.x - transform.position.x, unit.targetHitbox.transform.position.y - transform.position.y, unit.targetHitbox.transform.position.z - transform.position.z);
                     projectileTransform.GetComponent<ProjectileBullet>().SetDamage(unit.damageValue);
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
                 }
@@ -80,7 +80,7 @@ public class UnitAttack : MonoBehaviour
                     projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.damageValue, unit.weapon.transform, unit.targetHitbox.transform);
                 }
             }
-            if((gameObject.name == "Spear" || gameObject.name == "Sword") && unit.enemyInRange == true)
+            if((gameObject.name == "Spear" || gameObject.name == "Sword" || gameObject.name == "HeavySpear") && unit.enemyInRange && unit.targetHitbox != null)
             {
                 unit.targetHealth.TakeDamage(unit.damageValue);
             }
