@@ -63,24 +63,37 @@ public class FormationHandler : MonoBehaviour
 
         if (Input.GetMouseButtonUp(1))
         {
-
+            bool hitGround = true;
+            RaycastHit groundHit = new RaycastHit();
 
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHits = Physics.RaycastAll(destinationRay, 50000f);
 
             foreach (RaycastHit raycastHit in raycastHits)
             {
+
+                Debug.Log("I hit: "+raycastHit.collider);
                 
-                if (raycastHit.collider.gameObject.layer == 3)
+                if (raycastHit.collider.gameObject.layer == 7)
                 {
-                    lastPosition = raycastHit.point;
+                    Debug.Log("Enemy!");
+                    hitGround = false;
                     break;
                 }
+
+                if (raycastHit.collider.gameObject.layer == 3)
+                {
+                    groundHit = raycastHit;
+                }
+                
             }
 
-
-            PlaceUnits();
-
+            if (hitGround)
+            {
+                lastPosition = groundHit.point;
+                PlaceUnits();
+            }
+                
 
         }
 

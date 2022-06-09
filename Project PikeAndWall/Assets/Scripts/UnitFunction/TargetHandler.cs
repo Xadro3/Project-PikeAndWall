@@ -86,11 +86,6 @@ public class TargetHandler : MonoBehaviour
         yield break;
     }
 
-    private bool CheckUnitTarget(Hitbox targetHitbox)
-    {
-        return true;
-    }
-
     public int ClearDestroyedTargetsInRange(Hitbox targetHitbox)
     {
         int i = targetsInRange.RemoveAll(targetHitbox => targetHitbox == null);
