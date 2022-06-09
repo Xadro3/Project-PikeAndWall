@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitClass : MonoBehaviour
@@ -23,7 +24,8 @@ public class UnitClass : MonoBehaviour
     private float rangeOld;
     public float buildTime;
     public TargetHandler targetHandler;
-    
+
+
     void Awake()
     {
         audio = GetComponent<AudioSource>();
@@ -61,29 +63,43 @@ public class UnitClass : MonoBehaviour
     {
         if (unitAttack.gameObject.name == "Sword")
         {
-            fireRate = 2f;
+            fireRate = 1f;
             range = 2.5f;
             damageValue = 1;
             turnRate = 2f;
         }
         if (unitAttack.gameObject.name == "Spear")
         {
-            fireRate = 2f;
+            fireRate = 1f;
+            range = 5f;
+            damageValue = 1;
+            turnRate = 2f;
+        }
+        if (unitAttack.gameObject.name == "HeavySpear")
+        {
+            fireRate = 1f;
             range = 5f;
             damageValue = 2;
             turnRate = 2f;
         }
         if (unitAttack.gameObject.name == "Bow")
         {
-            fireRate = 2f;
+            fireRate = 1f;
             range = 50f;
             damageValue = 1;
             turnRate = 2f;
         }        
         if (unitAttack.gameObject.name == "Musket")
         {
-            fireRate = 2f;
+            fireRate = 1f;
             range = 40f;
+            damageValue = 2;
+            turnRate = 2f;
+        }
+        if (unitAttack.gameObject.name == "Pistol")
+        {
+            fireRate = 1f;
+            range = 10f;
             damageValue = 2;
             turnRate = 2f;
         }
