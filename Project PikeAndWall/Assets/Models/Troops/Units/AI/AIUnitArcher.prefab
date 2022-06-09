@@ -1682,7 +1682,7 @@ GameObject:
   - component: {fileID: 8722564924942945376}
   - component: {fileID: 1509030087178746240}
   - component: {fileID: 4612774766089244041}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Reach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2406,6 +2406,7 @@ MonoBehaviour:
   targetHitbox: {fileID: 0}
   targetHealth: {fileID: 0}
   enemyInRange: 0
+  unitAttack: {fileID: 0}
   buildTime: 0
   targetHandler: {fileID: 0}
 --- !u!114 &1349904145653179410

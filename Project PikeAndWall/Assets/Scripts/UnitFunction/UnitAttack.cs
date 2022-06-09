@@ -25,9 +25,9 @@ public class UnitAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        targetHitbox = unit.targetHitbox;
-        targetHealth = unit.targetHealth;
-        if (isAttacking && unit.enemyInRange && targetHitbox != null)
+        //targetHitbox = unit.targetHitbox;
+        //targetHealth = unit.targetHealth;
+        if (isAttacking && unit.enemyInRange && unit.targetHitbox != null)
         {
             RotateFaceToEnemy();
         }
@@ -42,22 +42,27 @@ public class UnitAttack : MonoBehaviour
             }
     }
 
+    public void StopAttack()
+    {
+        StopCoroutine(Attack());
+    }
+
     private void RotateFaceToEnemy()
     {
-        lookDirection = (targetHitbox.transform.position - unit.transform.position).normalized;
+        lookDirection = (unit.targetHitbox.transform.position - unit.transform.position).normalized;
         lookRotation = Quaternion.LookRotation(lookDirection);
         unit.transform.rotation = Quaternion.Slerp(unit.transform.rotation, lookRotation, Time.deltaTime * unit.turnRate);
     }
     private IEnumerator Attack()
     {
         isAttacking = true;
-        while (unit.enemyInRange == true)
+        while(unit.enemyInRange)
         {
             yield return new WaitForSeconds(unit.fireRate);
             if((gameObject.name == "Bow" || gameObject.name == "Musket") && unit.enemyInRange == true)
             {
                 Transform projectileTransform = Instantiate(projectile, new Vector3(unit.weapon.transform.position.x, unit.weapon.transform.position.y, unit.weapon.transform.position.z), Quaternion.identity);
-                Vector3 shootDirection = new Vector3(targetHitbox.transform.position.x - transform.position.x, targetHitbox.transform.position.y - transform.position.y, targetHitbox.transform.position.z - transform.position.z);
+                Vector3 shootDirection = new Vector3(unit.targetHitbox.transform.position.x - transform.position.x, unit.targetHitbox.transform.position.y - transform.position.y, unit.targetHitbox.transform.position.z - transform.position.z);
                 if (transform.root.CompareTag("Unit"))
                 {
                     projectileTransform.tag = "Player";
@@ -72,23 +77,19 @@ public class UnitAttack : MonoBehaviour
                 }
                 if (projectile.name == "pfArrow")
                 {
-                    projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.damageValue, unit.weapon.transform, targetHitbox.transform);
+                    projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.damageValue, unit.weapon.transform, unit.targetHitbox.transform);
                 }
             }
             if((gameObject.name == "Spear" || gameObject.name == "Sword") && unit.enemyInRange == true)
             {
-                targetHealth.TakeDamage(unit.damageValue);
+                unit.targetHealth.TakeDamage(unit.damageValue);
             }
             audio.PlayOneShot(audio.clip, 1f);
         }
-        if (targetHealth.hitPoints <= 0f)
+        if (unit.targetHealth.hitPoints <= 0f)
         {
             isAttacking = false;
             unit.enemyInRange = false;
-            targetHealth = null;
-            targetHitbox = null;
-            unit.targetHandler.targetsInRange.Remove(targetHitbox);
-            //unit.ClearTarget(targetHitbox);
             yield break;
         }
         isAttacking = false;

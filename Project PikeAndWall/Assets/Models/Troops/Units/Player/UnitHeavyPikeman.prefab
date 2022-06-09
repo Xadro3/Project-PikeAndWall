@@ -1726,6 +1726,7 @@ MonoBehaviour:
   targetHitbox: {fileID: 0}
   targetHealth: {fileID: 0}
   enemyInRange: 0
+  unitAttack: {fileID: 0}
   buildTime: 0
   targetHandler: {fileID: 0}
 --- !u!114 &4349566007381938788
@@ -2333,7 +2334,7 @@ GameObject:
   - component: {fileID: 6335393712182458902}
   - component: {fileID: 4185593688124755958}
   - component: {fileID: 7990739941451889663}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Reach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

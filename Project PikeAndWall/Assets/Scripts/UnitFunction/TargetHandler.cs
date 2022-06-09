@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class TargetHandler : MonoBehaviour
 {
@@ -13,7 +16,8 @@ public class TargetHandler : MonoBehaviour
     private RaycastHit raycastHit;
     private NavMeshAgent agent;
     private bool toBattle;
-    
+    private int layerMask = 1 << 7;
+
     //List <GameObject> currentCollisions = new List <GameObject> ();
 
     void Awake()
@@ -24,12 +28,14 @@ public class TargetHandler : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(FindNewTarget());
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && transform.TryGetComponent(out UnitHighlighter amISelected))
         {
+            unit.enemyInRange = false;
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHits = Physics.RaycastAll(destinationRay, 50000f);
             
@@ -38,48 +44,86 @@ public class TargetHandler : MonoBehaviour
                 if (raycastHit.transform.CompareTag("Enemy"))
                 {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
-
-                    if (targetsInRange.Contains(targetHitbox))
+                    unit.SetTarget(targetHitbox);
+                    agent.isStopped = false;
+                    SetTargetValue(targetHitbox, raycastHit);
+                    if (IsInRange(targetHitbox))
                     {
                         unit.enemyInRange = true;
-                        unit.SetTarget(targetHitbox);
                         agent.ResetPath();
+                        unit.unitAttack.StartAttack();
                         //agent.isStopped = true;
-                        
                     }
-                    CheckTargetHelper(targetHitbox, raycastHit);
-                    agent.isStopped = false;
-                    toBattle = true;
-                }
-                else
-                {
-                    toBattle = false;
+
+                    StartCoroutine(WaitingToAttack(targetHitbox));
+                    break;
                 }
             }
-            unit.SetTarget(null);
             agent.isStopped = false;
-            
         }
-        CheckTarget(targetHitbox, raycastHit);
+        
     }
 
+    private IEnumerator FindNewTarget()
+    {
+        while (ClearDestroyedTargetsInRange(targetHitbox) <= 0)
+        {
+            yield return new WaitForSeconds(1.0f);
+        }
+        AttackNewTarget();
 
-    public void CheckTargetHelper(Hitbox targetHitbox, RaycastHit raycastHit)
+    }
+    
+    private IEnumerator WaitingToAttack(Hitbox targetHitbox)
+    {
+        while (!IsInRange(targetHitbox))
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        unit.enemyInRange = true;
+        agent.ResetPath();
+        unit.unitAttack.StartAttack();
+        yield break;
+    }
+
+    private bool CheckUnitTarget(Hitbox targetHitbox)
+    {
+        return true;
+    }
+
+    public int ClearDestroyedTargetsInRange(Hitbox targetHitbox)
+    {
+        int i = targetsInRange.RemoveAll(targetHitbox => targetHitbox == null);
+        return i;
+    }
+
+    public void AttackNewTarget()
+    {
+        Hitbox newTarget = targetsInRange[Random.Range(0, targetsInRange.Count)];
+        unit.SetTarget(newTarget);
+        StartCoroutine(WaitingToAttack(newTarget));
+        StartCoroutine(FindNewTarget());
+        //unit.enemyInRange = true;
+        //agent.ResetPath();
+        //unit.unitAttack.StartAttack();
+
+    }
+    
+    public void SetTargetValue(Hitbox targetHitbox, RaycastHit raycastHit)
     {
         this.targetHitbox = targetHitbox;
         this.raycastHit = raycastHit;
     }
 
-    private void CheckTarget(Hitbox targetHitbox, RaycastHit raycastHit)
+    private bool IsInRange(Hitbox targetHitbox)
     {
         if (targetsInRange.Contains(targetHitbox))
         {
-            unit.enemyInRange = true;
+            return true;
         }
         else
         {
-            unit.enemyInRange = false;
-            targetsInRange.Remove(targetHitbox);
+            return false;
         }
     }
 
@@ -89,18 +133,23 @@ public class TargetHandler : MonoBehaviour
         {
             if (unit.CompareTag("Unit"))
             {
-                if (collision.CompareTag("Enemy") && toBattle)
+                if (collision.CompareTag("Enemy"))
                 {
                     targetsInRange.Add(hitbox);
-                    unit.enemyInRange = true;
-                    agent.ResetPath();
+                    //unit.enemyInRange = true;
+                    //agent.ResetPath();
                     //agent.isStopped = true;
-                    unit.SetTarget(hitbox);
+                    //unit.SetTarget(hitbox);
                 }
+            }
+
+            if (hitbox == targetHitbox)
+            {
+                unit.enemyInRange = true;
             }
             if (unit.CompareTag("Enemy"))
             {
-                if (collision.CompareTag("Player") && toBattle)
+                if (collision.CompareTag("Player"))
                 {
                     targetsInRange.Add(hitbox);
                     unit.enemyInRange = true;
@@ -119,17 +168,21 @@ public class TargetHandler : MonoBehaviour
                 if (collision.CompareTag("Enemy"))
                 {
                     targetsInRange.Remove(hitbox);
-                    unit.SetTarget(null);
-                    unit.enemyInRange = false;
+                    //unit.SetTarget(null);
+                    //unit.enemyInRange = false;
                     agent.isStopped = false;
                 }
+            }
+            if (hitbox == targetHitbox)
+            {
+                unit.enemyInRange = false;
             }
             if (unit.CompareTag("Enemy"))
             {
                 if (collision.CompareTag("Player"))
                 {
                     targetsInRange.Remove(hitbox);
-                    unit.SetTarget(null);
+                    //unit.SetTarget(null);
                     unit.enemyInRange = false;
                 }
             }
