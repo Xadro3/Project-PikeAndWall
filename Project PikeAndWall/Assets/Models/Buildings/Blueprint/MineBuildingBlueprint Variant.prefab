@@ -43,6 +43,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notEverywherePlaceable: 1
   placableOnTag: Mountain
+  resourceCost:
+  - resourceType: 1
+    resourceAmount: 5
+  - resourceType: 3
+    resourceAmount: 4
+  wood: 0
+  gold: 0
+  iron: 0
+  stone: 0
+  enoughResources: 0
 --- !u!114 &7562212556813508609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +117,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a9c98263635c7b14d99caf1211fd2615, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 7522640335242584857, guid: 06a2161d4f83c4441b17864a32b21f10, type: 3}
     - target: {fileID: 919132149155446097, guid: a9c98263635c7b14d99caf1211fd2615, type: 3}
       propertyPath: m_Name
       value: MineBuildingBlueprint Variant

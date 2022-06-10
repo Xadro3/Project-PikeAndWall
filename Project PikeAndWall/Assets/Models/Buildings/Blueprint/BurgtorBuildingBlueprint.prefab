@@ -128,6 +128,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notEverywherePlaceable: 1
   placableOnTag: wall
+  resourceCost:
+  - resourceType: 2
+    resourceAmount: 10
+  wood: 0
+  gold: 0
+  iron: 0
+  stone: 0
+  enoughResources: 0
 --- !u!114 &1681617608376885476
 MonoBehaviour:
   m_ObjectHideFlags: 0

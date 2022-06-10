@@ -15,8 +15,8 @@ MonoBehaviour:
   notEverywherePlaceable: 1
   placableOnTag: wall
   resourceCost:
-  - resourceType: 1
-    resourceAmount: 1
+  - resourceType: 2
+    resourceAmount: 5
   wood: 0
   gold: 0
   iron: 0
@@ -141,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 6709535782504992280, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
       propertyPath: m_Center.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709535782504992280, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6422865359226082594, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
