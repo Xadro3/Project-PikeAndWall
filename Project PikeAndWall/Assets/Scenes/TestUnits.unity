@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7168177827120668125, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
 --- !u!1001 &143451022
@@ -291,6 +295,10 @@ PrefabInstance:
     - target: {fileID: 764132070141442951, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
       propertyPath: m_Name
       value: UnitHeavyCavalry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969137875836341565, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
@@ -1458,6 +1466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostScreen: {fileID: 1455786861}
   winScreen: {fileID: 1625857864}
+  timeScale: 0
 --- !u!114 &1427901224
 MonoBehaviour:
   m_ObjectHideFlags: 0

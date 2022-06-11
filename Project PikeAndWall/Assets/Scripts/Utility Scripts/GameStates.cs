@@ -8,9 +8,10 @@ public class GameStates : MonoBehaviour
 
     public GameObject lostScreen;
     public GameObject winScreen;
+    [SerializeField] int timeScale = 0;
     void Start()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = timeScale;
         //lostScreen = GameObject.Find("LostScreen");
         //winScreen = GameObject.Find("WinScreen");
     }
@@ -21,13 +22,13 @@ public class GameStates : MonoBehaviour
         if(GameEnviroment.Singleton.Units.Count == 0)
         {
             lostScreen.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = timeScale;
             Debug.Log("Lost");
         }
         if (GameEnviroment.Singleton.Enemies.Count == 0)
         {
             winScreen.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = timeScale;
             Debug.Log("Won");
         }
     }
