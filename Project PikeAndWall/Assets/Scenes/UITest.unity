@@ -1300,11 +1300,11 @@ RectTransform:
   m_Children:
   - {fileID: 277082024}
   m_Father: {fileID: 1153527631}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 659, y: 74.34131}
+  m_AnchoredPosition: {x: 275, y: 74.34131}
   m_SizeDelta: {x: 105.8723, y: 25.6547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165949407
@@ -2164,11 +2164,11 @@ RectTransform:
   m_Children:
   - {fileID: 718250338}
   m_Father: {fileID: 1153527631}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 379.2, y: 74.34131}
+  m_AnchoredPosition: {x: 485, y: 74.34131}
   m_SizeDelta: {x: 105.8723, y: 25.6547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271259061
@@ -3201,7 +3201,7 @@ RectTransform:
   m_Children:
   - {fileID: 1537084017}
   m_Father: {fileID: 1153527631}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -5884,7 +5884,7 @@ GameObject:
   - component: {fileID: 666692376}
   - component: {fileID: 666692375}
   m_Layer: 5
-  m_Name: HolzMenge
+  m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5903,7 +5903,7 @@ RectTransform:
   m_Children:
   - {fileID: 2127578102}
   m_Father: {fileID: 1153527631}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -7513,11 +7513,11 @@ RectTransform:
   m_Children:
   - {fileID: 553812747}
   m_Father: {fileID: 1153527631}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 480.5, y: 74.34131}
+  m_AnchoredPosition: {x: 586.3, y: 74.34131}
   m_SizeDelta: {x: 105.8723, y: 25.6547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &752713590
@@ -8283,7 +8283,7 @@ RectTransform:
   m_Children:
   - {fileID: 1975319043}
   m_Father: {fileID: 1332677671}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11741,12 +11741,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 666692374}
-  - {fileID: 1743003501}
   - {fileID: 321720927}
+  - {fileID: 666692374}
+  - {fileID: 165949406}
+  - {fileID: 1743003501}
   - {fileID: 271259060}
   - {fileID: 752713589}
-  - {fileID: 165949406}
   m_Father: {fileID: 1332677671}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14507,9 +14507,9 @@ RectTransform:
   m_Children:
   - {fileID: 998404790}
   - {fileID: 1784168074}
+  - {fileID: 1983697889}
   - {fileID: 2088844905}
   - {fileID: 836824360}
-  - {fileID: 1983697889}
   - {fileID: 54352381}
   - {fileID: 777999141}
   - {fileID: 294163054}
@@ -19049,7 +19049,7 @@ GameObject:
   - component: {fileID: 1743003503}
   - component: {fileID: 1743003502}
   m_Layer: 5
-  m_Name: StoneMenge
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19068,11 +19068,11 @@ RectTransform:
   m_Children:
   - {fileID: 1594936281}
   m_Father: {fileID: 1153527631}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 269.8, y: 74.34131}
+  m_AnchoredPosition: {x: 375.59998, y: 74.34131}
   m_SizeDelta: {x: 95.0534, y: 25.6547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743003502
@@ -22114,7 +22114,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1332677671}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1983697890
 MonoBehaviour:
@@ -29760,7 +29760,7 @@ GameObject:
   - component: {fileID: 2088844907}
   - component: {fileID: 2088844906}
   m_Layer: 0
-  m_Name: CharacterPortraits
+  m_Name: CharacterPortraitsFungus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29780,7 +29780,7 @@ RectTransform:
   - {fileID: 1004003978}
   - {fileID: 1204273352}
   m_Father: {fileID: 1332677671}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
