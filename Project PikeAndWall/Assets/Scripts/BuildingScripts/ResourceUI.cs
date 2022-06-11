@@ -31,5 +31,6 @@ public enum ResourceType
     Gold,
     Iron,
     BlackPowder,
+    Food,
 
 }
