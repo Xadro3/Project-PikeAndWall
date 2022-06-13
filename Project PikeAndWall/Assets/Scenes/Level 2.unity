@@ -415,8 +415,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Now let us march to Seminara.
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -442,8 +442,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'Good job! That will teach them. '
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -467,9 +467,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 251.33374
+    x: 252.82628
     y: -345.8118
-    width: 117
+    width: 118.05967
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -501,8 +501,8 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -528,8 +528,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Here, take these two archers in addition to your pikeman.
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -555,8 +555,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'This time there seem to be 3 Pikemen coming or us. '
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -582,8 +582,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'I had hoped we got them all. '
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -609,8 +609,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'Wait! More are coming. '
   description: 
-  character: {fileID: 170048218}
-  portrait: {fileID: 0}
+  character: {fileID: 1827150297}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -651,7 +651,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 116.63995
     y: -345.8119
-    width: 109
+    width: 109.70146
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -679,18 +679,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 6.4408035, y: 844.6212}
+  scrollPos: {x: 194.87296, y: 1097.5697}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.6700003
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 163513470}
   selectedCommands: []
   variables: []
   description: 
@@ -827,7 +828,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1092380855}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &170048218
 MonoBehaviour:
@@ -1696,6 +1697,7 @@ Transform:
   m_Children:
   - {fileID: 1085940652}
   - {fileID: 163513460}
+  - {fileID: 1827150296}
   - {fileID: 170048217}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2707,6 +2709,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5317688ede08c984893669dad6a2f9ad, type: 3}
+--- !u!1 &1827150295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827150296}
+  - component: {fileID: 1827150297}
+  m_Layer: 0
+  m_Name: "Mar\xEDa Manrique de Lara y Figueroa"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1827150296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827150295}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -397.17877, y: 464.82596, z: -320.33636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1092380855}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827150297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827150295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: "Mar\xEDa Manrique de Lara y Figueroa"
+  nameColor: {r: 0.0934852, g: 0.9528302, b: 0.34963545, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &1834655849
 GameObject:
   m_ObjectHideFlags: 0

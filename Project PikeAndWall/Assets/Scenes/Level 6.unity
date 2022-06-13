@@ -235,8 +235,8 @@ MonoBehaviour:
   storyText: "Time to see what they are capable of. Let\u2019s hunt ourselves some
     Frenchmen! Maybe we can find some in the area."
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -263,8 +263,8 @@ MonoBehaviour:
   storyText: Our Pikemen are now heavy Pikemen, our archers are now Musketeers and
     our Horsemen became Pistoliers.
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 155.32425
-    y: -197.82822
+    x: 152.19925
+    y: -196.26572
     width: 117.500015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -321,8 +321,8 @@ MonoBehaviour:
   storyText: 'Nicely done. As soon as we have gathered enough, we should upgrade
     our units in the barracks. '
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -376,8 +376,8 @@ MonoBehaviour:
   storyText: "For that we definitely need steel and gunpowder. It\u2019s time to
     build some mines."
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -404,8 +404,8 @@ MonoBehaviour:
   storyText: "Let\u2019s upgrade our units so they can smash our enemies without
     taking as much damage as last time."
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -432,8 +432,8 @@ MonoBehaviour:
   storyText: "We are Spanish after all, our troops simply must be better than the
     Frenchmen\u2019s. "
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -475,8 +475,8 @@ MonoBehaviour:
   storyText: Capitan. In battle it is not only advisable to have the numerical advantage
     against our foes, but also one of quality.
   description: 
-  character: {fileID: 2111729708}
-  portrait: {fileID: 0}
+  character: {fileID: 1336351966}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -723,7 +723,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 239767396}
   selectedCommands: []
   variables: []
   description: 
@@ -1384,7 +1385,7 @@ RectTransform:
   m_Children:
   - {fileID: 327291760}
   m_Father: {fileID: 1946178581}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1641,6 +1642,57 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &1336351964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336351965}
+  - component: {fileID: 1336351966}
+  m_Layer: 0
+  m_Name: "Mar\xEDa Manrique de Lara y Figueroa"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336351965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336351964}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -397.17877, y: 464.82596, z: -320.33636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1946178581}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336351966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336351964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: "Mar\xEDa Manrique de Lara y Figueroa"
+  nameColor: {r: 0.0934852, g: 0.9528302, b: 0.34963545, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &1592684015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1949,7 @@ Transform:
   - {fileID: 239767393}
   - {fileID: 1592684016}
   - {fileID: 2111729707}
+  - {fileID: 1336351965}
   - {fileID: 1292787950}
   m_Father: {fileID: 0}
   m_RootOrder: 3

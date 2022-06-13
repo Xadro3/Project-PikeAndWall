@@ -36752,7 +36752,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 270.44305
     y: -251.87546
-    width: 125
+    width: 130
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -36893,7 +36893,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 268.5203
     y: -340.33636
-    width: 135.7143
+    width: 139.23077
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -36922,11 +36922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 534.6322, y: 1543.7161}
+  scrollPos: {x: 677.1701, y: 1219.7032}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.28
+  zoom: 0.52
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -37004,7 +37004,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 151.46124
     y: -342.7489
-    width: 110.71429
+    width: 114.61539
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -37065,7 +37065,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 212.77734
-    width: 78.57143
+    width: 82.30769
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -37141,7 +37141,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -115.51172
     y: 152.77734
-    width: 114.28571
+    width: 114.61539
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -37168,7 +37168,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 275.77734
-    width: 114.28571
+    width: 120.76923
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -44481,6 +44481,7 @@ Transform:
   - {fileID: 1048206225}
   - {fileID: 660565922}
   - {fileID: 917735478}
+  - {fileID: 1618626375}
   - {fileID: 1468047693}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -49709,7 +49710,7 @@ RectTransform:
   m_Children:
   - {fileID: 699945655}
   m_Father: {fileID: 1303717079}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -55389,6 +55390,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b4ff4c04b05093a4dae620ba4f3ce420, type: 3}
   m_PrefabInstance: {fileID: 1618048916}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1618626374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618626375}
+  - component: {fileID: 1618626376}
+  m_Layer: 0
+  m_Name: "Mar\xEDa Manrique de Lara y Figueroa"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618626375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618626374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -397.17877, y: 464.82596, z: -320.33636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1303717079}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618626376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618626374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: "Mar\xEDa Manrique de Lara y Figueroa"
+  nameColor: {r: 0.0934852, g: 0.9528302, b: 0.34963545, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1001 &1619546361
 PrefabInstance:
   m_ObjectHideFlags: 0

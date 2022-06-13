@@ -123,6 +123,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4783740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4783741}
+  - component: {fileID: 4783742}
+  m_Layer: 0
+  m_Name: "Mar\xEDa Manrique de Lara y Figueroa"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4783741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783740}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -397.17877, y: 464.82596, z: -320.33636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1500947081}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4783742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: "Mar\xEDa Manrique de Lara y Figueroa"
+  nameColor: {r: 0.0934852, g: 0.9528302, b: 0.34963545, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &169305438
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +755,7 @@ RectTransform:
   m_Children:
   - {fileID: 1304880563}
   m_Father: {fileID: 1500947081}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1025,8 +1076,8 @@ MonoBehaviour:
   storyText: "Build them in our newly constructed buildings as soon as you have enough
     resources. \n"
   description: 
-  character: {fileID: 1759359650}
-  portrait: {fileID: 0}
+  character: {fileID: 4783742}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1053,8 +1104,8 @@ MonoBehaviour:
   storyText: Good job. To rebuild our army to its former military might, we need
     to recruit 3 Pikemen, 3 Archers and 2 Horsemen.
   description: 
-  character: {fileID: 1759359650}
-  portrait: {fileID: 0}
+  character: {fileID: 4783742}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1078,9 +1129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 150.85513
+    x: 148.93205
     y: -294.26666
-    width: 150.46512
+    width: 138.16327
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1108,8 +1159,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: To recruit new units, we need some military buildings. Build them now.
   description: 
-  character: {fileID: 1759359650}
-  portrait: {fileID: 0}
+  character: {fileID: 4783742}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1151,8 +1202,8 @@ MonoBehaviour:
   storyText: "The Castle seems to be secure now, so let\u2019s go on to building
     some troops. "
   description: 
-  character: {fileID: 1759359650}
-  portrait: {fileID: 0}
+  character: {fileID: 4783742}
+  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1178,7 +1229,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 151.46124
     y: -342.7489
-    width: 111.395355
+    width: 105.51021
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1240,7 +1291,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 275.77734
-    width: 115.11628
+    width: 110.40816
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1301,7 +1352,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 212.77734
-    width: 79.76744
+    width: 77.755104
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1362,7 +1413,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -115.51172
     y: 152.77734
-    width: 113.25581
+    width: 108.77551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1386,18 +1437,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 114.79776, y: 962.08435}
+  scrollPos: {x: 78.28548, y: 798.0062}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.42999998
+  zoom: 0.49
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1244663569}
   selectedCommands: []
   variables: []
   description: 
@@ -1605,6 +1657,7 @@ Transform:
   - {fileID: 1244663566}
   - {fileID: 1018402951}
   - {fileID: 1759359649}
+  - {fileID: 4783741}
   - {fileID: 1106533139}
   m_Father: {fileID: 0}
   m_RootOrder: 3
