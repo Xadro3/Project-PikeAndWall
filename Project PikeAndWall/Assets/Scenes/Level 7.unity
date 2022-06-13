@@ -274,8 +274,8 @@ MonoBehaviour:
   storyText: 'Nicely done! Athens and thereby large portions of Greece are ours.
     Now the path to Constantinople is clear. '
   description: 
-  character: {fileID: 1427173174}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  character: {fileID: 1177008767}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -328,8 +328,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: I guess its time to take Athens. Good luck Capitan.
   description: 
-  character: {fileID: 1427173174}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  character: {fileID: 1177008767}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -356,8 +356,8 @@ MonoBehaviour:
   storyText: 'well if we want to reach Constantinople, we first must cross what once
     was Greece. '
   description: 
-  character: {fileID: 1427173174}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  character: {fileID: 1177008767}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -383,8 +383,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Oh wow! This mans ambition knows no bounds\u2026 "
   description: 
-  character: {fileID: 1427173174}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  character: {fileID: 1177008767}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -874,10 +874,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 422012988}
-  selectedCommands:
-  - {fileID: 422012987}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1364,57 +1362,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341927798}
   m_CullTransparentMesh: 1
---- !u!1 &1427173172
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1427173173}
-  - component: {fileID: 1427173174}
-  m_Layer: 0
-  m_Name: "Mar\xEDa Manrique de Lara y Figueroa"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1427173173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427173172}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -397.17877, y: 464.82596, z: -320.33636}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2061192554}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1427173174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427173172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: "Mar\xEDa Manrique de Lara y Figueroa"
-  nameColor: {r: 0.0934852, g: 0.9528302, b: 0.34963545, a: 1}
-  soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
-  portraitsFace: 0
-  setSayDialog: {fileID: 0}
-  description: 
 --- !u!1 &1626022972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1683,7 @@ RectTransform:
   m_Children:
   - {fileID: 1626022973}
   m_Father: {fileID: 2061192554}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2116,7 +2063,6 @@ Transform:
   - {fileID: 422012986}
   - {fileID: 947755377}
   - {fileID: 1177008766}
-  - {fileID: 1427173173}
   - {fileID: 1685663051}
   m_Father: {fileID: 0}
   m_RootOrder: 3

@@ -864,7 +864,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 155.33417
-    y: -296.61874
+    y: -295.5549
     width: 111.27663
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -893,7 +893,7 @@ MonoBehaviour:
   storyText: Capitan! There is an army approaching Athens.
   description: 
   character: {fileID: 1566946787}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1155,8 +1155,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1272031615}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -1609,7 +1608,7 @@ GameObject:
   - component: {fileID: 1566946786}
   - component: {fileID: 1566946787}
   m_Layer: 0
-  m_Name: "Mar\xEDa Manrique de Lara y Figueroa"
+  m_Name: Penultimo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1641,11 +1640,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: "Mar\xEDa Manrique de Lara y Figueroa"
+  nameText: Penultimo
   nameColor: {r: 0.0934852, g: 0.9528302, b: 0.34963545, a: 1}
   soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portraits: []
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
