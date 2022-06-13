@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5578,7 +5578,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 630205552}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1760550336}
+        m_TargetAssemblyTypeName: GamePause, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &630205552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16132,7 +16144,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1457862646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1760550336}
+        m_TargetAssemblyTypeName: GamePause, Assembly-CSharp
+        m_MethodName: InterruptGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1457862646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17581,10 +17605,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1427901223, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
-      propertyPath: timeScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427901223, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 1328077564}
@@ -17592,6 +17612,10 @@ PrefabInstance:
       propertyPath: lostScreen
       value: 
       objectReference: {fileID: 1385185873}
+    - target: {fileID: 1760550336, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1390913042}
     - target: {fileID: 5007924860898448080, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -17639,10 +17663,6 @@ PrefabInstance:
     - target: {fileID: 5007924860898448081, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
       propertyPath: m_Name
       value: EventSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 5007924860898448081, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
@@ -19477,6 +19497,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5007924860898448081, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
   m_PrefabInstance: {fileID: 1544170695}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1760550336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1760550336, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
+  m_PrefabInstance: {fileID: 1544170695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760550335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42091a196a295da4298241bed592c7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762219393
 GameObject:
   m_ObjectHideFlags: 0

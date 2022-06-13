@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 1427901222}
   - component: {fileID: 1427901223}
   - component: {fileID: 1427901224}
+  - component: {fileID: 1760550336}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: EventSystem
@@ -297,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lostScreen: {fileID: 0}
   winScreen: {fileID: 0}
+  timeScale: 1
 --- !u!114 &1427901224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,3 +314,16 @@ MonoBehaviour:
   directionalLight: {fileID: 0}
   preset: {fileID: 11400000, guid: 81ad562242096024981394feaf18e9aa, type: 2}
   timeOfDay: 13.3
+--- !u!114 &1760550336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007924860898448081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42091a196a295da4298241bed592c7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
