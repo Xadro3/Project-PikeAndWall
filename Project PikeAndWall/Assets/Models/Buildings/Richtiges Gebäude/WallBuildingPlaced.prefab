@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &30062308087305359
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6312861148505854394}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07600001, y: 0.2709864, z: 0.24}
-  m_Center: {x: -0.018000007, y: 0.103506796, z: 0}
 --- !u!208 &6019815916779593559
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -87,6 +74,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c0800b7f83b65e745b03b19ead640cb3, type: 2}
+    - target: {fileID: 5294038444666086622, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ba9a24718833e74f8d156a7e7b0b56e, type: 2}
     - target: {fileID: 5942727971587147019, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
       propertyPath: m_Name
       value: WallBuildingPlaced
@@ -97,11 +88,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
       propertyPath: m_Size.y
-      value: 0.26716816
+      value: 0.23989278
       objectReference: {fileID: 0}
     - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
       propertyPath: m_Center.y
-      value: 0.10541592
+      value: 0.11905361
       objectReference: {fileID: 0}
     - target: {fileID: 6412573231467666089, guid: 57b04e6d565b1524cb2f0a401815fcd9, type: 3}
       propertyPath: m_Center.z
