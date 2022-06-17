@@ -170,8 +170,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7427599534842274677}
-  m_LocalRotation: {x: 1.7032369e-14, y: 1, z: -0.00000008146034, w: 0.00000019470718}
-  m_LocalPosition: {x: -52.31048, y: 0.0000027219521, z: 26.802376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 2181330159711700226}
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffekt: {fileID: 8557169479780612495, guid: b9fc9d482fb8916489d9a681f8877f33, type: 3}
-  destroyEffektTime: 0
+  destroyEffektTime: 5
   getResouceBackInt:
   - resourceType: 1
     resourceAmount: 2

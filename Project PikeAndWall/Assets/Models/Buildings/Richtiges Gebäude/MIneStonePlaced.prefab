@@ -155,7 +155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEffekt: {fileID: 3690776664864911764, guid: 2c0ad3af52d03b644acca39c9018f845, type: 3}
   destroyEffektTime: 5
-  getResouceBackInt: []
+  getResouceBackInt:
+  - resourceType: 3
+    resourceAmount: 10
+  - resourceType: 1
+    resourceAmount: 5
   destroyClip: {fileID: 0}
 --- !u!114 &1917329912
 MonoBehaviour:
@@ -227,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5959f3fcbc3522743871a5dd50d76265, type: 3}
       propertyPath: m_Name
-      value: MIneBuildingPlaced
+      value: MIneStonePlaced
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5959f3fcbc3522743871a5dd50d76265, type: 3}
       propertyPath: m_TagString
