@@ -39,7 +39,7 @@ public class LightManager : MonoBehaviour
     {
         RenderSettings.ambientLight = preset.AmbientColor.Evaluate(timePercent);
         RenderSettings.fogColor = preset.FogColor.Evaluate(timePercent);
-
+        
         if(directionalLight != null)
         {
             directionalLight.color = preset.DirectionalColor.Evaluate(timePercent);

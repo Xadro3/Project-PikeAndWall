@@ -9,7 +9,7 @@ public class GamePause : MonoBehaviour
     public GameObject pauseMenu;
     void Start()
     {
-        
+        Time.timeScale = 1;
     }
     void Update()
     {
