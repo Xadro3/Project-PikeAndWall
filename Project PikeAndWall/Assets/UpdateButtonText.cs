@@ -19,7 +19,7 @@ public class UpdateButtonText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string updateText = "Food: " + selected.returnAR[0] + "\n Iron: " + selected.returnAR[1] + "\n Blackpowder: " + selected.returnAR[2];
+        string updateText = selected.returnAR[0] + "\n \n" + selected.returnAR[1] + "\n \n" + selected.returnAR[2];
         upgradeCosts.text = updateText;
     }
 }
