@@ -24,7 +24,10 @@ public class UnitClass : MonoBehaviour
     private float rangeOld;
     public float buildTime;
     public TargetHandler targetHandler;
+    public string className;
 
+    public List<ResourceValue> upgradeCost;
+    public List<ResourceValue> buildCost;
 
     void Awake()
     {

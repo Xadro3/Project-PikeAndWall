@@ -352,6 +352,17 @@ MonoBehaviour:
   unitAttack: {fileID: 0}
   buildTime: 0
   targetHandler: {fileID: 0}
+  className: Cavalry
+  upgradeCost:
+  - resourceType: 4
+    resourceAmount: 10
+  - resourceType: 6
+    resourceAmount: 50
+  buildCost:
+  - resourceType: 4
+    resourceAmount: 10
+  - resourceType: 6
+    resourceAmount: 50
 --- !u!114 &7815384607068835528
 MonoBehaviour:
   m_ObjectHideFlags: 0

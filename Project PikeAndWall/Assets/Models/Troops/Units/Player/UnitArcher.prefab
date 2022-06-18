@@ -1075,6 +1075,17 @@ MonoBehaviour:
   unitAttack: {fileID: 0}
   buildTime: 0
   targetHandler: {fileID: 0}
+  className: Bowman
+  upgradeCost:
+  - resourceType: 5
+    resourceAmount: 50
+  - resourceType: 6
+    resourceAmount: 10
+  buildCost:
+  - resourceType: 5
+    resourceAmount: 50
+  - resourceType: 6
+    resourceAmount: 10
 --- !u!114 &2726253059296001632
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class HealthBarHandler : MonoBehaviour
     void Start()
     {
         renderer = gameObject.GetComponent<MeshRenderer>();
+        //Debug.Log(renderer);
         HideHealthBar();
 
     }

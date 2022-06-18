@@ -5,7 +5,22 @@ public class SelectedUnitsDictionary : MonoBehaviour
 {
 
     public Dictionary<int, GameObject> selectedUnits = new Dictionary<int, GameObject>();
+    public ResourceManager resourceManager;
+    public GameObject upgradedBowman;
+    public GameObject upgradedPikeman;
+    public GameObject upgradedCavalry;
+    public Dictionary<ResourceType, int> upgradeCosts
+        = new Dictionary<ResourceType, int>();
+    public int[] returnAR = new int[3];
 
+    private void Start()
+    {
+        upgradeCosts[ResourceType.Food] = 0;
+        upgradeCosts[ResourceType.Iron] = 0;
+        upgradeCosts[ResourceType.BlackPowder] = 0;
+
+        InvokeRepeating("ReportUnitTypesSelected", 0, 1.0f);
+    }
     public void AddSelectedUnits(GameObject selectedUnit)
     {
 
@@ -41,5 +56,90 @@ public class SelectedUnitsDictionary : MonoBehaviour
         return selectedUnits.Count;
     }
 
+    public void UpgradeSelectedUnits()
+    {
 
+        foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
+        {
+            if (pair.Value.tag == "Unit")
+            {
+                if (pair.Value.GetComponent<UnitClass>().className == "Pikeman")
+                {
+                    resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
+                    Instantiate(upgradedPikeman, pair.Value.transform.position, pair.Value.transform.rotation);
+
+                    Destroy(pair.Value);
+                    continue;
+                }
+                if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
+                {
+                    resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
+                    Instantiate(upgradedBowman, pair.Value.transform.position, pair.Value.transform.rotation);
+
+                    Destroy(pair.Value);
+                    continue;
+                }
+                if (pair.Value.GetComponent<UnitClass>().className == "Cavalry")
+                {
+                    resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
+                    Instantiate(upgradedCavalry, pair.Value.transform.position, pair.Value.transform.rotation);
+
+                    Destroy(pair.Value);
+                    continue;
+                }
+            }
+
+
+        }
+        RemoveAllUnitsFromSelection();
+    }
+    public void ReportUnitTypesSelected()
+    {
+        
+        foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
+        {
+            if (pair.Value.GetComponent<UnitClass>().className == "Pikeman")
+            {
+                foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                {
+                    upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
+                }
+                    continue;
+            }
+            if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
+            {
+                foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                {
+                    upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
+                }
+
+                continue;
+            }
+            if (pair.Value.GetComponent<UnitClass>().className == "Cavalry")
+            {
+                foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                {
+                    upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
+                }
+
+                continue;
+            }
+        }
+
+        
+        upgradeCosts.TryGetValue(ResourceType.Food, out returnAR[0]);
+        upgradeCosts.TryGetValue(ResourceType.Iron, out returnAR[1]);
+        upgradeCosts.TryGetValue(ResourceType.BlackPowder, out returnAR[2]);
+        upgradeCosts[ResourceType.Food] = 0;
+        upgradeCosts[ResourceType.Iron] = 0;
+        upgradeCosts[ResourceType.BlackPowder] = 0;
+    
+        
+
+        
+        
+        
+    }
 }
+
+            

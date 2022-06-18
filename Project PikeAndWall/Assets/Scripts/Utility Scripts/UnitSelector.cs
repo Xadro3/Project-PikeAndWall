@@ -8,6 +8,9 @@ public class UnitSelector : MonoBehaviour
     RaycastHit[] raycastHits;
 
     bool isDragging;
+    bool hitUnit = false;
+    bool hitBuilding = false;
+    bool hitQuad = false;
 
     Vector3 mouseDownPosition;
     Vector3 mouseDragPosition;
@@ -56,7 +59,10 @@ public class UnitSelector : MonoBehaviour
             {
                 Ray singleSelectionRay = Camera.main.ScreenPointToRay(mouseDownPosition);
                 raycastHits = Physics.RaycastAll(singleSelectionRay, 50000f);
-
+                int i = 0;
+                hitBuilding = false;
+                hitQuad = false;
+                hitUnit = false;
                 foreach (RaycastHit raycast in raycastHits)
                 {
                     // if ((raycast.collider.gameObject.tag == "Unit") && (Input.GetKey(KeyCode.LeftControl)))
@@ -65,7 +71,9 @@ public class UnitSelector : MonoBehaviour
                     //     selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
                     //     break;
                     // }
-
+                    
+                    i++;
+                    Debug.Log(i);
 
                     if (raycast.collider.gameObject.tag == "Unit")
                     {
@@ -73,20 +81,23 @@ public class UnitSelector : MonoBehaviour
 
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                         selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
+                        hitUnit = true;
                         break;
                     }
                     else if(raycast.collider.gameObject.tag == "Building")
                     {
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                         selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
+                        hitBuilding = true;
                         break;
                     }
                     else if(raycast.collider.gameObject.tag == "UIQuad")
                     {
                         //do nothing
+                        hitQuad = true;
                         break;
                     }
-                    else
+                    else if(!hitQuad && !hitUnit && !hitBuilding && i>=raycastHits.Length)
                     {
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                         break;
