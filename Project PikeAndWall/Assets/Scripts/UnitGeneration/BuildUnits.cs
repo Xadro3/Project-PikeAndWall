@@ -42,7 +42,15 @@ public class BuildUnits : MonoBehaviour
         {
             foreach(ResourceValue value in buildable.GetComponent<UnitClass>().buildCost)
             {
-                canafford = resource.CheckResourceAvailability(value);
+                if(!(canafford = resource.CheckResourceAvailability(value)))
+                {
+                    canafford = false;
+                    break;
+                }
+                else
+                {
+                    canafford = true;
+                }
             }
             if (canafford)
             {
