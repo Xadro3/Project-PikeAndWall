@@ -9,6 +9,7 @@ public class BuildUnits : MonoBehaviour
     public bool subroutineRunning;
     Vector3 spawnpoint;
     public GameObject buildable;
+    public ResourceManager resource;
     
 
     private void Start()
@@ -16,6 +17,7 @@ public class BuildUnits : MonoBehaviour
         buildQueue = new List<GameObject>();
         spawnpoint = this.transform.GetChild(1).position;
         subroutineRunning = false;
+        resource = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
     }
 
     private void Update()
@@ -31,13 +33,23 @@ public class BuildUnits : MonoBehaviour
     }
     public void QueueUnit ()
     {
+        bool canafford = false;
         if (buildQueue.Count >= 15)
         {
 
         }
         else
         {
-            buildQueue.Add(buildable);
+            foreach(ResourceValue value in buildable.GetComponent<UnitClass>().buildCost)
+            {
+                canafford = resource.CheckResourceAvailability(value);
+            }
+            if (canafford)
+            {
+                resource.SpendResource(buildable.GetComponent<UnitClass>().buildCost);
+                buildQueue.Add(buildable);
+            }
+            
         }
 
 

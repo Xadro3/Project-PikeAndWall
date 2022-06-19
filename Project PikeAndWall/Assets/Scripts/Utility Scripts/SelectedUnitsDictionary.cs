@@ -96,34 +96,39 @@ public class SelectedUnitsDictionary : MonoBehaviour
     public void ReportUnitTypesSelected()
     {
         
+        
         foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
         {
-            if (pair.Value.GetComponent<UnitClass>().className == "Pikeman")
+            if (pair.Value.GetComponent<UnitClass>() != null)
             {
-                foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                if (pair.Value.GetComponent<UnitClass>().className == "Pikeman")
                 {
-                    upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
-                }
+                    foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                    {
+                        upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
+                    }
                     continue;
-            }
-            if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
-            {
-                foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
-                {
-                    upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
                 }
-
-                continue;
-            }
-            if (pair.Value.GetComponent<UnitClass>().className == "Cavalry")
-            {
-                foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
                 {
-                    upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
-                }
+                    foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                    {
+                        upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
+                    }
 
-                continue;
+                    continue;
+                }
+                if (pair.Value.GetComponent<UnitClass>().className == "Cavalry")
+                {
+                    foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
+                    {
+                        upgradeCosts[resourceValue.resourceType] += resourceValue.resourceAmount;
+                    }
+
+                    continue;
+                }
             }
+            
         }
 
         
