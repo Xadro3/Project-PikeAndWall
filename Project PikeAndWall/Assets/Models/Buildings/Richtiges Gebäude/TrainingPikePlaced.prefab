@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 3006154329639794894}
   - component: {fileID: 4552856010492786983}
   - component: {fileID: 844002084164816412}
+  - component: {fileID: 3555942627430970962}
+  - component: {fileID: 903850598082406403}
   m_Layer: 0
   m_Name: TrainingPikePlaced
   m_TagString: Untagged
@@ -272,6 +274,40 @@ MonoBehaviour:
   timer: 0
   subroutineRunning: 0
   buildable: {fileID: 5436801974628755489, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
+  resource: {fileID: 0}
+--- !u!114 &3555942627430970962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278735498151040262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f03ba78bea5dde4f8c31a0056b2df96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 0
+  armor: 0
+  maximumHitPoints: 0
+  team: 0
+  healOverTimeEffect: 0
+  healOverTimeTickRate: 0
+  audio: {fileID: 0}
+  audioClip: {fileID: 0}
+--- !u!114 &903850598082406403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278735498151040262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9ed718527e6fe43a05fc1521cd215f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fracturedWall: {fileID: 8557169479780612495, guid: b9fc9d482fb8916489d9a681f8877f33, type: 3}
 --- !u!1 &5242231592275056741
 GameObject:
   m_ObjectHideFlags: 0
