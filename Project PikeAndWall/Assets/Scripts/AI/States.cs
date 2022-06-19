@@ -384,6 +384,7 @@ public class Attack : States
 
     public override void Enter()
     {
+        Debug.Log("AI is attacking");
         animator.SetTrigger("isAttacking");
         agent.isStopped = true;
         base.Enter();
