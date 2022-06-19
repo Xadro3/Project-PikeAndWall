@@ -64,7 +64,7 @@ public class CheckBuildingPlacement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Buildings"))
+        if (other.gameObject.CompareTag("Building"))
         {
             buildingManager.canPlace = false;
             buildingCount++;
@@ -87,7 +87,7 @@ public class CheckBuildingPlacement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Buildings"))
+        if (other.gameObject.CompareTag("Building"))
         {
             buildingCount--;
             Debug.Log(buildingCount);

@@ -1413,15 +1413,17 @@ MonoBehaviour:
   targetHandler: {fileID: 0}
   className: Pikeman
   upgradeCost:
+  - resourceType: 6
+    resourceAmount: 10
   - resourceType: 4
     resourceAmount: 10
-  - resourceType: 6
-    resourceAmount: 50
+  - resourceType: 5
+    resourceAmount: 5
   buildCost:
-  - resourceType: 4
+  - resourceType: 1
     resourceAmount: 10
   - resourceType: 6
-    resourceAmount: 50
+    resourceAmount: 40
 --- !u!114 &3346813184583482662
 MonoBehaviour:
   m_ObjectHideFlags: 0

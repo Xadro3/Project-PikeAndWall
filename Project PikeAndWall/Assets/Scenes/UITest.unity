@@ -1142,8 +1142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 137465119}
-  hoverSound: {fileID: 8300000, guid: fad7b3ac5dab49449a3d10b660b35d37, type: 3}
-  clickedSound: {fileID: 8300000, guid: bc1b054175aaf4db68627c14e5cadb8d, type: 3}
+  hoverSound: {fileID: 8300000, guid: 4a2e4b33531fe36458dcd30121986ac7, type: 3}
+  clickedSound: {fileID: 8300000, guid: 4b620bf0f118c84429690a92f4932d30, type: 3}
 --- !u!1 &138824286
 GameObject:
   m_ObjectHideFlags: 0
@@ -11735,7 +11735,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1983698157}
   selectedCommands: []
   variables: []
   description: 
