@@ -12,10 +12,12 @@ public class GameStateL1 : MonoBehaviour
     bool executed13 = true;
     bool executed14 = true;
     public GameObject pikeman;
+    public GameObject eventSystem;
 
     private void Start()
     {
         selected = GameObject.Find("EventSystem").GetComponent<SelectedUnitsDictionary>();
+        eventSystem = GameObject.Find("EventSystem");
 
     }
 
@@ -35,6 +37,10 @@ public class GameStateL1 : MonoBehaviour
         {
             flowchart.ExecuteBlock("Tutorial 1.4");
             executed14 = false;
+        }
+        if (GameEnviroment.Singleton.Units.Count == 0)
+        {
+            eventSystem.GetComponent<GameStates>().Lose();
         }
     }
 

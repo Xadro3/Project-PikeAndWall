@@ -33,14 +33,14 @@ public class GameStates : MonoBehaviour
         //}
     }
 
-    void Win()
+    public void Win()
     {
         winScreen.SetActive(true);
            Time.timeScale = timeScale;
            Debug.Log("Won");
     }
 
-    void Lose()
+    public void Lose()
     {
         lostScreen.SetActive(true);
            Time.timeScale = timeScale;
