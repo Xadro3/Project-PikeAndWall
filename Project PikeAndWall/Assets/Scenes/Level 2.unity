@@ -1173,6 +1173,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818095, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818100, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818223, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818314, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818416, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1913343105034669562, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1183,6 +1203,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1913343105405294032, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343106026485269, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: selectedBlocks.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1913343106087399968, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
@@ -1229,6 +1253,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1913343104284303791, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
   m_PrefabInstance: {fileID: 381741358}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &381741363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1913343106026485269, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+  m_PrefabInstance: {fileID: 381741358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &392396375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1974,7 +2009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 163513472}
+  selectedFlowchart: {fileID: 381741363}
 --- !u!4 &1050660195
 Transform:
   m_ObjectHideFlags: 1

@@ -2597,15 +2597,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1048206225}
   - component: {fileID: 1048206224}
-  - component: {fileID: 1048206241}
-  - component: {fileID: 1048206240}
-  - component: {fileID: 1048206239}
-  - component: {fileID: 1048206237}
-  - component: {fileID: 1048206236}
-  - component: {fileID: 1048206238}
-  - component: {fileID: 1048206242}
-  - component: {fileID: 1048206243}
-  - component: {fileID: 1048206244}
   - component: {fileID: 1048206221}
   - component: {fileID: 1048206220}
   - component: {fileID: 1048206219}
@@ -2970,189 +2961,6 @@ MonoBehaviour:
   - {fileID: 1048206223}
   - {fileID: 1048206222}
   suppressAllAutoSelections: 0
---- !u!114 &1048206236
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 21
-  indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: Level 1
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
---- !u!114 &1048206237
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -107.51172
-    y: 212.77734
-    width: 77.868835
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 24
-  blockName: Retry
-  description: 
-  eventHandler: {fileID: 1048206238}
-  commandList:
-  - {fileID: 1048206236}
-  suppressAllAutoSelections: 0
---- !u!114 &1048206238
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1048206237}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
---- !u!114 &1048206239
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1048206241}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
---- !u!114 &1048206240
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 19
-  indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: Level 2
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
---- !u!114 &1048206241
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -115.51172
-    y: 152.77734
-    width: 107.377014
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 18
-  blockName: Next Level
-  description: 
-  eventHandler: {fileID: 1048206239}
-  commandList:
-  - {fileID: 1048206240}
-  suppressAllAutoSelections: 0
---- !u!114 &1048206242
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -107.51172
-    y: 275.77734
-    width: 110.6557
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 25
-  blockName: Retry (Lost)
-  description: 
-  eventHandler: {fileID: 1048206244}
-  commandList:
-  - {fileID: 1048206243}
-  suppressAllAutoSelections: 0
---- !u!114 &1048206243
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 23
-  indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: Level 1
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
---- !u!114 &1048206244
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1048206242}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
 --- !u!1 &1058249347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3568,7 +3376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1048206224}
+  selectedFlowchart: {fileID: 1970822601}
 --- !u!4 &1485532794
 Transform:
   m_ObjectHideFlags: 1
@@ -5693,6 +5501,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818095, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818100, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818223, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818314, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913343104892818416, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: _sceneName.stringVal
+      value: Level 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1913343105034669562, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5753,6 +5581,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1913343104284303791, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
   m_PrefabInstance: {fileID: 1970822596}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1970822601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1913343106026485269, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+  m_PrefabInstance: {fileID: 1970822596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2028520445
 PrefabInstance:
   m_ObjectHideFlags: 0
