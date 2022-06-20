@@ -1452,10 +1452,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1048206227}
-  selectedCommands:
-  - {fileID: 1048206246}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1972,7 +1970,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1048206246
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2851,6 +2849,10 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 1093462062}
+    - target: {fileID: 1427901225, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1760550336, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
       propertyPath: pauseMenu
       value: 

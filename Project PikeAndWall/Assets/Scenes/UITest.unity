@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731689, g: 0.13414702, b: 0.1210784, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1721,14 +1721,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1913343105799096989, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
-      propertyPath: hoverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: bda1913c772b2422cacd52948efbe429, type: 3}
-    - target: {fileID: 1913343105799096989, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
-      propertyPath: clickedSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 9f5584a3f619640f8a087490de0e1dca, type: 3}
     - target: {fileID: 1913343106145841026, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
