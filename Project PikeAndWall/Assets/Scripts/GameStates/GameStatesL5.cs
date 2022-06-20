@@ -9,12 +9,21 @@ public class GameStatesL5 : MonoBehaviour
     bool executed14 = true;
     public Flowchart flowchart;
     public GameObject eventSystem;
-
+    public int unitsToBuild;
+    private void Start()
+    {
+        InvokeRepeating("UpdateState", 0, 1.0f);
+    }
     // Update is called once per frame
-    void Update()
+    void UpdateState()
     {
 
-        if (GameObject.Find("TrainingPikePlaced(Clone)") != null && executed14)
+        //Debug.Log("Pike"+(GameObject.Find("TrainingPikePlaced(Clone)") != null));
+        //Debug.Log("Caval"+(GameObject.Find("TainingCavalryPlaceded(Clone)") != null));
+        //Debug.Log("Bow"+(GameObject.Find("TrainingBowmanPlaced(Clone)") != null));
+        //Debug.Log("Units"+ (GameEnviroment.Singleton.Units.Count >= 8));
+
+        if (GameObject.Find("TrainingPikePlaced(Clone)") != null && executed14 && GameObject.Find("TrainingCavalryPlaced(Clone)") !=null && GameObject.Find("TrainingBowmanPlaced(Clone)") !=null && GameEnviroment.Singleton.Units.Count>=unitsToBuild)
         {
             flowchart.ExecuteBlock("Einheitenbau dia");
             executed14 = false;

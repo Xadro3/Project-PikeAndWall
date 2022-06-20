@@ -73,7 +73,7 @@ public class UnitSelector : MonoBehaviour
                     // }
                     
                     i++;
-                    Debug.Log(i);
+                    //Debug.Log(i);
 
                     if (raycast.collider.gameObject.tag == "Unit")
                     {
