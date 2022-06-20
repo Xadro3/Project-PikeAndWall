@@ -404,17 +404,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1913343104284303791, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
   m_PrefabInstance: {fileID: 184109762}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &184109767 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1913343106026485269, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
-  m_PrefabInstance: {fileID: 184109762}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &268843382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6687873381577919232, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
@@ -1419,7 +1408,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -95.49996
     y: -177.72719
-    width: 109.99993
+    width: 104.63414
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1449,18 +1438,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 1060.2683, y: 1099.5145}
+  scrollPos: {x: 301.23828, y: 282.221}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.40000045
+  zoom: 0.8200002
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1048206223}
   selectedCommands: []
   variables: []
   description: 
@@ -1531,13 +1521,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 41.46244
     y: 0.62822723
-    width: 112.49992
+    width: 111.4634
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 16
   blockName: Tutorial 1.4
-  description: 'Beginn mit ende der Schlacht mit den Franzosen
+  description: 'Beginn wenn alle gegner tot sind
 
 '
   eventHandler: {fileID: 0}
@@ -1588,7 +1578,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 41.462425
     y: -90.28084
-    width: 112.49992
+    width: 111.4634
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1645,7 +1635,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 42.137512
     y: -177.11452
-    width: 112.49992
+    width: 110.48779
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1758,7 +1748,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.872055
     y: -217.8999
-    width: 132.49991
+    width: 128.04877
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1806,7 +1796,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 213.80827
-    width: 82.49996
+    width: 79.26829
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1882,7 +1872,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -115.51172
     y: 152.77734
-    width: 112.49992
+    width: 108.536575
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1909,7 +1899,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 275.77734
-    width: 119.99992
+    width: 113.41462
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3012,7 +3002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 184109767}
+  selectedFlowchart: {fileID: 1048206224}
 --- !u!4 &1485532794
 Transform:
   m_ObjectHideFlags: 1
