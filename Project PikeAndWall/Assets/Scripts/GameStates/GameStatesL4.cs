@@ -5,6 +5,9 @@ using Fungus;
 public class GameStatesL4 : MonoBehaviour
 {
     bool executed14 = true;
+    bool executed = true;
+    bool executed2 = true;
+    bool executed3 = true;
     public Flowchart flowchart;
     public GameObject eventSystem;
     int wallsbuilt=0;
@@ -29,20 +32,24 @@ public class GameStatesL4 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Unit")
+        if(other.tag == "Unit" && executed)
         {
             flowchart.ExecuteBlock("Armee in Ruine");
+            executed = false;
+            
         }
-        if(other.gameObject.name == "MIneStonePlaced(Clone)")
+        if(other.gameObject.name == "MIneStonePlaced(Clone)" && executed2)
         {
             flowchart.ExecuteBlock("Build Walls");
+            executed2 = false;
         }
-        if(other.gameObject.name== "WallBuildingPlaced(Clone)")
+        if(other.gameObject.name== "WallBuildingPlaced(Clone)" && executed3)
         {
             wallsbuilt++;
             Debug.Log(wallsbuilt);
             if (wallsbuilt == 7)
             {
+                executed3 = false;
                 flowchart.ExecuteBlock("New Block");
             }
         }
