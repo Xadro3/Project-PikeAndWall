@@ -7,6 +7,7 @@ public class GameStatesL4 : MonoBehaviour
     bool executed14 = true;
     public Flowchart flowchart;
     public GameObject eventSystem;
+    int wallsbuilt=0;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,9 @@ public class GameStatesL4 : MonoBehaviour
             flowchart.ExecuteBlock("Hütte gebaut");
             executed14 = false;
         }
+
+       
+
         if (GameEnviroment.Singleton.Units.Count == 0)
         {
             eventSystem.GetComponent<GameStates>().Lose();
@@ -28,6 +32,19 @@ public class GameStatesL4 : MonoBehaviour
         if(other.tag == "Unit")
         {
             flowchart.ExecuteBlock("Armee in Ruine");
+        }
+        if(other.gameObject.name == "MIneStonePlaced(Clone)")
+        {
+            flowchart.ExecuteBlock("Build Walls");
+        }
+        if(other.gameObject.name== "WallBuildingPlaced(Clone)")
+        {
+            wallsbuilt++;
+            Debug.Log(wallsbuilt);
+            if (wallsbuilt == 7)
+            {
+                flowchart.ExecuteBlock("New Block");
+            }
         }
     }
 }
