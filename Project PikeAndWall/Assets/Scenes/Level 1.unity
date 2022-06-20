@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.2562566, g: 0.25436416, b: 0.2535531, a: 1}
+  m_FogColor: {r: 0.28903735, g: 0.28664532, b: 0.28562015, a: 1}
   m_FogMode: 1
   m_FogDensity: 0
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.7801329, g: 0.73111045, b: 0.7332736, a: 1}
+  m_AmbientSkyColor: {r: 0.8658548, g: 0.81486475, b: 0.702718, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040961276, g: 0.0036912693, b: 0.0018431647, a: 1}
+  m_IndirectSpecularColor: {r: 0.042060576, g: 0.033572666, b: 0.01963118, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -506,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.2
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1410,7 +1410,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -108.49996
     y: -235.72719
-    width: 108
+    width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1525,7 +1525,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 58.46244
     y: 56.628227
-    width: 115.333336
+    width: 113
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1583,7 +1583,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 46.462425
     y: -40.280838
-    width: 115.333336
+    width: 113
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1640,7 +1640,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 42.137512
     y: -177.11452
-    width: 114.666664
+    width: 112
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1753,7 +1753,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.872055
     y: -217.8999
-    width: 132.66666
+    width: 130
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1801,7 +1801,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 213.80827
-    width: 80.666664
+    width: 80
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1877,7 +1877,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -115.51172
     y: 152.77734
-    width: 112.66667
+    width: 110
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1904,7 +1904,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 275.77734
-    width: 116.666664
+    width: 115
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2332,7 +2332,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8545355, g: 0.5029453, b: 0.05297392, a: 1}
+  m_Color: {r: 0.8598004, g: 0.5256928, b: 0.052597586, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2390,7 +2390,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093462061}
-  m_LocalRotation: {x: -0.011376117, y: 0.98767215, z: 0.13002953, w: 0.08641018}
+  m_LocalRotation: {x: -0.005700261, y: 0.9940618, z: 0.06515423, w: 0.0869692}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2845,7 +2845,7 @@ PrefabInstance:
       objectReference: {fileID: 184109763}
     - target: {fileID: 1427901224, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
       propertyPath: timeOfDay
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1427901224, guid: 9a806671e7315274a987226ed0a1f267, type: 3}
       propertyPath: directionalLight
@@ -3216,7 +3216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -70.2
+      value: -30.199997
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3291,6 +3291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowchart: {fileID: 1048206224}
   pikeman: {fileID: 1052198532}
+  eventSystem: {fileID: 0}
 --- !u!4 &1621253428
 Transform:
   m_ObjectHideFlags: 0
@@ -3809,7 +3810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -104.1
+      value: -64.1
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3940,7 +3941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.5
+      value: 67.5
       objectReference: {fileID: 0}
     - target: {fileID: 7267671202892554641, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3997,7 +3998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3796056343674221229, guid: 355985f1834338749a813d82b296c4cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102.03857
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 3796056343674221229, guid: 355985f1834338749a813d82b296c4cb, type: 3}
       propertyPath: m_LocalPosition.y
