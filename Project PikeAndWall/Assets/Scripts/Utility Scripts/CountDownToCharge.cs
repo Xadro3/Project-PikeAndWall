@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CountDownToCharge : MonoBehaviour
 {
+    public float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class CountDownToCharge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeSinceLevelLoad > 600f)
+        if (Time.timeSinceLevelLoad > time)
         {
             foreach(GameObject unit in GameEnviroment.Singleton.Enemies)
             {
