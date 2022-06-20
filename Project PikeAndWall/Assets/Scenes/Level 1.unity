@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040961266, g: 0.0036912623, b: 0.0018431569, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040961276, g: 0.0036912693, b: 0.0018431647, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -404,17 +404,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1913343104284303791, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
   m_PrefabInstance: {fileID: 184109762}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &184109767 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1913343106026485269, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
-  m_PrefabInstance: {fileID: 184109762}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &268843382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6687873381577919232, guid: 267a67bdfad716e44b58acdfa184dd20, type: 3}
@@ -1184,6 +1173,8 @@ GameObject:
   - component: {fileID: 1048206242}
   - component: {fileID: 1048206243}
   - component: {fileID: 1048206244}
+  - component: {fileID: 1048206245}
+  - component: {fileID: 1048206246}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1417,9 +1408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -95.49996
-    y: -177.72719
-    width: 109.99993
+    x: -108.49996
+    y: -235.72719
+    width: 108
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1435,6 +1426,7 @@ MonoBehaviour:
   - {fileID: 1048206217}
   - {fileID: 1048206216}
   - {fileID: 1048206215}
+  - {fileID: 1048206245}
   suppressAllAutoSelections: 0
 --- !u!114 &1048206224
 MonoBehaviour:
@@ -1449,19 +1441,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 1060.2683, y: 1099.5145}
+  scrollPos: {x: 279.53757, y: 263.37177}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.40000045
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1048206227}
+  selectedCommands:
+  - {fileID: 1048206246}
   variables: []
   description: 
   stepPause: 0
@@ -1505,7 +1499,7 @@ MonoBehaviour:
     move out and meet with General Gonzalo Fernandez de Cordoba at Seminara. '
   description: 
   character: {fileID: 1226963524}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1529,9 +1523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 41.46244
-    y: 0.62822723
-    width: 112.49992
+    x: 58.46244
+    y: 56.628227
+    width: 115.333336
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1543,6 +1537,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1048206226}
+  - {fileID: 1048206246}
   suppressAllAutoSelections: 0
 --- !u!114 &1048206228
 MonoBehaviour:
@@ -1586,9 +1581,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 41.462425
-    y: -90.28084
-    width: 112.49992
+    x: 46.462425
+    y: -40.280838
+    width: 115.333336
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1619,7 +1614,7 @@ MonoBehaviour:
     as they can reach it.
   description: 
   character: {fileID: 1226963524}
-  portrait: {fileID: 21300000, guid: 0ad47ce5f81f4594abd2fe037dbf6b22, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1645,7 +1640,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 42.137512
     y: -177.11452
-    width: 112.49992
+    width: 114.666664
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1758,7 +1753,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.872055
     y: -217.8999
-    width: 132.49991
+    width: 132.66666
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1806,7 +1801,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 213.80827
-    width: 82.49996
+    width: 80.666664
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1882,7 +1877,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -115.51172
     y: 152.77734
-    width: 112.49992
+    width: 112.66667
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1909,7 +1904,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -107.51172
     y: 275.77734
-    width: 119.99992
+    width: 116.666664
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1954,6 +1949,49 @@ MonoBehaviour:
   parentBlock: {fileID: 1048206242}
   suppressBlockAutoSelect: 0
   targetButton: {fileID: 0}
+--- !u!114 &1048206245
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048206214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 26
+  indentLevel: 0
+  targetFlowchart: {fileID: 1048206224}
+  targetBlock: {fileID: 1048206235}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &1048206246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048206214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  targetObject: {fileID: 1421407038}
+  methodName: Win
+  delay: 0
+--- !u!1 &1052198532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5436801974628755489, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
+  m_PrefabInstance: {fileID: 9161682178421886591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1056806867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3012,7 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 184109767}
+  selectedFlowchart: {fileID: 1048206224}
 --- !u!4 &1485532794
 Transform:
   m_ObjectHideFlags: 1
@@ -3222,6 +3260,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7762761ada9b2a54abe09a9f32736307, type: 3}
+--- !u!1 &1621253426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621253428}
+  - component: {fileID: 1621253427}
+  m_Layer: 0
+  m_Name: GameStateL1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1621253427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621253426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7874fb829d18d4b8242de55ae3cbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowchart: {fileID: 1048206224}
+  pikeman: {fileID: 1052198532}
+--- !u!4 &1621253428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621253426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.4281015, y: 5.8983746, z: -0.80440044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705181106
 GameObject:
   m_ObjectHideFlags: 0

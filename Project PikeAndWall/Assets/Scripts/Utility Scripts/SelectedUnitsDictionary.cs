@@ -61,31 +61,77 @@ public class SelectedUnitsDictionary : MonoBehaviour
 
         foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
         {
+            bool canafford = false;
             if (pair.Value.tag == "Unit")
             {
                 if (pair.Value.GetComponent<UnitClass>().className == "Pikeman")
                 {
-                    resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
-                    Instantiate(upgradedPikeman, pair.Value.transform.position, pair.Value.transform.rotation);
+                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().buildCost)
+                    {
+                        if (!(canafford = resourceManager.CheckResourceAvailability(value)))
+                        {
+                            canafford = false;
+                            break;
+                        }
+                        else
+                        {
+                            canafford = true;
+                        }
+                    }
+                    if (canafford) {
+                        resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
+                        Instantiate(upgradedPikeman, pair.Value.transform.position, pair.Value.transform.rotation);
 
-                    Destroy(pair.Value);
-                    continue;
+                        Destroy(pair.Value);
+                        continue;
+                    }
+                    
                 }
                 if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
                 {
-                    resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
-                    Instantiate(upgradedBowman, pair.Value.transform.position, pair.Value.transform.rotation);
+                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().buildCost)
+                    {
+                        if (!(canafford = resourceManager.CheckResourceAvailability(value)))
+                        {
+                            canafford = false;
+                            break;
+                        }
+                        else
+                        {
+                            canafford = true;
+                        }
+                    }
+                    if (canafford)
+                    {
+                        resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
+                        Instantiate(upgradedBowman, pair.Value.transform.position, pair.Value.transform.rotation);
 
-                    Destroy(pair.Value);
-                    continue;
+                        Destroy(pair.Value);
+                        continue;
+                    }
                 }
                 if (pair.Value.GetComponent<UnitClass>().className == "Cavalry")
                 {
-                    resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
-                    Instantiate(upgradedCavalry, pair.Value.transform.position, pair.Value.transform.rotation);
+                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().buildCost)
+                    {
+                        if (!(canafford = resourceManager.CheckResourceAvailability(value)))
+                        {
+                            canafford = false;
+                            break;
+                        }
+                        else
+                        {
+                            canafford = true;
+                        }
+                    }
+                    if (canafford)
+                    {
+                        resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
+                        Instantiate(upgradedCavalry, pair.Value.transform.position, pair.Value.transform.rotation);
 
-                    Destroy(pair.Value);
-                    continue;
+                        Destroy(pair.Value);
+                        continue;
+                    }
                 }
             }
 

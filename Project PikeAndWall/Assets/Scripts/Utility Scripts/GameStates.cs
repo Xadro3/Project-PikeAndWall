@@ -19,17 +19,31 @@ public class GameStates : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameEnviroment.Singleton.Units.Count == 0)
-        {
-            lostScreen.SetActive(true);
-            Time.timeScale = timeScale;
-            Debug.Log("Lost");
-        }
-        if (GameEnviroment.Singleton.Enemies.Count == 0)
-        {
-            winScreen.SetActive(true);
-            Time.timeScale = timeScale;
-            Debug.Log("Won");
-        }
+        //if(GameEnviroment.Singleton.Units.Count == 0)
+        //{
+        //    lostScreen.SetActive(true);
+        //    Time.timeScale = timeScale;
+        //    Debug.Log("Lost");
+        //}
+        //if (GameEnviroment.Singleton.Enemies.Count == 0)
+        //{
+        //    winScreen.SetActive(true);
+        //    Time.timeScale = timeScale;
+        //    Debug.Log("Won");
+        //}
+    }
+
+    void Win()
+    {
+        winScreen.SetActive(true);
+           Time.timeScale = timeScale;
+           Debug.Log("Won");
+    }
+
+    void Lose()
+    {
+        lostScreen.SetActive(true);
+           Time.timeScale = timeScale;
+           Debug.Log("Lost");
     }
 }
