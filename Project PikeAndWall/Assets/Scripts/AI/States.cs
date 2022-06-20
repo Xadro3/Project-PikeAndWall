@@ -408,6 +408,7 @@ public class Attack : States
             {
                 npc.GetComponent<UnitClass>().enemyInRange = true;
                 npc.GetComponent<UnitClass>().SetTarget(closestUnit.GetComponentInChildren<Hitbox>());
+                npc.GetComponent<UnitClass>().unitAttack.StartAttack();
             }
             else
             {
