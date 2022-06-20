@@ -11,6 +11,7 @@ public class GameStates : MonoBehaviour
     [SerializeField] int timeScale = 0;
     void Start()
     {
+        
         //Time.timeScale = timeScale;
         //lostScreen = GameObject.Find("LostScreen");
         //winScreen = GameObject.Find("WinScreen");

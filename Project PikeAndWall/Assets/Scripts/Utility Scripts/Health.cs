@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     public AudioClip audioClip;
     HealthBarHandler healthBarHandler;
 
-    void Start()
+    void Awake()
     {
         if (gameObject.tag == "Unit")
         {

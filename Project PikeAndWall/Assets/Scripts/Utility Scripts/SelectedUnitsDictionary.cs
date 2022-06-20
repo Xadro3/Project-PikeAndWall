@@ -81,7 +81,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                     if (canafford) {
                         resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
                         Instantiate(upgradedPikeman, pair.Value.transform.position, pair.Value.transform.rotation);
-
+                        GameEnviroment.Singleton.Units.Remove(pair.Value);
                         Destroy(pair.Value);
                         continue;
                     }
@@ -105,7 +105,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                     {
                         resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
                         Instantiate(upgradedBowman, pair.Value.transform.position, pair.Value.transform.rotation);
-
+                        GameEnviroment.Singleton.Units.Remove(pair.Value);
                         Destroy(pair.Value);
                         continue;
                     }
@@ -128,7 +128,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                     {
                         resourceManager.SpendResource(pair.Value.GetComponent<UnitClass>().upgradeCost);
                         Instantiate(upgradedCavalry, pair.Value.transform.position, pair.Value.transform.rotation);
-
+                        GameEnviroment.Singleton.Units.Remove(pair.Value);
                         Destroy(pair.Value);
                         continue;
                     }

@@ -96,8 +96,8 @@ public class Idle : States
     public override void Update()
     {
 
-       
 
+       // Debug.LogWarning(playerUnits.Count);
         
             Vector3 npcPos = npc.transform.position;
            

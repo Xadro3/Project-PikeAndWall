@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class GameEnviroment 
-{
+public  class GameEnviroment : MonoBehaviour { 
 
-    private static GameEnviroment instance;
+    private static  GameEnviroment instance = null;
     private List<GameObject> perimeter = new List<GameObject>();
     private List<GameObject> units = new List<GameObject>();
     private List<GameObject> enemies = new List<GameObject>();
@@ -21,8 +20,8 @@ public sealed class GameEnviroment
     {
         get { return enemies; }
     }
-
-
+    
+    
 
     public static GameEnviroment Singleton
     {
@@ -30,7 +29,7 @@ public sealed class GameEnviroment
         {
             if(instance== null)
             {
-                instance = new GameEnviroment();
+                instance = new GameObject(typeof(GameEnviroment).Name).AddComponent<GameEnviroment>();
                 instance.Perimeter.AddRange(GameObject.FindGameObjectsWithTag("Perimeter"));
                 //instance.Units.AddRange(GameObject.FindGameObjectsWithTag("Unit"));
                 //instance.enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
