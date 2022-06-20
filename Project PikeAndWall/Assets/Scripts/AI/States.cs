@@ -122,7 +122,7 @@ public class Idle : States
                 Debug.Log("AI is transitioning to Patrol");
                 stage = EVENT.EXIT;
             }
-            if (charge) // if charge flag is set, charge
+            if (npc.GetComponent<Ai>().charge) // if charge flag is set, charge
             {
                 nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
                 Debug.Log("Ai is Transitioning to Charge");
@@ -175,7 +175,7 @@ public class Pursue: States
                     closestUnit = unit;
                 }
             }
-            if(charge && Vector3.Distance(origin, npc.transform.position) > 25)
+            if(npc.GetComponent<Ai>().charge && Vector3.Distance(origin, npc.transform.position) > 25)
             {
                 nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
                 stage = EVENT.EXIT;
@@ -230,7 +230,7 @@ public class Patrol: States
 
     public override void Update()
     {
-        if (charge)
+        if (npc.GetComponent<Ai>().charge)
         {
             nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
             stage = EVENT.EXIT;
