@@ -15,6 +15,7 @@ public class UnitAttack : MonoBehaviour
     private Quaternion lookRotation;
     private Vector3 lookDirection;
     private AudioSource audio;
+    private bool animate;
 
     void Start()
     {
@@ -56,9 +57,9 @@ public class UnitAttack : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true;
-        unit.animatior.SetTrigger("TrAttack");
         while(unit.enemyInRange)
         {
+            unit.PlayAnimation("TrAttack");
             yield return new WaitForSeconds(unit.fireRate);
             if((gameObject.name == "Bow" || gameObject.name == "Musket" || gameObject.name == "Pistol") && unit.enemyInRange && unit.targetHitbox != null)
             {
@@ -73,12 +74,14 @@ public class UnitAttack : MonoBehaviour
                 }
                 if (projectile.name == "pfBullet"){
                     Vector3 shootDirection = new Vector3(unit.targetHitbox.transform.position.x - transform.position.x, unit.targetHitbox.transform.position.y - transform.position.y, unit.targetHitbox.transform.position.z - transform.position.z);
-                    projectileTransform.GetComponent<ProjectileBullet>().SetDamage(unit.damageValue);
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
+                    projectileTransform.GetComponent<ProjectileBullet>().SetDamage(unit.damageValue);
                 }
                 if (projectile.name == "ArrowRed" || projectile.name == "ArrowBlue")
                 {
-                    projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.damageValue, unit.weapon.transform, unit.targetHitbox.transform);
+                    projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.weapon.transform, unit.targetHitbox.transform);
+                    projectileTransform.GetComponent<ProjectileArch>().SetDamage(unit.damageValue);
+                    
                 }
             }
             if((gameObject.name == "Spear" || gameObject.name == "Sword" || gameObject.name == "HeavySpear") && unit.enemyInRange && unit.targetHitbox != null)
@@ -86,13 +89,19 @@ public class UnitAttack : MonoBehaviour
                 unit.targetHealth.TakeDamage(unit.damageValue);
             }
             audio.PlayOneShot(audio.clip, 1f);
+            if (unit.targetHealth.hitPoints <= 0f)
+            {
+                isAttacking = false;
+                unit.enemyInRange = false;
+                yield break;
+            }
         }
-        if (unit.targetHealth.hitPoints <= 0f)
-        {
-            isAttacking = false;
-            unit.enemyInRange = false;
-            yield break;
-        }
+        //if (unit.targetHealth.hitPoints <= 0f)
+        //{
+        //    isAttacking = false;
+        //    unit.enemyInRange = false;
+        //    yield break;
+        //}
         isAttacking = false;
     }
 }

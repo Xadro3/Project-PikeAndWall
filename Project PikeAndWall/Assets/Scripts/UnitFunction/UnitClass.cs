@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitClass : MonoBehaviour
 {
@@ -20,12 +21,15 @@ public class UnitClass : MonoBehaviour
     public Health targetHealth;
     public bool enemyInRange;
     public UnitAttack unitAttack;
+    public float buildTime;
+    public string className;
+    public TargetHandler targetHandler;
+    [Header ("Animation")]
+    public Animator animatorWeapon;
+    public Animator animatorRig;
+    
     private UnitReach unitReach;
     private float rangeOld;
-    public float buildTime;
-    public TargetHandler targetHandler;
-    public string className;
-    public Animator animatior;
 
     public List<ResourceValue> upgradeCost;
     public List<ResourceValue> buildCost;
@@ -36,8 +40,8 @@ public class UnitClass : MonoBehaviour
         unitReach = GetComponentInChildren<UnitReach>();
         unitAttack = weapon.GetComponentInChildren<UnitAttack>();
         targetHandler = GetComponent<TargetHandler>();
-        animatior = GetComponent<Animator>();
-        
+        damageValue = 0;
+
         SetWeaponStats();
     }
     
@@ -59,10 +63,41 @@ public class UnitClass : MonoBehaviour
     {
         if (targetHitbox != null)
         {
+            SetWeaponStats();
             this.targetHitbox = targetHitbox;
             targetHealth = targetHitbox.GetComponentInParent<Health>();
+            SetDamage();
             //unitAttack.StartAttack();
         }
+    }
+
+    public void SetDamage()
+    {
+        if ((className == "Archer" || className == "Musket")&&(targetHitbox.GetComponentInParent<UnitClass>().className == "Pikeman" || targetHitbox.GetComponentInParent<UnitClass>().className == "HeavyPikeman"))
+        {
+            damageValue += 1;
+        }
+        if ((className == "Pikeman" || className == "HeavyPikeman")&&(targetHitbox.GetComponentInParent<UnitClass>().className == "Cavalry" || targetHitbox.GetComponentInParent<UnitClass>().className == "HeavyCavalry"))
+        {
+            damageValue += 1;
+        }
+        if ((className == "Cavalry" || className == "HeavyCavalry")&&(targetHitbox.GetComponentInParent<UnitClass>().className == "Archer" || targetHitbox.GetComponentInParent<UnitClass>().className == "Musket"))
+        {
+            damageValue += 1;
+        }
+    }
+
+    public void PlayAnimation(string trigger)
+    {
+        if (animatorWeapon != null)
+        {
+            animatorWeapon.SetTrigger(trigger);
+        }
+        if (animatorRig != null)
+        {
+            animatorRig.SetTrigger(trigger);
+        }
+        
     }
 
     private void SetWeaponStats()
@@ -70,7 +105,7 @@ public class UnitClass : MonoBehaviour
         if (unitAttack.gameObject.name == "Sword")
         {
             fireRate = 1f;
-            range = 2.5f;
+            range = 5f;
             damageValue = 1;
             turnRate = 2f;
         }
@@ -110,6 +145,4 @@ public class UnitClass : MonoBehaviour
             turnRate = 2f;
         }
     }
-
-
 }

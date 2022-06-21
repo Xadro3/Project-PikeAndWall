@@ -184,11 +184,11 @@ public class TargetHandler : MonoBehaviour
                     agent.isStopped = false;
                 }
             }
-            if (hitbox == targetHitbox)
-            {
-                unit.enemyInRange = false;
-            }
-            if (unit.CompareTag("Enemy"))
+            //if (hitbox == targetHitbox)
+            //{
+            //    unit.enemyInRange = false;
+            //}
+            if (unit.CompareTag("Enemy") && hitbox == targetHitbox)
             {
                 if (collision.CompareTag("Player"))
                 {

@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 1370211177278535047}
   - component: {fileID: 3256042789306901005}
   - component: {fileID: 3285817646332496302}
-  - component: {fileID: -3782179452566397728}
   m_Layer: 0
   m_Name: UnitArcher
   m_TagString: Unit
@@ -174,9 +173,10 @@ MonoBehaviour:
   enemyInRange: 0
   unitAttack: {fileID: 0}
   buildTime: 0
+  className: Archer
   targetHandler: {fileID: 0}
-  className: Bowman
-  animatior: {fileID: 0}
+  animatorWeapon: {fileID: 712524020}
+  animatorRig: {fileID: 2026469846}
   upgradeCost:
   - resourceType: 6
     resourceAmount: 5
@@ -382,17 +382,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &-3782179452566397728
+--- !u!95 &2026469846
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4671564297744837479}
+  m_GameObject: {fileID: 4978927179073089803}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 854f1673986ffd34a89900a8a9dd1938, type: 2}
+  m_Controller: {fileID: 9100000, guid: 418da39c7de7ef94880ad7f80fe03b30, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -482,6 +482,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &712524020
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536759902781321515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 854f1673986ffd34a89900a8a9dd1938, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1204795189997232775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,6 +558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8333a0bdaf71b2842b51e0f02fb2262f, type: 3}
+--- !u!1 &4978927179073089803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6170205492335481740, guid: 8333a0bdaf71b2842b51e0f02fb2262f, type: 3}
+  m_PrefabInstance: {fileID: 1204795189997232775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5643963950413392817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6839606195584649526, guid: 8333a0bdaf71b2842b51e0f02fb2262f, type: 3}
@@ -601,6 +625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15797f87701c33145a52e2c110d70874, type: 3}
+--- !u!1 &7536759902781321515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4820189151512094793, guid: 15797f87701c33145a52e2c110d70874, type: 3}
+  m_PrefabInstance: {fileID: 3058844980213832034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7195665473122364305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5309480980705293043, guid: 15797f87701c33145a52e2c110d70874, type: 3}
@@ -617,6 +646,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 6232778236850425237, guid: 281bb3f593577ed41be32e1389e610c1, type: 3}
+    - target: {fileID: 766168771961501266, guid: 065eb5ca63e7aff45a1ff7bfea60fdb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.429
+      objectReference: {fileID: 0}
     - target: {fileID: 5571784927694508979, guid: 065eb5ca63e7aff45a1ff7bfea60fdb1, type: 3}
       propertyPath: m_RootOrder
       value: 3

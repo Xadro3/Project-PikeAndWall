@@ -78,8 +78,10 @@ MonoBehaviour:
   enemyInRange: 0
   unitAttack: {fileID: 0}
   buildTime: 0
-  targetHandler: {fileID: 0}
   className: HeavyCavalry
+  targetHandler: {fileID: 0}
+  animatorWeapon: {fileID: 0}
+  animatorRig: {fileID: 0}
   upgradeCost: []
   buildCost: []
 --- !u!114 &8042193484541668992
@@ -771,65 +773,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9218588687226400109, guid: b0d43f40d3978a74f93e682983578648, type: 3}
   m_PrefabInstance: {fileID: 5413490520509398208}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &9159610291054502358
+--- !u!1001 &8696625490693537627
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1529651503075823243}
     m_Modifications:
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9181630778728167510, guid: 373973861066af5429a37a7e416e9188, type: 3}
+    - target: {fileID: 8702734886610888411, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 373973861066af5429a37a7e416e9188, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
 --- !u!4 &4165930147269290632 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5101771758059604830, guid: 373973861066af5429a37a7e416e9188, type: 3}
-  m_PrefabInstance: {fileID: 9159610291054502358}
+  m_CorrespondingSourceObject: {fileID: 4710982548568053203, guid: f12e9dfea1d5f254d960d6df88aba703, type: 3}
+  m_PrefabInstance: {fileID: 8696625490693537627}
   m_PrefabAsset: {fileID: 0}

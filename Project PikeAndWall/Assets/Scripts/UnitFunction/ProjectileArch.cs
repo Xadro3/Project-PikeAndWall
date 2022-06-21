@@ -49,7 +49,7 @@ public class ProjectileArch : MonoBehaviour
         }
     }
 
-    public void SetProjectileArch(int damageValue, Transform sunrise, Transform sunset)
+    public void SetProjectileArch(Transform sunrise, Transform sunset)
     {
         
         this.sunrise = sunrise;
@@ -60,9 +60,7 @@ public class ProjectileArch : MonoBehaviour
         setRelCenter = sunset.position - center;
         relCenter = center + new Vector3(-100, -100, 0);
         transform.eulerAngles = relCenter;
-
-
-        SetDamage(damageValue);
+        
     }
     public void SetDamage(int damageValue)
     {
