@@ -56,6 +56,7 @@ public class UnitAttack : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true;
+        unit.animatior.SetTrigger("TrAttack");
         while(unit.enemyInRange)
         {
             yield return new WaitForSeconds(unit.fireRate);
@@ -75,7 +76,7 @@ public class UnitAttack : MonoBehaviour
                     projectileTransform.GetComponent<ProjectileBullet>().SetDamage(unit.damageValue);
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
                 }
-                if (projectile.name == "pfArrow")
+                if (projectile.name == "ArrowRed" || projectile.name == "ArrowBlue")
                 {
                     projectileTransform.GetComponent<ProjectileArch>().SetProjectileArch(unit.damageValue, unit.weapon.transform, unit.targetHitbox.transform);
                 }

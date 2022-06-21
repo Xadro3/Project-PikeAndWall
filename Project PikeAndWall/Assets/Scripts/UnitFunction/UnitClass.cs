@@ -25,6 +25,7 @@ public class UnitClass : MonoBehaviour
     public float buildTime;
     public TargetHandler targetHandler;
     public string className;
+    public Animator animatior;
 
     public List<ResourceValue> upgradeCost;
     public List<ResourceValue> buildCost;
@@ -35,6 +36,8 @@ public class UnitClass : MonoBehaviour
         unitReach = GetComponentInChildren<UnitReach>();
         unitAttack = weapon.GetComponentInChildren<UnitAttack>();
         targetHandler = GetComponent<TargetHandler>();
+        animatior = GetComponent<Animator>();
+        
         SetWeaponStats();
     }
     

@@ -9,14 +9,18 @@ public class ProjectileArch : MonoBehaviour
     public Vector3 center;
     public Vector3 riseRelCenter;
     public Vector3 setRelCenter;
+    public Vector3 relCenter;
     public float journeyTime = 2f;
     private float startTime;
     private int damageValue;
+    private Quaternion lookRotation;
+    private Vector3 lookDirection;
 
     void Awake()
     {
         startTime = Time.time;
         StartCoroutine(TimeToLive());
+
     }
     
     
@@ -43,13 +47,6 @@ public class ProjectileArch : MonoBehaviour
                 Destroy(gameObject,0f);
             }
         }
-        
-        //if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
-        //{
-        //    Health hit = hitbox.GetComponentInParent<Health>();
-        //    hit.TakeDamage(damageValue);
-        //    Destroy(gameObject, 0f);
-        //}
     }
 
     public void SetProjectileArch(int damageValue, Transform sunrise, Transform sunset)
@@ -58,31 +55,32 @@ public class ProjectileArch : MonoBehaviour
         this.sunrise = sunrise;
         this.sunset = sunset;
         center = (sunrise.position + sunset.position) * 0.5f;
-        center -= new Vector3(0, 1, 0);
+        center -= new Vector3(0, 4, 0);
         riseRelCenter = sunrise.position - center;
         setRelCenter = sunset.position - center;
-        
+        relCenter = center + new Vector3(-100, -100, 0);
+        transform.eulerAngles = relCenter;
+
+
         SetDamage(damageValue);
     }
     public void SetDamage(int damageValue)
     {
         this.damageValue = damageValue;
     }
+    
+    private void RotateTowardsEnemy()
+    {
+        lookDirection = (sunset.position - transform.position).normalized;
+        lookRotation = Quaternion.LookRotation(lookDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime);
+    }
 
     private void Update()
     {
-
         float fracComplete = (Time.time - startTime) / journeyTime * speed;
         transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete * speed);
         transform.position += center;
-
-    }
-    public static float GetAngleFromVectorFloat(Vector3 dir)
-    {
-        dir = dir.normalized;
-        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        if (n < 0) n += 360;
-
-        return n;
+        RotateTowardsEnemy();
     }
 }

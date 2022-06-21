@@ -505,6 +505,7 @@ MonoBehaviour:
   buildTime: 0
   targetHandler: {fileID: 0}
   className: 
+  animatior: {fileID: 0}
   upgradeCost: []
   buildCost: []
 --- !u!114 &1349904145653179410
@@ -710,7 +711,7 @@ Animator:
   m_GameObject: {fileID: 8627472914417889557}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27725da43ed6cca4a99ae082c7ee9f8f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

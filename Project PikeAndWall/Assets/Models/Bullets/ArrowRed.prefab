@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6589546453821865644
+--- !u!1 &6716158301529249583
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3329244146401374278}
-  - component: {fileID: 3604501860891400498}
-  - component: {fileID: 4851468981179418707}
-  - component: {fileID: 4422534203802515066}
-  - component: {fileID: 4102677136722614414}
-  - component: {fileID: 1024706210225800753}
+  - component: {fileID: 6232778236850425237}
+  - component: {fileID: 7048306443439456816}
+  - component: {fileID: 5058784915833665274}
+  - component: {fileID: -1058770554577819488}
+  - component: {fileID: -7778417309841623126}
+  - component: {fileID: 604659632423898752}
   m_Layer: 0
-  m_Name: pfArrow
+  m_Name: ArrowRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3329244146401374278
+--- !u!4 &6232778236850425237
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589546453821865644}
+  m_GameObject: {fileID: 6716158301529249583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 28.184122, y: 28.184122, z: 19.3833}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3604501860891400498
+--- !u!33 &7048306443439456816
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589546453821865644}
+  m_GameObject: {fileID: 6716158301529249583}
   m_Mesh: {fileID: 8223383899750572358, guid: ddee183a8889cdc4a8e8d283e139f236, type: 3}
---- !u!23 &4851468981179418707
+--- !u!23 &5058784915833665274
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589546453821865644}
+  m_GameObject: {fileID: 6716158301529249583}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 44484ce9e8d1f90479abca9c377b9a1c, type: 2}
+  - {fileID: 5141343937901183020, guid: ddee183a8889cdc4a8e8d283e139f236, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,13 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4422534203802515066
+--- !u!54 &-1058770554577819488
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589546453821865644}
+  m_GameObject: {fileID: 6716158301529249583}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -100,26 +100,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4102677136722614414
+--- !u!65 &-7778417309841623126
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589546453821865644}
+  m_GameObject: {fileID: 6716158301529249583}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1024706210225800753
+  m_Size: {x: 0.0022223978, y: 0.0006502839, z: 0.006481876}
+  m_Center: {x: -0.000037772195, y: 1.6663904e-17, z: 0.016174646}
+--- !u!114 &604659632423898752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589546453821865644}
+  m_GameObject: {fileID: 6716158301529249583}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb6dc2e7502f0c43ac294ca868419e0, type: 3}
@@ -130,4 +130,5 @@ MonoBehaviour:
   center: {x: 0, y: 0, z: 0}
   riseRelCenter: {x: 0, y: 0, z: 0}
   setRelCenter: {x: 0, y: 0, z: 0}
-  journeyTime: 1
+  relCenter: {x: 0, y: 0, z: 0}
+  journeyTime: 2
