@@ -178,22 +178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7168177827120668125, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
-      propertyPath: m_Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7168177827120668125, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
-      propertyPath: m_Acceleration
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7168177827120668125, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5760
-      objectReference: {fileID: 0}
-    - target: {fileID: 7168177827120668125, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab8f45da6e69e1046be558d9bc4b78f7, type: 3}
 --- !u!1001 &143451022
@@ -251,22 +235,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6982757443925305710, guid: 75d74f4d4fc40c04996fd26f75a62c11, type: 3}
-      propertyPath: m_Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982757443925305710, guid: 75d74f4d4fc40c04996fd26f75a62c11, type: 3}
-      propertyPath: m_Acceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982757443925305710, guid: 75d74f4d4fc40c04996fd26f75a62c11, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5760
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982757443925305710, guid: 75d74f4d4fc40c04996fd26f75a62c11, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75d74f4d4fc40c04996fd26f75a62c11, type: 3}
 --- !u!1001 &179471695
@@ -323,22 +291,6 @@ PrefabInstance:
     - target: {fileID: 764132070141442951, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
       propertyPath: m_Name
       value: UnitHeavyCavalry
-      objectReference: {fileID: 0}
-    - target: {fileID: 2969137875836341565, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
-      propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2969137875836341565, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
-      propertyPath: m_Acceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2969137875836341565, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5760
-      objectReference: {fileID: 0}
-    - target: {fileID: 2969137875836341565, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4fc17de907aa14d807a67a1efa410a, type: 3}
@@ -473,34 +425,6 @@ PrefabInstance:
     - target: {fileID: 681434050807094223, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
       propertyPath: m_Name
       value: UnitCavalry
-      objectReference: {fileID: 0}
-    - target: {fileID: 2564365926421026749, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: animatorRig
-      value: 
-      objectReference: {fileID: 1349652906}
-    - target: {fileID: 3087835004765990261, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087835004765990261, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: m_Radius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087835004765990261, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: m_AutoBraking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087835004765990261, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: m_Acceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087835004765990261, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5760
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087835004765990261, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
@@ -745,6 +669,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2268733342480208118, guid: 00ea1febd18c5924ebb99752a48e9fb6, type: 3}
+      propertyPath: isPatrol
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4817613391181380596, guid: 00ea1febd18c5924ebb99752a48e9fb6, type: 3}
       propertyPath: hitPoints
       value: 100
@@ -1390,30 +1318,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1349652904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1129457479086311028, guid: 91af6c92081c37640ac22ab8d56d06a9, type: 3}
-  m_PrefabInstance: {fileID: 371347019}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1349652906
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349652904}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b314b1fd2716294085a44762106c557, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1402307023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7351134281331056773, guid: 5a474f8c5bf293c4082a3211b467362b, type: 3}
@@ -2081,22 +1985,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitHeavyPikeman
       objectReference: {fileID: 0}
-    - target: {fileID: 8859460397429584345, guid: 8ae79ad83e1a6f04d829f9f18d4a6e60, type: 3}
-      propertyPath: m_Speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859460397429584345, guid: 8ae79ad83e1a6f04d829f9f18d4a6e60, type: 3}
-      propertyPath: m_Acceleration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859460397429584345, guid: 8ae79ad83e1a6f04d829f9f18d4a6e60, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5760
-      objectReference: {fileID: 0}
-    - target: {fileID: 8859460397429584345, guid: 8ae79ad83e1a6f04d829f9f18d4a6e60, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae79ad83e1a6f04d829f9f18d4a6e60, type: 3}
 --- !u!1001 &2023930956
@@ -2156,6 +2044,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3796056343674221229, guid: 355985f1834338749a813d82b296c4cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308430991176140998, guid: 355985f1834338749a813d82b296c4cb, type: 3}
+      propertyPath: isPatrol
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4604259424090040343, guid: 355985f1834338749a813d82b296c4cb, type: 3}
@@ -2234,22 +2126,6 @@ PrefabInstance:
     - target: {fileID: 5436801974628755489, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
       propertyPath: m_Name
       value: UnitPikeman
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556380107707915931, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_Speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556380107707915931, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_Acceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556380107707915931, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5760
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556380107707915931, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
