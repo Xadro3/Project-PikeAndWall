@@ -4095,6 +4095,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1913343104284303791, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
   m_PrefabInstance: {fileID: 184109762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &184109767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780308560, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+  m_PrefabInstance: {fileID: 184109762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &184109768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 366756975, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+  m_PrefabInstance: {fileID: 184109762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &184109769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2485917929163250092, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+  m_PrefabInstance: {fileID: 184109762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &184109770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113550247365072933, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+  m_PrefabInstance: {fileID: 184109762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &185485599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d87b7e0090b93ef4f957434d09566417, type: 3}
@@ -21581,17 +21601,15 @@ GameObject:
   - component: {fileID: 1048206228}
   - component: {fileID: 1048206227}
   - component: {fileID: 1048206226}
+  - component: {fileID: 1048206245}
+  - component: {fileID: 1048206246}
+  - component: {fileID: 1048206238}
+  - component: {fileID: 1048206237}
+  - component: {fileID: 1048206236}
+  - component: {fileID: 1048206242}
   - component: {fileID: 1048206241}
   - component: {fileID: 1048206240}
   - component: {fileID: 1048206239}
-  - component: {fileID: 1048206237}
-  - component: {fileID: 1048206236}
-  - component: {fileID: 1048206238}
-  - component: {fileID: 1048206242}
-  - component: {fileID: 1048206243}
-  - component: {fileID: 1048206244}
-  - component: {fileID: 1048206245}
-  - component: {fileID: 1048206246}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -21858,7 +21876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 279.53757, y: 263.37177}
+  scrollPos: {x: 198.53757, y: 584.37177}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -21869,7 +21887,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1048206235}
   selectedCommands: []
   variables: []
   description: 
@@ -21953,6 +21972,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1048206226}
   - {fileID: 1048206246}
+  - {fileID: 1048206236}
   suppressAllAutoSelections: 0
 --- !u!114 &1048206228
 MonoBehaviour:
@@ -22010,6 +22030,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1048206228}
+  - {fileID: 1048206240}
+  - {fileID: 1048206239}
   suppressAllAutoSelections: 0
 --- !u!114 &1048206230
 MonoBehaviour:
@@ -22065,6 +22087,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1048206230}
+  - {fileID: 1048206242}
+  - {fileID: 1048206241}
   suppressAllAutoSelections: 0
 --- !u!114 &1048206232
 MonoBehaviour:
@@ -22180,190 +22204,156 @@ MonoBehaviour:
   - {fileID: 1048206234}
   - {fileID: 1048206233}
   - {fileID: 1048206232}
+  - {fileID: 1048206238}
+  - {fileID: 1048206237}
   suppressAllAutoSelections: 0
 --- !u!114 &1048206236
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 21
+  itemId: 30
   indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: Level 1
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109767}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206237
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -107.51172
-    y: 213.80827
-    width: 80
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 24
-  blockName: Retry
-  description: 
-  eventHandler: {fileID: 1048206238}
-  commandList:
-  - {fileID: 1048206236}
-  suppressAllAutoSelections: 0
+  itemId: 29
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109768}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206238
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1048206237}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
+  itemId: 28
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109767}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206239
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1048206241}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
+  itemId: 34
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109769}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206240
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 19
+  itemId: 33
   indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: Level 2
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109770}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206241
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -115.51172
-    y: 152.77734
-    width: 110
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 18
-  blockName: Next Level
-  description: 
-  eventHandler: {fileID: 1048206239}
-  commandList:
-  - {fileID: 1048206240}
-  suppressAllAutoSelections: 0
+  itemId: 32
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109770}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206242
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048206214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -107.51172
-    y: 275.77734
-    width: 115
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 25
-  blockName: Retry (Lost)
-  description: 
-  eventHandler: {fileID: 1048206244}
-  commandList:
-  - {fileID: 1048206243}
-  suppressAllAutoSelections: 0
---- !u!114 &1048206243
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 23
+  itemId: 31
   indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: Level 1
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
---- !u!114 &1048206244
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048206214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1048206242}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 184109768}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1048206245
 MonoBehaviour:
   m_ObjectHideFlags: 2
