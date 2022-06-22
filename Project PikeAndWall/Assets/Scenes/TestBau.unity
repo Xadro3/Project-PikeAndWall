@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.519773, g: 0.5870892, b: 0.82121766, a: 1}
+  m_FogColor: {r: 0.73252314, g: 0.70168334, b: 0.5866298, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -229,7 +229,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25178
+  m_Name: pb_Mesh445642
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -393,7 +393,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25118
+  m_Name: pb_Mesh445594
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1043,7 +1043,7 @@ RectTransform:
   - {fileID: 1967301666}
   - {fileID: 1715003791}
   - {fileID: 1120024065}
-  - {fileID: 2028953848}
+  - {fileID: 913413103688883290}
   - {fileID: 1861463750}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1633,7 +1633,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25458
+  m_Name: pb_Mesh445842
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3270,7 +3270,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 202e246bb3ce1cd468b50100e7428e1d, type: 2}
+  - {fileID: 2100000, guid: feedebd508e030840a0aeb99f9b8b6df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4555,17 +4555,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &945977839 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4454553600694697367, guid: 19317380fa118994f859ec3fad1f1c23, type: 3}
-  m_PrefabInstance: {fileID: 4454553601363821688}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f93eb4c11a0d0840934f793bc37d50d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &958282486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4a6667e2c2c0d04fbe18012a5adeb1d, type: 3}
@@ -9192,11 +9181,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4a6667e2c2c0d04fbe18012a5adeb1d, type: 3}
   m_PrefabInstance: {fileID: 2016265989}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &2028953848 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6690929326270827744, guid: e2339664c7b90ab4cb212ba98e009c2a, type: 3}
-  m_PrefabInstance: {fileID: 913413103688883289}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2043907181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9623,6 +9607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2339664c7b90ab4cb212ba98e009c2a, type: 3}
+--- !u!4 &913413103688883290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 913413103688883289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &917063644381566123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9773,7 +9762,7 @@ PrefabInstance:
     - target: {fileID: 1481494962618501369, guid: ce6ff865350dfdf4eae7de5ce7cf25fe, type: 3}
       propertyPath: resourceManager
       value: 
-      objectReference: {fileID: 945977839}
+      objectReference: {fileID: 0}
     - target: {fileID: 1481494962618501369, guid: ce6ff865350dfdf4eae7de5ce7cf25fe, type: 3}
       propertyPath: blueprint.Array.size
       value: 4
