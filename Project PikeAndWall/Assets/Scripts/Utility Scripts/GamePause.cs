@@ -13,23 +13,32 @@ public class GamePause : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)&&!isInterrupted)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //Debug.Log("Escape!");
-            pauseMenu.SetActive(true);
-            InterruptGame();
+            if (!isInterrupted)
+            {
+                Debug.Log("Escape!");
+                pauseMenu.SetActive(true);
+                InterruptGame();
+
+            }
+            else if (isInterrupted)
+            {
+                pauseMenu.SetActive(false);
+                ResumeGame();
+            }
+
             
         }
-        if(Input.GetKeyDown(KeyCode.Escape) && isInterrupted)
-        {
-            pauseMenu.SetActive(false);
-            ResumeGame();
-        }
+        
+       
+        
     }
 
     // Update is called once per frame
     public void InterruptGame()
     {
+        Debug.Log("interrupt");
         isInterrupted = true;
         Time.timeScale = 0;
     }
