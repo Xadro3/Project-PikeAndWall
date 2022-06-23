@@ -87,7 +87,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                     }
                     
                 }
-                if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
+                if (pair.Value.GetComponent<UnitClass>().className == "Archer")
                 {
                     foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().upgradeCost)
                     {

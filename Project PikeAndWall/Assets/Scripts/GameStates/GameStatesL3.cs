@@ -16,9 +16,13 @@ public class GameStatesL3 : MonoBehaviour
             flowchart.ExecuteBlock("Nach Schlacht (Copy)");
             executed14 = false;
         }
-        if (GameEnviroment.Singleton.Units.Count == 0)
+        else if (GameEnviroment.Singleton.Units.Count == 0)
         {
             eventSystem.GetComponent<GameStates>().Lose();
         }
+    }
+    void StopBlocks()
+    {
+        flowchart.StopAllBlocks();
     }
 }
