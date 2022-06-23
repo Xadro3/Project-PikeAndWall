@@ -61,7 +61,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hitPoints = hitPoints - damage;
-        audio.PlayOneShot(audioClip, 0.5f);
+        //audio.PlayOneShot(audioClip, 0.5f);
         UpdateHealthBar();
     }
     public void HealDamage(int healing)
