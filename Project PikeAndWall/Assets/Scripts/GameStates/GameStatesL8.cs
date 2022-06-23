@@ -7,6 +7,7 @@ public class GameStatesL8 : MonoBehaviour
     public GameObject eventSystem;
     bool executed=true;
     public Flowchart flowchart;
+    public GameObject objective;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class GameStatesL8 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameEnviroment.Singleton.Units.Count == 0)
+        if (objective==null)
         {
             eventSystem.GetComponent<GameStates>().Lose();
         }
