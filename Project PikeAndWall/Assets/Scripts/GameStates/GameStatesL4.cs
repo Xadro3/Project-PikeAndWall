@@ -12,11 +12,11 @@ public class GameStatesL4 : MonoBehaviour
     public GameObject eventSystem;
     int wallsbuilt=0;
 
-    private void Start()
-    {
-        flowchart.StopAllBlocks();
-        flowchart.ExecuteBlock("Level start");
-    }
+    //private void Start()
+    //{
+    //    flowchart.StopAllBlocks();
+    //    flowchart.ExecuteBlock("Level start");
+    //}
     // Update is called once per frame
     void Update()
     {
