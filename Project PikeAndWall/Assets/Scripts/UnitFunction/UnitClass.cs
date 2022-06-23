@@ -31,9 +31,8 @@ public class UnitClass : MonoBehaviour
     
     private UnitReach unitReach;
     private float rangeOld;
-
-    private CapsuleCollider collider;
-
+    
+    
     public List<ResourceValue> upgradeCost;
     public List<ResourceValue> buildCost;
 
@@ -143,7 +142,7 @@ public class UnitClass : MonoBehaviour
         if (unitAttack.gameObject.name == "Pistol")
         {
             fireRate = 1f;
-            range = 10f;
+            range = 15f;
             damageValue = 2;
             turnRate = 2f;
         }

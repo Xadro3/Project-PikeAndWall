@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 3141488624400062934, guid: 9ec89d893aecf2144bab9e59c62341bb, type: 3}
+      propertyPath: MaxDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141488624400062934, guid: 9ec89d893aecf2144bab9e59c62341bb, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141488624400062934, guid: 9ec89d893aecf2144bab9e59c62341bb, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3482860784918819135, guid: 9ec89d893aecf2144bab9e59c62341bb, type: 3}
       propertyPath: m_RootOrder
       value: 0

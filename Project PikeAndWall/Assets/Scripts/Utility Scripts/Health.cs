@@ -31,9 +31,7 @@ public class Health : MonoBehaviour
         audio = GetComponent<AudioSource>();
         StartCoroutine(HealOverTime());
     }
-
     // Update is called once per frame
-
     void Update()
     {
         UpdateHealthBar();
@@ -44,7 +42,6 @@ public class Health : MonoBehaviour
                 GameEnviroment.Singleton.Units.Remove(gameObject);
             }
             gameObject.GetComponent<Destructible>().Die();
-
         }
         if (hitPoints < maximumHitPoints)
         {

@@ -62,15 +62,7 @@ public class UnitAttack : MonoBehaviour
             if((gameObject.name == "Bow" || gameObject.name == "Musket" || gameObject.name == "Pistol") && unit.enemyInRange && unit.targetHitbox != null)
             {
                 Transform projectileTransform = Instantiate(projectile, new Vector3(unit.weapon.transform.position.x, unit.weapon.transform.position.y, unit.weapon.transform.position.z), Quaternion.identity);
-                if (transform.root.CompareTag("Unit"))
-                {
-                    projectileTransform.tag = "Player";
-                }
-                else
-                {
-                    projectileTransform.tag = "Enemy";
-                }
-                if (projectile.name == "pfBullet"){
+                if (projectile.name == "BulletRed" || projectile.name == "BulletBlue"){
                     Vector3 shootDirection = new Vector3(unit.targetHitbox.transform.position.x - transform.position.x, unit.targetHitbox.transform.position.y - transform.position.y, unit.targetHitbox.transform.position.z - transform.position.z);
                     projectileTransform.GetComponent<ProjectileBullet>().Setup(shootDirection);
                     projectileTransform.GetComponent<ProjectileBullet>().SetDamage(unit.damageValue);
