@@ -335,7 +335,7 @@ MonoBehaviour:
   className: Musket
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 2744462597464523788}
   upgradeCost: []
   buildCost: []
 --- !u!114 &6003955168756119578
@@ -542,6 +542,25 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &2744462597464523788
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3961049840024561491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a71be2d2caeff23489aed14590593269, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -856,5 +875,10 @@ PrefabInstance:
 --- !u!4 &4446083604350008809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8039818714947542073, guid: 4d09767aeff4b95448477acb7e680b46, type: 3}
+  m_PrefabInstance: {fileID: 5917877232373866960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3961049840024561491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7266835259709982339, guid: 4d09767aeff4b95448477acb7e680b46, type: 3}
   m_PrefabInstance: {fileID: 5917877232373866960}
   m_PrefabAsset: {fileID: 0}

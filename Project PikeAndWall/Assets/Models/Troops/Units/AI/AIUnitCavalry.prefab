@@ -505,7 +505,7 @@ MonoBehaviour:
   className: Cavalry
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 2739120076581761439}
   upgradeCost: []
   buildCost: []
 --- !u!114 &7832614734645300852
@@ -720,6 +720,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2739120076581761439
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656867427520282030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27725da43ed6cca4a99ae082c7ee9f8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1161851294105282152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -788,6 +807,11 @@ PrefabInstance:
 --- !u!4 &5470559545327527700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6626182037313651068, guid: 09f36506f4564694b9163c177fb8034d, type: 3}
+  m_PrefabInstance: {fileID: 1161851294105282152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4656867427520282030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5818437242273127366, guid: 09f36506f4564694b9163c177fb8034d, type: 3}
   m_PrefabInstance: {fileID: 1161851294105282152}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3685339073247522666

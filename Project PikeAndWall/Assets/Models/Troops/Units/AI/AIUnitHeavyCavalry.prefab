@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3421480449841927551
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233460647196864089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ccd0fba69dbc914f90cd6964c95185f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1231919917526442674
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +524,7 @@ MonoBehaviour:
   className: HeavyCavalry
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 3421480449841927551}
   upgradeCost: []
   buildCost: []
 --- !u!114 &2163929368100016154
@@ -780,6 +799,11 @@ PrefabInstance:
 --- !u!4 &609881045420209379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 861411376596837300, guid: 143e7d030bfe97746b5a075598fd4fe9, type: 3}
+  m_PrefabInstance: {fileID: 253013573168207703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &233460647196864089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 53913151858063630, guid: 143e7d030bfe97746b5a075598fd4fe9, type: 3}
   m_PrefabInstance: {fileID: 253013573168207703}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3259843497593395234

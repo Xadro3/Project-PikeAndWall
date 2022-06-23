@@ -158,7 +158,7 @@ MonoBehaviour:
   className: Pikeman
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 5128871878737501867}
   upgradeCost: []
   buildCost: []
 --- !u!114 &5413118622364552621
@@ -677,6 +677,25 @@ Transform:
   m_Father: {fileID: 2690250232632279568}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5128871878737501867
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900855081369070677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e595cf7e66f7f2b4c9cc8768f93106f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7834957163846409833
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,5 +875,10 @@ PrefabInstance:
 --- !u!4 &5712962463668614895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1939342319365282477, guid: 656b299232813424f923ceec8ab7bf7b, type: 3}
+  m_PrefabInstance: {fileID: 6170327897492810818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4900855081369070677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1270645376555548695, guid: 656b299232813424f923ceec8ab7bf7b, type: 3}
   m_PrefabInstance: {fileID: 6170327897492810818}
   m_PrefabAsset: {fileID: 0}

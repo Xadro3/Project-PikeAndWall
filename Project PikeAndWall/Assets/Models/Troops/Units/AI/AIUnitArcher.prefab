@@ -127,6 +127,25 @@ Transform:
   m_Father: {fileID: 9003012638189218735}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4689333333588455408
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681759571573337668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a35bb1d4a089a0479d00eae1d1e3668, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3828002617814742998
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +260,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95dca09600bf33a45850c739fc431cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3934681879225771960
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688639330840155819}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b320ad31e72e70447a8d7f6982e2dac8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7959681668174339881
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +474,7 @@ GameObject:
   - component: {fileID: 2624962875212443637}
   - component: {fileID: 1891938144556218495}
   - component: {fileID: 1943263244794663900}
-  - component: {fileID: -4361817720872532917}
+  - component: {fileID: -3195513430651820536}
   m_Layer: 0
   m_Name: AIUnitArcher
   m_TagString: Enemy
@@ -505,8 +543,8 @@ MonoBehaviour:
   buildTime: 0
   className: Archer
   targetHandler: {fileID: 0}
-  animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorWeapon: {fileID: 4689333333588455408}
+  animatorRig: {fileID: 3934681879225771960}
   upgradeCost: []
   buildCost: []
 --- !u!114 &1349904145653179410
@@ -702,7 +740,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &-4361817720872532917
+--- !u!95 &-3195513430651820536
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -712,7 +750,7 @@ Animator:
   m_GameObject: {fileID: 8627472914417889557}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 27725da43ed6cca4a99ae082c7ee9f8f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -783,6 +821,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5194286881608062817, guid: 1f1389f0fc039834cb7d8814fd5621a2, type: 3}
   m_PrefabInstance: {fileID: 3021220962568444784}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7688639330840155819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4854318313469644251, guid: 1f1389f0fc039834cb7d8814fd5621a2, type: 3}
+  m_PrefabInstance: {fileID: 3021220962568444784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8235450946303721469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +886,11 @@ PrefabInstance:
 --- !u!4 &3349647552710554878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6644610120469170947, guid: 2347563cb6dde3b47beabe5981e536e3, type: 3}
+  m_PrefabInstance: {fileID: 8235450946303721469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2681759571573337668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6304394201211048377, guid: 2347563cb6dde3b47beabe5981e536e3, type: 3}
   m_PrefabInstance: {fileID: 8235450946303721469}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8577644679539357435
