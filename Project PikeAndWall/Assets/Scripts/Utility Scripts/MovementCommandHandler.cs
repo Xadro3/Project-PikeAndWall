@@ -41,6 +41,7 @@ public class MovementCommandHandler : MonoBehaviour
     {
         
         Debug.Log("Destination is: " + dest);
+        agent.velocity = Vector3.zero;
         agent.SetDestination(dest);
     }
 
