@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -87,6 +88,10 @@ public class UnitClass : MonoBehaviour
         {
             damageValue += 1;
         }
+        if(targetHitbox.GetComponentInParent<UnitClass>().className == "Objective")
+        {
+            damageValue += 1;
+        }
     }
 
     public void PlayAnimation(string trigger)
@@ -145,6 +150,13 @@ public class UnitClass : MonoBehaviour
             range = 15f;
             damageValue = 2;
             turnRate = 2f;
+        }
+        if (className == "Objective")
+        {
+            fireRate = 0f;
+            range = 0f;
+            damageValue = 0;
+            turnRate = 0f;
         }
     }
 }
