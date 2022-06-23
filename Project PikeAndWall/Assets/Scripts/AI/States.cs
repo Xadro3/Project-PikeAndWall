@@ -166,6 +166,30 @@ public class Pursue: States
     {
         agent.SetDestination(closestUnit.transform.position); //follow closest unit
 
+        foreach (GameObject unit in playerUnits)
+        {
+            if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnit.transform.position, npc.transform.position)) // find closest unit
+            {
+                closestUnit = unit;
+            }
+        }
+
+        if (closestUnit != null && (Vector3.Distance(closestUnit.transform.position, npc.transform.position) > aggroRange))
+        {
+            nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
+            stage = EVENT.EXIT;
+        }
+        if (closestUnit == null && npc.GetComponent<Ai>().charge)
+        {
+            nextState = new Charge(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+            stage = EVENT.EXIT;
+        }
+        if (closestUnit == null)
+        {
+            nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+            stage = EVENT.EXIT;
+        }
+
         if (agent.hasPath)
         {
             foreach (GameObject unit in playerUnits)

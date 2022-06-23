@@ -6942,6 +6942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7054918347058421522}
   - component: {fileID: -8734758002271612076}
+  - component: {fileID: 7474728341847469137}
   m_Layer: 0
   m_Name: AIUnitHeavyCavalryDestroyed
   m_TagString: Untagged
@@ -7113,6 +7114,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7474728341847469137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684208002504443304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c2be12904f81e438733da3be20f1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDie: 3
 --- !u!1 &7761673625465250854
 GameObject:
   m_ObjectHideFlags: 0

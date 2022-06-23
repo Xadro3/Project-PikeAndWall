@@ -67,7 +67,7 @@ public class TargetHandler : MonoBehaviour
 
     public void MoveToAttack()
     {
-        if ((Vector3.Distance(transform.position, targetHitbox.transform.position)) > unit.range / 2)
+        if (targetHitbox!=null && (Vector3.Distance(transform.position, targetHitbox.transform.position)) > unit.range / 2)
         {
             agent.SetDestination(targetHitbox.transform.position);
         }

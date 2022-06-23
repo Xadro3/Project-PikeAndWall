@@ -99,6 +99,7 @@ public class UnitSelector : MonoBehaviour
                     }
                     else if(!hitQuad && !hitUnit && !hitBuilding && i>=raycastHits.Length)
                     {
+                        Debug.Log("Remove all units!");
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                         break;
                         

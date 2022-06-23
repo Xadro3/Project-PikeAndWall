@@ -1553,6 +1553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586343907267431208}
   - component: {fileID: -2797559964382233352}
+  - component: {fileID: 5952063292160321055}
   m_Layer: 0
   m_Name: AIUnitMusketmanDestroyed
   m_TagString: Untagged
@@ -1698,6 +1699,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5952063292160321055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814029740558487954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c2be12904f81e438733da3be20f1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDie: 3
 --- !u!1 &4100317943876226512
 GameObject:
   m_ObjectHideFlags: 0

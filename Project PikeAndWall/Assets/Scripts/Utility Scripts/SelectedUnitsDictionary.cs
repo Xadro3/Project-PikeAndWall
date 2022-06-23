@@ -20,6 +20,19 @@ public class SelectedUnitsDictionary : MonoBehaviour
         upgradeCosts[ResourceType.BlackPowder] = 0;
 
         InvokeRepeating("ReportUnitTypesSelected", 0, 1.0f);
+        InvokeRepeating("RemoveDead", 0, 0.1f);
+    }
+    void RemoveDead()
+    {
+        foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
+        {
+            Debug.Log(pair.Value);
+
+            if (pair.Value==null)
+            {
+                RemoveUnitFromSelection(pair.Key);
+            }
+        }
     }
     public void AddSelectedUnits(GameObject selectedUnit)
     {
@@ -37,7 +50,11 @@ public class SelectedUnitsDictionary : MonoBehaviour
 
     public void RemoveUnitFromSelection(int unitID)
     {
-        Destroy(selectedUnits[unitID].GetComponent<UnitHighlighter>());
+        if (selectedUnits[unitID]!=null && selectedUnits[unitID].GetComponent<UnitHighlighter>() == null)
+        {
+            Destroy(selectedUnits[unitID].GetComponent<UnitHighlighter>());
+        }
+        
         selectedUnits.Remove(unitID);
     }
     public void RemoveAllUnitsFromSelection()

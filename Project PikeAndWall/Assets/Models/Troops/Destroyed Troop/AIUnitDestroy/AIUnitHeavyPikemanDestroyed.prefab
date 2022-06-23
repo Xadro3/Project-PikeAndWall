@@ -3710,6 +3710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7045374803624600512}
   - component: {fileID: 8457352578793493583}
+  - component: {fileID: 5452818187537500933}
   m_Layer: 0
   m_Name: AIUnitHeavyPikemanDestroyed
   m_TagString: Untagged
@@ -3856,6 +3857,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5452818187537500933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7678043228238018938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c2be12904f81e438733da3be20f1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDie: 3
 --- !u!1 &8240199049110876906
 GameObject:
   m_ObjectHideFlags: 0

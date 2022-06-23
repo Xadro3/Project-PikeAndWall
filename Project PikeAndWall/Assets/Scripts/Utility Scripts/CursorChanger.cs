@@ -34,6 +34,11 @@ public class CursorChanger : MonoBehaviour
                 Cursor.SetCursor(selectCursor, hotSpot, cursorMode);
                 break;
             }
+            if (hit.collider.gameObject.tag == "UIQuad")
+            {
+                Cursor.SetCursor(selectCursor, hotSpot, cursorMode);
+                break;
+            }
             if ((hit.collider.gameObject.tag == "Enemy") && (selected.selectedUnits.Count != 0))
             {
                 Cursor.SetCursor(attackCursor, hotSpot, cursorMode);

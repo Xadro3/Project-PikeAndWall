@@ -79,6 +79,10 @@ public class ProjectileArch : MonoBehaviour
         float fracComplete = (Time.time - startTime) / journeyTime * speed;
         transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete * speed);
         transform.position += center;
-        RotateTowardsEnemy();
+        if (transform != null)
+        {
+            RotateTowardsEnemy();
+        }
+        
     }
 }
