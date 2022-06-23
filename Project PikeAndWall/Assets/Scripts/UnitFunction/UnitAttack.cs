@@ -32,8 +32,6 @@ public class UnitAttack : MonoBehaviour
         {
             RotateFaceToEnemy();
         }
-        
-
     }
     public void StartAttack()
     {

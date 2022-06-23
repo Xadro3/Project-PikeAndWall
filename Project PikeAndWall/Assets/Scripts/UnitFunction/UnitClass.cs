@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class UnitClass : MonoBehaviour
@@ -30,6 +31,8 @@ public class UnitClass : MonoBehaviour
     
     private UnitReach unitReach;
     private float rangeOld;
+
+    private CapsuleCollider collider;
 
     public List<ResourceValue> upgradeCost;
     public List<ResourceValue> buildCost;
@@ -105,21 +108,21 @@ public class UnitClass : MonoBehaviour
         if (unitAttack.gameObject.name == "Sword")
         {
             fireRate = 1f;
-            range = 5f;
+            range = 7.5f;
             damageValue = 1;
             turnRate = 2f;
         }
         if (unitAttack.gameObject.name == "Spear")
         {
             fireRate = 1f;
-            range = 5f;
+            range = 7.5f;
             damageValue = 1;
             turnRate = 2f;
         }
         if (unitAttack.gameObject.name == "HeavySpear")
         {
             fireRate = 1f;
-            range = 5f;
+            range = 7.5f;
             damageValue = 2;
             turnRate = 2f;
         }

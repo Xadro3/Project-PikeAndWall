@@ -46,12 +46,12 @@ public class TargetHandler : MonoBehaviour
                 {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
                     unit.SetTarget(targetHitbox);
-                    agent.isStopped = false;
+                    ResumeMovement();
                     SetTargetValue(targetHitbox, raycastHit);
                     if (IsInRange(targetHitbox))
                     {
                         unit.enemyInRange = true;
-                        agent.ResetPath();
+                        ForgetMovement();
                         unit.unitAttack.StartAttack();
                         //agent.isStopped = true;
                     }
@@ -60,7 +60,7 @@ public class TargetHandler : MonoBehaviour
                     break;
                 }
             }
-            agent.isStopped = false;
+            ResumeMovement();
         }
         
     }
@@ -138,6 +138,23 @@ public class TargetHandler : MonoBehaviour
         }
     }
 
+    public void ForgetMovement()
+    {
+        agent.velocity = Vector3.zero;
+        agent.ResetPath();
+    }
+    
+    public void StopMovement()
+    {
+        agent.velocity = Vector3.zero;
+        agent.isStopped = true;
+    }
+
+    public void ResumeMovement()
+    {
+        agent.isStopped = false;
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
@@ -147,6 +164,7 @@ public class TargetHandler : MonoBehaviour
                 if (collision.CompareTag("Enemy"))
                 {
                     targetsInRange.Add(hitbox);
+                    StopMovement();
                     //unit.enemyInRange = true;
                     //agent.ResetPath();
                     //agent.isStopped = true;
@@ -181,7 +199,7 @@ public class TargetHandler : MonoBehaviour
                     targetsInRange.Remove(hitbox);
                     //unit.SetTarget(null);
                     //unit.enemyInRange = false;
-                    agent.isStopped = false;
+                    ResumeMovement();
                 }
             }
             //if (hitbox == targetHitbox)
@@ -195,6 +213,7 @@ public class TargetHandler : MonoBehaviour
                     targetsInRange.Remove(hitbox);
                     //unit.SetTarget(null);
                     unit.enemyInRange = false;
+                    ResumeMovement();
                 }
             }
         }
