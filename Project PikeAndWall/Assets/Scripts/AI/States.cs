@@ -214,7 +214,7 @@ public class Patrol: States
                 : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard,_charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.PATROL;
-        agent.speed = agent.speed-3.5f;
+        agent.speed = agent.speed - 0f;
         agent.isStopped = false;
     }
 
