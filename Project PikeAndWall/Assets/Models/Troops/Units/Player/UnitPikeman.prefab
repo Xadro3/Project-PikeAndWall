@@ -150,6 +150,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1843584949535920949
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112708583671805504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b57592ed268eaf4ea9157402fa8f664, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2408649765550444430
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +378,7 @@ MonoBehaviour:
   className: Pikeman
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 1843584949535920949}
   upgradeCost:
   - resourceType: 6
     resourceAmount: 10
@@ -867,6 +886,11 @@ PrefabInstance:
 --- !u!4 &1592596344510180602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6491684089669393518, guid: 78dc4f9f28123864687f88b7286f5375, type: 3}
+  m_PrefabInstance: {fileID: 5480055730668171412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2112708583671805504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5862781698193540820, guid: 78dc4f9f28123864687f88b7286f5375, type: 3}
   m_PrefabInstance: {fileID: 5480055730668171412}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8858697139922057726

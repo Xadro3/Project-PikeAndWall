@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &7114237776794873805
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193573391172052211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3366ad56f164bb84dbd41ac686d27bdd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2015604441335300512
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +461,7 @@ MonoBehaviour:
   className: HeavyPikeman
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 7114237776794873805}
   upgradeCost: []
   buildCost: []
 --- !u!114 &4349566007381938788
@@ -822,6 +841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b44fcf1786c2ed419aaabd090641b06, type: 3}
+--- !u!1 &193573391172052211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9082857454069626521, guid: 0b44fcf1786c2ed419aaabd090641b06, type: 3}
+  m_PrefabInstance: {fileID: 8981162005458260586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &712806060409716297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8450751914653805603, guid: 0b44fcf1786c2ed419aaabd090641b06, type: 3}

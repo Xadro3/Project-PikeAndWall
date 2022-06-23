@@ -81,7 +81,7 @@ MonoBehaviour:
   className: HeavyCavalry
   targetHandler: {fileID: 0}
   animatorWeapon: {fileID: 0}
-  animatorRig: {fileID: 0}
+  animatorRig: {fileID: 1452457958186037993}
   upgradeCost: []
   buildCost: []
 --- !u!114 &8042193484541668992
@@ -277,6 +277,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6900472327606531380
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006826513755226784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1324389831519785115
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +530,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95dca09600bf33a45850c739fc431cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1452457958186037993
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576859878685412119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 895d664385f16f240b651de2410e165b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5206023657632169284
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,9 +806,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0d43f40d3978a74f93e682983578648, type: 3}
+--- !u!1 &4576859878685412119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8405072865478588375, guid: b0d43f40d3978a74f93e682983578648, type: 3}
+  m_PrefabInstance: {fileID: 5413490520509398208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3805424466569744813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9218588687226400109, guid: b0d43f40d3978a74f93e682983578648, type: 3}
+  m_PrefabInstance: {fileID: 5413490520509398208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1006826513755226784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5104939662569078368, guid: b0d43f40d3978a74f93e682983578648, type: 3}
   m_PrefabInstance: {fileID: 5413490520509398208}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8696625490693537627
