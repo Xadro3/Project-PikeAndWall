@@ -426,7 +426,7 @@ public class Attack : States
             }
         }
 
-        if(Vector3.Distance(closestUnit.transform.position, npc.transform.position) > aggroRange && closestUnit != null)
+        if(closestUnit != null&&(Vector3.Distance(closestUnit.transform.position, npc.transform.position) > aggroRange))
         {
             nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
             stage = EVENT.EXIT;
