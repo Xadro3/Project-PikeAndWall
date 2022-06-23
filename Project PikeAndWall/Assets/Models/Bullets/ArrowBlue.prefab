@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3675910663224367031}
   - component: {fileID: 336836284775405586}
   - component: {fileID: 2542380503710887128}
+  - component: {fileID: 5453824161197372241}
+  - component: {fileID: 1560723018620808373}
+  - component: {fileID: 747868957343429503}
   m_Layer: 0
   m_Name: ArrowBlue
   m_TagString: Untagged
@@ -81,3 +84,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &5453824161197372241
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055673885150891277}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1560723018620808373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055673885150891277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0022979546, y: 0.0006502837, z: 0.04274369}
+  m_Center: {x: 0.0000000067520887, y: 0, z: -0.0019562552}
+--- !u!114 &747868957343429503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055673885150891277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb6dc2e7502f0c43ac294ca868419e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunrise: {fileID: 0}
+  sunset: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  riseRelCenter: {x: 0, y: 0, z: 0}
+  setRelCenter: {x: 0, y: 0, z: 0}
+  relCenter: {x: 0, y: 0, z: 0}
+  journeyTime: 2
