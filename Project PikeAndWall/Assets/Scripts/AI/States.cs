@@ -148,7 +148,7 @@ public class Pursue: States
                 : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.PURSUE;
-        agent.speed = agent.speed +4.5f; ;
+        agent.speed = agent.speed + 0f; ;
         agent.isStopped = false;
         closestUnit = _closestUnit;
         
@@ -285,7 +285,7 @@ public class Charge : States
                 : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
     {
         name = STATE.CHARGE;
-        agent.speed = agent.speed + 4.5f; ;
+        agent.speed = agent.speed + 0f; ;
         agent.isStopped = false;
 
     }
@@ -321,7 +321,7 @@ public class Retreat : States
                     : base(_npc, _agent, _anim, _playerUnits, _attackRange, _isGuard, _charge, _objective, _isPatrol, _gettingAtacked)
         {
             name = STATE.RETREAT;
-            agent.speed = agent.speed + 4.5f; ;
+            agent.speed = agent.speed + 0f; ;
             agent.isStopped = false;
             origin = _origin;
             closestUnit = _closestUnit;
