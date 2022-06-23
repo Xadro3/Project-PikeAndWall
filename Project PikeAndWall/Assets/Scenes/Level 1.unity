@@ -3895,6 +3895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 366756977, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: m_text
+      value: Select the Pikemen.
+      objectReference: {fileID: 0}
     - target: {fileID: 1913343104351318088, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4066,6 +4070,14 @@ PrefabInstance:
     - target: {fileID: 1913343106359126212, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209102654795348563, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: m_text
+      value: Defeat the enemy cavalry.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786423932082140149, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
+      propertyPath: m_text
+      value: Right click to move your unit around the map.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda76c0c1ffe38a4cae984e25f2c032b, type: 3}
