@@ -66,7 +66,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
             {
                 if (pair.Value.GetComponent<UnitClass>().className == "Pikeman")
                 {
-                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().buildCost)
+                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().upgradeCost)
                     {
                         if (!(canafford = resourceManager.CheckResourceAvailability(value)))
                         {
@@ -89,7 +89,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                 }
                 if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
                 {
-                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().buildCost)
+                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().upgradeCost)
                     {
                         if (!(canafford = resourceManager.CheckResourceAvailability(value)))
                         {
@@ -112,7 +112,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                 }
                 if (pair.Value.GetComponent<UnitClass>().className == "Cavalry")
                 {
-                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().buildCost)
+                    foreach (ResourceValue value in pair.Value.GetComponent<UnitClass>().upgradeCost)
                     {
                         if (!(canafford = resourceManager.CheckResourceAvailability(value)))
                         {
@@ -155,7 +155,7 @@ public class SelectedUnitsDictionary : MonoBehaviour
                     }
                     continue;
                 }
-                if (pair.Value.GetComponent<UnitClass>().className == "Bowman")
+                if (pair.Value.GetComponent<UnitClass>().className == "Archer")
                 {
                     foreach (ResourceValue resourceValue in pair.Value.GetComponent<UnitClass>().upgradeCost)
                     {

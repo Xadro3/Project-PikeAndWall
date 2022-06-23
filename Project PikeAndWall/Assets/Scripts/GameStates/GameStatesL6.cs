@@ -40,7 +40,7 @@ public class GameStatesL6 : MonoBehaviour
         if (spawned&&executed2&&GameEnviroment.Singleton.Enemies.Count==0)
         {
             executed2 = false;
-            flowchart.ExecuteBlock("New Block2");
+            flowchart.ExecuteBlock("EnemiesDead");
         }
     }
     void CheckBuildings()
