@@ -33,6 +33,21 @@ public class SelectedUnitsDictionary : MonoBehaviour
                 RemoveUnitFromSelection(pair.Key);
             }
         }
+        foreach(GameObject enemy in GameEnviroment.Singleton.Enemies)
+        {
+            if (enemy == null)
+            {
+                GameEnviroment.Singleton.Enemies.Remove(enemy);
+            }
+        }
+        foreach (GameObject unit in GameEnviroment.Singleton.Units)
+        {
+            if (unit == null)
+            {
+                GameEnviroment.Singleton.Enemies.Remove(unit);
+            }
+        }
+
     }
     public void AddSelectedUnits(GameObject selectedUnit)
     {
