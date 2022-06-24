@@ -130,7 +130,7 @@ public class FormationHandler : MonoBehaviour
 
         foreach (KeyValuePair<Vector3, GameObject> entry in unitPlaces)
         {
-            if (entry.Value !=null) 
+            if (entry.Value !=null && entry.Key != null) 
             {
                 entry.Value.GetComponent<MovementCommandHandler>().MoveToDestinationMultiple(entry.Key);
             }
