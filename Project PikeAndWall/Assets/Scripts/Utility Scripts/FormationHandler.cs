@@ -130,8 +130,11 @@ public class FormationHandler : MonoBehaviour
 
         foreach (KeyValuePair<Vector3, GameObject> entry in unitPlaces)
         {
-            //Debug.Log("Placed unit at: " + entry.Key);
-            entry.Value.GetComponent<MovementCommandHandler>().MoveToDestinationMultiple(entry.Key);
+            if (entry.Value !=null) 
+            {
+                entry.Value.GetComponent<MovementCommandHandler>().MoveToDestinationMultiple(entry.Key);
+            }
+           
         }
         unitPlaces.Clear();
 
