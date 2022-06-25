@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 6420339145521490983}
   - component: {fileID: 7906011953761806415}
   - component: {fileID: 3782971210965706864}
+  - component: {fileID: 2645685200409705673}
   m_Layer: 0
   m_Name: TrainingCavalryPlaced
   m_TagString: Building
@@ -447,3 +448,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fracturedWall: {fileID: 8557169479780612495, guid: b9fc9d482fb8916489d9a681f8877f33, type: 3}
+--- !u!114 &2645685200409705673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7427599534842274677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff56480ed039904880b9e73659d6f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

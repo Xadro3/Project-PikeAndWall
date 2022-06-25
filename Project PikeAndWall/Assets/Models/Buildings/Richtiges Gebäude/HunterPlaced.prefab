@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8921378354117364080}
   - component: {fileID: 7154835276490317448}
   - component: {fileID: 3043672753958473152}
+  - component: {fileID: -5175051879456154236}
   m_Layer: 0
   m_Name: HunterPlaced
   m_TagString: Building
@@ -272,3 +273,15 @@ MonoBehaviour:
   producedResources:
   - resourceType: 6
     resourceAmount: 5
+--- !u!114 &-5175051879456154236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137453893708942670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff56480ed039904880b9e73659d6f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

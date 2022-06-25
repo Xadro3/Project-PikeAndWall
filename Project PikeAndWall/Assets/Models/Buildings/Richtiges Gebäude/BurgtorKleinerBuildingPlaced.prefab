@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 671911134441946183}
   - component: {fileID: 281876014943014671}
   - component: {fileID: -1740391630125193541}
+  - component: {fileID: 3850939291844246065}
   m_Layer: 0
   m_Name: BurgtorKleinerBuildingPlaced
   m_TagString: Building
@@ -247,6 +248,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3850939291844246065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399613707788057882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff56480ed039904880b9e73659d6f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2282485609655841409
 GameObject:
   m_ObjectHideFlags: 0

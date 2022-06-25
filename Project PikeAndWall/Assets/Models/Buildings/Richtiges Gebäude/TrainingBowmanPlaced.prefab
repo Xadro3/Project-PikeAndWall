@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1206123338864571958}
   - component: {fileID: 6082990320975214769}
   - component: {fileID: 5229954761265681456}
+  - component: {fileID: 1833478928704844745}
   m_Layer: 0
   m_Name: TrainingBowmanPlaced
   m_TagString: Building
@@ -317,6 +318,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fracturedWall: {fileID: 0}
+--- !u!114 &1833478928704844745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081733246678253201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff56480ed039904880b9e73659d6f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9018388554698522011
 GameObject:
   m_ObjectHideFlags: 0

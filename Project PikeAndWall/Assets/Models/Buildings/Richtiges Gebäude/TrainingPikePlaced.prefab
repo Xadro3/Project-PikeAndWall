@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 844002084164816412}
   - component: {fileID: 3555942627430970962}
   - component: {fileID: 903850598082406403}
+  - component: {fileID: -7364121608376532995}
   m_Layer: 0
   m_Name: TrainingPikePlaced
   m_TagString: Building
@@ -308,6 +309,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fracturedWall: {fileID: 8557169479780612495, guid: b9fc9d482fb8916489d9a681f8877f33, type: 3}
+--- !u!114 &-7364121608376532995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278735498151040262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff56480ed039904880b9e73659d6f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5242231592275056741
 GameObject:
   m_ObjectHideFlags: 0
