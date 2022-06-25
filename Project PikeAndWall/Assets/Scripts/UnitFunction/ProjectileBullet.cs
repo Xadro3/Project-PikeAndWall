@@ -6,7 +6,7 @@ public class ProjectileBullet : MonoBehaviour
 {
     private Vector3 shootDirection;
     private UnitClass unit;
-    private float speed = 7f;
+    private float speed = 5f;
     private int damageValue;
     private Rigidbody body;
 
@@ -19,7 +19,7 @@ public class ProjectileBullet : MonoBehaviour
 
     private IEnumerator TimeToLive()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
         yield break;
     }
 

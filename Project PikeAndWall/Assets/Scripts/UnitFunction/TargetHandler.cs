@@ -67,7 +67,7 @@ public class TargetHandler : MonoBehaviour
 
     public void MoveToAttack()
     {
-        if (targetHitbox!=null && (Vector3.Distance(transform.position, targetHitbox.transform.position)) > unit.range / 2)
+        if (targetHitbox!=null && !IsInRange(targetHitbox) && (Vector3.Distance(transform.position, targetHitbox.transform.position)) > unit.range / 2)
         {
             agent.SetDestination(targetHitbox.transform.position);
         }
@@ -164,17 +164,16 @@ public class TargetHandler : MonoBehaviour
                 if (collision.CompareTag("Enemy"))
                 {
                     targetsInRange.Add(hitbox);
-                    StopMovement();
                     //unit.enemyInRange = true;
                     //agent.ResetPath();
                     //agent.isStopped = true;
                     //unit.SetTarget(hitbox);
+                    if (targetHitbox == hitbox)
+                    {
+                        unit.enemyInRange = true;
+                        StopMovement();
+                    }
                 }
-            }
-
-            if (hitbox == targetHitbox)
-            {
-                unit.enemyInRange = true;
             }
             if (unit.CompareTag("Enemy"))
             {
@@ -202,10 +201,6 @@ public class TargetHandler : MonoBehaviour
                     ResumeMovement();
                 }
             }
-            //if (hitbox == targetHitbox)
-            //{
-            //    unit.enemyInRange = false;
-            //}
             if (unit.CompareTag("Enemy") && hitbox == targetHitbox)
             {
                 if (collision.CompareTag("Player"))

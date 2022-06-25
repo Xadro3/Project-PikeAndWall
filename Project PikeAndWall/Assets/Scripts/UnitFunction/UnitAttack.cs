@@ -86,12 +86,6 @@ public class UnitAttack : MonoBehaviour
                 yield break;
             }
         }
-        //if (unit.targetHealth.hitPoints <= 0f)
-        //{
-        //    isAttacking = false;
-        //    unit.enemyInRange = false;
-        //    yield break;
-        //}
         isAttacking = false;
     }
 }
