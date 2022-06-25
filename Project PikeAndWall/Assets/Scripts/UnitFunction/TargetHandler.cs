@@ -39,13 +39,14 @@ public class TargetHandler : MonoBehaviour
             unit.enemyInRange = false;
             Ray destinationRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHits = Physics.RaycastAll(destinationRay, 50000f);
-            
+            CancelInvoke("MoveToAttack");
             foreach (RaycastHit raycastHit in raycastHits)
             {
                 if (raycastHit.transform.CompareTag("Enemy"))
                 {
                     Hitbox targetHitbox = raycastHit.transform.GetComponentInChildren<Hitbox>();
                     unit.SetTarget(targetHitbox);
+                    ClearDestroyedTargetsInRange(targetHitbox);
                     ResumeMovement();
                     SetTargetValue(targetHitbox, raycastHit);
                     if (IsInRange(targetHitbox))
@@ -60,6 +61,8 @@ public class TargetHandler : MonoBehaviour
                     break;
                 }
             }
+
+            
             ResumeMovement();
         }
         
@@ -82,9 +85,9 @@ public class TargetHandler : MonoBehaviour
     
     private IEnumerator FindNewTarget()
     {
-        while (ClearDestroyedTargetsInRange(targetHitbox) <= 0)
+        while (ClearDestroyedTargetsInRange(targetHitbox) <= 0 )
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.1f);
         }
         AttackNewTarget();
 
@@ -110,14 +113,17 @@ public class TargetHandler : MonoBehaviour
 
     public void AttackNewTarget()
     {
-        Hitbox newTarget = targetsInRange[Random.Range(0, targetsInRange.Count)];
-        unit.SetTarget(newTarget);
-        StartCoroutine(WaitingToAttack(newTarget));
-        StartCoroutine(FindNewTarget());
+        if (targetsInRange.Count != 0)
+        {
+            Hitbox newTarget = targetsInRange[Random.Range(0, targetsInRange.Count)];
+            unit.SetTarget(newTarget);
+            StartCoroutine(WaitingToAttack(newTarget));
+            StartCoroutine(FindNewTarget());
+        }
+        
         //unit.enemyInRange = true;
         //agent.ResetPath();
         //unit.unitAttack.StartAttack();
-
     }
     
     public void SetTargetValue(Hitbox targetHitbox, RaycastHit raycastHit)
