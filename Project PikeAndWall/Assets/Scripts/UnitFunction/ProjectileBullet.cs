@@ -6,7 +6,7 @@ public class ProjectileBullet : MonoBehaviour
 {
     private Vector3 shootDirection;
     private UnitClass unit;
-    private float speed = 5f;
+    private float speed = 4.5f;
     private int damageValue;
     private Rigidbody body;
 
@@ -19,7 +19,7 @@ public class ProjectileBullet : MonoBehaviour
 
     private IEnumerator TimeToLive()
     {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1.5f);
         yield break;
     }
 
@@ -47,7 +47,9 @@ public class ProjectileBullet : MonoBehaviour
                 hit.TakeDamage(damageValue);
                 Destroy(gameObject,0f);
             }
+            Destroy(gameObject, 0f);
         }
+        
 
 
         //if (collision.TryGetComponent<Hitbox>(out Hitbox hitbox))
@@ -63,7 +65,7 @@ public class ProjectileBullet : MonoBehaviour
     {
         this.shootDirection = shootDirection;
         transform.eulerAngles = new Vector3(GetAngleFromVectorFloat(shootDirection), GetAngleFromVectorFloat(shootDirection), GetAngleFromVectorFloat(shootDirection));
-        Destroy(gameObject, 2f);
+        //Destroy(gameObject, 2f);
 
     }
 

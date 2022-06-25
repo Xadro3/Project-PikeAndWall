@@ -72,17 +72,18 @@ public class ProjectileArch : MonoBehaviour
         lookDirection = (sunset.position - transform.position).normalized;
         lookRotation = Quaternion.LookRotation(lookDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime);
-    }
+
+        }
 
     private void Update()
     {
         float fracComplete = (Time.time - startTime) / journeyTime * speed;
         transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete * speed);
         transform.position += center;
-        if (transform != null)
+        if (sunset != null)
         {
-            RotateTowardsEnemy();
+            RotateTowardsEnemy(); 
         }
-        
-    }
+
+        }
 }
