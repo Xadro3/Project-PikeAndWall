@@ -12930,6 +12930,7 @@ GameObject:
   - component: {fileID: 595862756}
   - component: {fileID: 595862755}
   - component: {fileID: 595862754}
+  - component: {fileID: 595862759}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Untagged
@@ -14087,6 +14088,22 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!208 &595862759
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595862752}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 81.497, y: 7.6130004, z: 126.44301}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 73.523, y: 7.6130004, z: -126.39901}
+  m_TimeToStationary: 0.5
 --- !u!1001 &596301497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15788,7 +15805,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh301804
+  m_Name: pb_Mesh81598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
