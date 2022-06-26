@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 3006154329639794894}
   - component: {fileID: 4552856010492786983}
   - component: {fileID: 844002084164816412}
-  - component: {fileID: 3555942627430970962}
   - component: {fileID: 903850598082406403}
   - component: {fileID: -7364121608376532995}
   m_Layer: 0
@@ -276,26 +275,6 @@ MonoBehaviour:
   subroutineRunning: 0
   buildable: {fileID: 5436801974628755489, guid: a514f6d3effa1e14e85a9f3a4f60f02a, type: 3}
   resource: {fileID: 0}
---- !u!114 &3555942627430970962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2278735498151040262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f03ba78bea5dde4f8c31a0056b2df96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitPoints: 100
-  armor: 0
-  maximumHitPoints: 100
-  team: 0
-  healOverTimeEffect: 0
-  healOverTimeTickRate: 0
-  audio: {fileID: 0}
-  audioClip: {fileID: 0}
 --- !u!114 &903850598082406403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +312,6 @@ GameObject:
   - component: {fileID: 1494999637277662589}
   - component: {fileID: 433559410463663232}
   - component: {fileID: 8617232440296544901}
-  - component: {fileID: 3604810500631342121}
   m_Layer: 0
   m_Name: Quad
   m_TagString: UIQuad
@@ -418,18 +396,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3604810500631342121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5242231592275056741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6dd27b193bf8a40accd32b6d87c966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6887754211988411315
 GameObject:
   m_ObjectHideFlags: 0

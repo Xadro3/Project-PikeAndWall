@@ -84,22 +84,22 @@ public class UnitSelector : MonoBehaviour
                         hitUnit = true;
                         break;
                     }
-                    else if(raycast.collider.gameObject.tag == "Building")
-                    {
-                        selectedUnitsDictionary.RemoveAllUnitsFromSelection();
-                        selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
-                        hitBuilding = true;
-                        break;
-                    }
+                    //else if(raycast.collider.gameObject.tag == "Building")
+                    //{
+                    //    selectedUnitsDictionary.RemoveAllUnitsFromSelection();
+                    //    selectedUnitsDictionary.AddSelectedUnits(raycast.collider.gameObject);
+                    //    hitBuilding = true;
+                    //    break;
+                    //}
                     else if(raycast.collider.gameObject.tag == "UIQuad")
                     {
                         //do nothing
                         hitQuad = true;
                         break;
                     }
-                    else if(!hitQuad && !hitUnit && !hitBuilding && i>=raycastHits.Length)
+                    else if(!hitQuad && !hitUnit && i>=raycastHits.Length)
                     {
-                        Debug.Log("Remove all units!");
+                        //Debug.Log("Remove all units!");
                         selectedUnitsDictionary.RemoveAllUnitsFromSelection();
                         break;
                         
@@ -238,7 +238,7 @@ public class UnitSelector : MonoBehaviour
 
         if (other.tag == "Unit")
         {
-
+            //selectedUnitsDictionary.RemoveAllUnitsFromSelection();
             selectedUnitsDictionary.AddSelectedUnits(other.gameObject);
         }
 

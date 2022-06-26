@@ -72,7 +72,7 @@ public class FormationHandler : MonoBehaviour
             foreach (RaycastHit raycastHit in raycastHits)
             {
 
-                Debug.Log("I hit: "+raycastHit.collider);
+                //Debug.Log("I hit: "+raycastHit.collider);
                 
                 if (raycastHit.collider.gameObject.layer == 7)
                 {

@@ -109,48 +109,6 @@ public class UnitClass : MonoBehaviour
 
     private void SetWeaponStats()
     {
-        if (unitAttack.gameObject.name == "Sword")
-        {
-            fireRate = 1f;
-            range = 7.5f;
-            damageValue = 1;
-            turnRate = 2f;
-        }
-        if (unitAttack.gameObject.name == "Spear")
-        {
-            fireRate = 1f;
-            range = 7.5f;
-            damageValue = 1;
-            turnRate = 2f;
-        }
-        if (unitAttack.gameObject.name == "HeavySpear")
-        {
-            fireRate = 1f;
-            range = 7.5f;
-            damageValue = 2;
-            turnRate = 2f;
-        }
-        if (unitAttack.gameObject.name == "Bow")
-        {
-            fireRate = 1f;
-            range = 50f;
-            damageValue = 1;
-            turnRate = 2f;
-        }        
-        if (unitAttack.gameObject.name == "Musket")
-        {
-            fireRate = 1f;
-            range = 40f;
-            damageValue = 2;
-            turnRate = 2f;
-        }
-        if (unitAttack.gameObject.name == "Pistol")
-        {
-            fireRate = 1f;
-            range = 15f;
-            damageValue = 2;
-            turnRate = 2f;
-        }
         if (className == "Objective")
         {
             fireRate = 0f;
@@ -158,5 +116,48 @@ public class UnitClass : MonoBehaviour
             damageValue = 0;
             turnRate = 0f;
         }
+        else if (unitAttack.gameObject.name == "Sword")
+        {
+            fireRate = 1f;
+            range = 7.5f;
+            damageValue = 1;
+            turnRate = 2f;
+        }
+        else if (unitAttack.gameObject.name == "Spear")
+        {
+            fireRate = 1f;
+            range = 7.5f;
+            damageValue = 1;
+            turnRate = 2f;
+        }
+        else if (unitAttack.gameObject.name == "HeavySpear")
+        {
+            fireRate = 1f;
+            range = 7.5f;
+            damageValue = 2;
+            turnRate = 2f;
+        }
+        else if (unitAttack.gameObject.name == "Bow")
+        {
+            fireRate = 1f;
+            range = 50f;
+            damageValue = 1;
+            turnRate = 2f;
+        }        
+        else if (unitAttack.gameObject.name == "Musket")
+        {
+            fireRate = 1f;
+            range = 40f;
+            damageValue = 2;
+            turnRate = 2f;
+        }
+        else if (unitAttack.gameObject.name == "Pistol")
+        {
+            fireRate = 1f;
+            range = 15f;
+            damageValue = 2;
+            turnRate = 2f;
+        }
+       
     }
 }

@@ -88,7 +88,7 @@ public class Idle : States
     }
     public override void Enter()
     {
-        animator.SetTrigger("isIdle");
+       // animator.SetTrigger("isIdle");
         Debug.Log("AI is in Idle");
         base.Enter();
     }
@@ -135,7 +135,7 @@ public class Idle : States
 
     public override void Exit()
     {
-        animator.ResetTrigger("isIdle");
+        //animator.ResetTrigger("isIdle");
         base.Exit();
     }
 }
@@ -157,22 +157,34 @@ public class Pursue: States
     public  override void Enter()
     {
         Debug.Log("AI is in Pursuit");
-        animator.SetTrigger("isRunning");
+       // animator.SetTrigger("isRunning");
         origin = npc.transform.position;
         base.Enter();
     }
 
     public override void Update()
     {
-        agent.SetDestination(closestUnit.transform.position); //follow closest unit
+        //if (closestUnit == null)
+        //{
+        //    closestUnit = playerUnits[0];
+        //}
 
-        foreach (GameObject unit in playerUnits)
+        if (closestUnit != null)
         {
-            if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnit.transform.position, npc.transform.position)) // find closest unit
+            foreach (GameObject unit in playerUnits)
             {
-                closestUnit = unit;
+                if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnit.transform.position, npc.transform.position) && Vector3.Distance(closestUnit.transform.position, npc.transform.position) < aggroRange) // find closest unit
+                {
+                    closestUnit = unit;
+                }
             }
         }
+
+        if (closestUnit != null && Vector3.Distance(closestUnit.transform.position, npc.transform.position)<aggroRange)
+        {
+            agent.SetDestination(closestUnit.transform.position); //follow closest unit
+        }
+        
 
         if (closestUnit != null && (Vector3.Distance(closestUnit.transform.position, npc.transform.position) > aggroRange))
         {
@@ -186,7 +198,7 @@ public class Pursue: States
         }
         if (closestUnit == null)
         {
-            nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+            nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
             stage = EVENT.EXIT;
         }
 
@@ -222,7 +234,7 @@ public class Pursue: States
 
     public override void Exit()
     {
-        animator.ResetTrigger("isRunning");
+        //animator.ResetTrigger("isRunning");
         base.Exit();
     }
 
@@ -247,7 +259,7 @@ public class Patrol: States
         origin = npc.transform.position;
         Debug.Log("AI is in Patrol");
         currentIndex = 0;
-        animator.SetTrigger("isWalking");
+        //animator.SetTrigger("isWalking");
         base.Enter();
     }
 
@@ -298,7 +310,7 @@ public class Patrol: States
 
     public override void Exit()
     {
-        animator.ResetTrigger("isWalking");
+        //animator.ResetTrigger("isWalking");
         base.Exit();
     }
 
@@ -317,7 +329,7 @@ public class Charge : States
     public override void Enter()
     {
         Debug.Log("AI is Charging");
-        animator.SetTrigger("isRunning");
+       // animator.SetTrigger("isRunning");
         base.Enter();
     }
 
@@ -354,7 +366,7 @@ public class Retreat : States
         public override void Enter()
         {
             Debug.Log("Ai is Retreating");
-            animator.SetTrigger("isRunning");
+            //animator.SetTrigger("isRunning");
             base.Enter();
         }
 
@@ -362,12 +374,12 @@ public class Retreat : States
         {
             if (!gettingAttacked) //if not in combat, return to idle 
             {
-            if (agent.destination != origin)
+            if (Vector3.Distance(origin, npc.transform.position) > 1.4)
             {
                 Debug.Log("AI is returning to Origin");
                 agent.SetDestination(origin);
             }
-                if(origin == npc.transform.position)
+            if((Vector3.Distance(origin, npc.transform.position) < 1.4))
             {
                 nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
                 stage = EVENT.EXIT;
@@ -392,7 +404,7 @@ public class Retreat : States
 
         public override void Exit()
         {
-            animator.ResetTrigger("isRunning");
+           // animator.ResetTrigger("isRunning");
             base.Exit();
 
         }
@@ -416,7 +428,7 @@ public class Attack : States
     public override void Enter()
     {
         Debug.Log("AI is attacking");
-        animator.SetTrigger("isAttacking");
+        //animator.SetTrigger("isAttacking");
         agent.isStopped = true;
         base.Enter();
     }
@@ -428,7 +440,7 @@ public class Attack : States
         {
             closestUnitPosition = closestUnit.transform.position;
 
-            if (Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange)
+            if (Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= attackRange && Vector3.Distance(closestUnit.transform.position, npc.transform.position) <= aggroRange)
             {
                 npc.GetComponent<UnitClass>().enemyInRange = true;
                 npc.GetComponent<UnitClass>().SetTarget(closestUnit.GetComponentInChildren<Hitbox>());
@@ -442,13 +454,13 @@ public class Attack : States
             }
         }
 
-        foreach (GameObject unit in playerUnits)
-        {
-            if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnitPosition, npc.transform.position)) // find closest unit
-            {
-                closestUnit = unit;
-            }
-        }
+        //foreach (GameObject unit in playerUnits)
+        //{
+        //    if (Vector3.Distance(unit.transform.position, npc.transform.position) < Vector3.Distance(closestUnitPosition, npc.transform.position)) // find closest unit
+        //    {
+        //        closestUnit = unit;
+        //    }
+        //}
 
         if(closestUnit != null&&(Vector3.Distance(closestUnit.transform.position, npc.transform.position) > aggroRange))
         {
@@ -462,7 +474,7 @@ public class Attack : States
         }
         if(closestUnit == null)
         {
-            nextState = new Idle(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked);
+            nextState = new Retreat(npc, agent, animator, playerUnits, attackRange, isGuard, charge, objective, isPatrol, gettingAttacked, origin, closestUnit);
             stage = EVENT.EXIT;
         }
     }

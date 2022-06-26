@@ -40,7 +40,7 @@ public class MovementCommandHandler : MonoBehaviour
     public void MoveToDestinationMultiple(Vector3 dest)
     {
         
-        Debug.Log("Destination is: " + dest);
+       // Debug.Log("Destination is: " + dest);
         agent.velocity = Vector3.zero;
         agent.SetDestination(dest);
     }

@@ -24,15 +24,19 @@ public class SelectedUnitsDictionary : MonoBehaviour
     }
     void RemoveDead()
     {
-        foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
+        if (selectedUnits.Count != 0)
         {
-            Debug.Log(pair.Value);
-
-            if (pair.Value==null)
+            foreach (KeyValuePair<int, GameObject> pair in selectedUnits)
             {
-                RemoveUnitFromSelection(pair.Key);
+                //Debug.Log(pair.Value);
+
+                if (pair.Value == null)
+                {
+                    RemoveUnitFromSelection(pair.Key);
+                }
             }
         }
+        
         foreach(GameObject enemy in GameEnviroment.Singleton.Enemies)
         {
             if (enemy == null)
