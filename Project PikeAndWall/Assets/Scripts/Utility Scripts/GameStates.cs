@@ -9,6 +9,7 @@ public class GameStates : MonoBehaviour
     public GameObject lostScreen;
     public GameObject winScreen;
     [SerializeField] int timeScale = 0;
+    bool won = false;
     void Start()
     {
         
@@ -38,13 +39,18 @@ public class GameStates : MonoBehaviour
     {
         winScreen.SetActive(true);
            Time.timeScale = timeScale;
+        won = true;
            Debug.Log("Won");
     }
 
     public void Lose()
     {
-        lostScreen.SetActive(true);
-           Time.timeScale = timeScale;
-           Debug.Log("Lost");
+        if (!won)
+        {
+            lostScreen.SetActive(true);
+            Time.timeScale = timeScale;
+            Debug.Log("Lost");
+        }
+        
     }
 }
