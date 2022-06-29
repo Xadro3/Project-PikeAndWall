@@ -3367,7 +3367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: 'This time there seem to be 3 Pikemen coming or us. '
+  storyText: 'This time there seem to be 3 Pikemen coming for us. '
   description: 
   character: {fileID: 1677118170}
   portrait: {fileID: 0}
@@ -3528,8 +3528,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 163513463}
-  selectedCommands: []
+  - {fileID: 163513470}
+  selectedCommands:
+  - {fileID: 163513466}
   variables: []
   description: 
   stepPause: 0
