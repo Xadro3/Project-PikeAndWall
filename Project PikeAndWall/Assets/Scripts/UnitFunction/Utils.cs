@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Utils : MonoBehaviour
 {
+
     public static float GetAngleFromVectorFloat(Vector3 dir)
     {
         dir = dir.normalized;
