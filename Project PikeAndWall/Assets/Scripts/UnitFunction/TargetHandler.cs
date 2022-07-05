@@ -34,7 +34,8 @@ public class TargetHandler : MonoBehaviour
 
     void Update()
     {
-        AttackNewTarget();
+        //activate for trailer stuff
+        //AttackNewTarget();
         if (Input.GetMouseButtonDown(1) && transform.TryGetComponent(out UnitHighlighter amISelected))
         {
             unit.enemyInRange = false;

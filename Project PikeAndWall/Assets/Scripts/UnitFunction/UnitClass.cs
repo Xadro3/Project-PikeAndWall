@@ -92,8 +92,8 @@ public class UnitClass : MonoBehaviour
         {
             damageValue += 1;
         }
-
-        damageValue = 0;
+        //activate for trailer stuff
+        //damageValue = 0;
     }
 
     public void PlayAnimation(string trigger)
