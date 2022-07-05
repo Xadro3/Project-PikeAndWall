@@ -34,6 +34,7 @@ public class TargetHandler : MonoBehaviour
 
     void Update()
     {
+        AttackNewTarget();
         if (Input.GetMouseButtonDown(1) && transform.TryGetComponent(out UnitHighlighter amISelected))
         {
             unit.enemyInRange = false;
@@ -91,7 +92,8 @@ public class TargetHandler : MonoBehaviour
         }
         AttackNewTarget();
 
-    }
+
+        }
     
     private IEnumerator WaitingToAttack(Hitbox targetHitbox)
     {

@@ -92,6 +92,8 @@ public class UnitClass : MonoBehaviour
         {
             damageValue += 1;
         }
+
+        damageValue = 0;
     }
 
     public void PlayAnimation(string trigger)
@@ -158,6 +160,6 @@ public class UnitClass : MonoBehaviour
             damageValue = 2;
             turnRate = 2f;
         }
-       
+
     }
 }
