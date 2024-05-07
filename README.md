@@ -1,4 +1,5 @@
-https://img.itch.zone/aW1nLzkyODExMDYucG5n/original/BME6KY.png
+![BME6KY](https://github.com/Xadro3/Project-PikeAndWall/assets/22886138/48554e34-946e-4c48-b768-958218cb8724)
+
 The game Pike & Wall is a game, in which the story let's you at first play events from the Italian wars at the start of the 16th century. 
 
 As a condottiere, the leader of a band of mercenaries, you get to help the famous General Fernandez Gonzalo de Cordoba liberate the complete south of Italy from French occupation. 
